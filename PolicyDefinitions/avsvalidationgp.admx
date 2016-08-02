@@ -22,7 +22,7 @@
         valueName="NoGenTicket"
      >
      <parentCategory ref="SoftwareProtectionPlatform" />
-     <supportedOn ref="windows:SUPPORTED_Windows8" />
+     <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
      <enabledValue>
         <decimal value = "1" />
      </enabledValue>

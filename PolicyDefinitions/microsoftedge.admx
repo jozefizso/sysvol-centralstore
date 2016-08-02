@@ -22,23 +22,8 @@
   </categories>
   <!-- NOTE: Please try to keep this list sorted by the Policy name="" field -->
   <policies>
-    <policy name="AllowActiveScripting"
-            class="Both"
-            displayName="$(string.AllowActiveScripting)"
-            explainText="$(string.AllowActiveScripting_Explain)"
-            key="Software\Policies\Microsoft\MicrosoftEdge\Internet Settings\Zones\3"
-            valueName="1400">
-      <parentCategory ref="MicrosoftEdge" />
-      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_1" />
-      <enabledValue>
-        <decimal value="0" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="2" />
-      </disabledValue>
-    </policy>
     <policy name="AllowAutofill"
-            class="Both"
+            class="Machine"
             displayName="$(string.AllowAutofill)"
             explainText="$(string.AllowAutofill_Explain)"
             key="Software\Policies\Microsoft\MicrosoftEdge\Main"
@@ -52,8 +37,24 @@
         <string>no</string>
       </disabledValue>
     </policy>
+    <policy name="AllowDeveloperTools"
+            class="Machine"
+            displayName="$(string.AllowDeveloperTools)"
+            explainText="$(string.AllowDeveloperTools_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\F12"
+            valueName="AllowDeveloperTools"
+            >
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_1" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="AllowDoNotTrack"
-            class="Both"
+            class="Machine"
             displayName="$(string.AllowDoNotTrack)"
             explainText="$(string.AllowDoNotTrack_Explain)"
             key="Software\Policies\Microsoft\MicrosoftEdge\Main"
@@ -67,8 +68,23 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="AllowInPrivate"
+            class="Machine"
+            displayName="$(string.AllowInPrivate)"
+            explainText="$(string.AllowInPrivate_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Main"
+            valueName="AllowInPrivate">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_1" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="AllowPasswordManager"
-            class="Both"
+            class="Machine"
             displayName="$(string.AllowPasswordManager)"
             explainText="$(string.AllowPasswordManager_Explain)"
             key="Software\Policies\Microsoft\MicrosoftEdge\Main"
@@ -83,7 +99,7 @@
       </disabledValue>
     </policy>
     <policy name="AllowPopups"
-            class="Both"
+            class="Machine"
             displayName="$(string.AllowPopups)"
             explainText="$(string.AllowPopups_Explain)"
             key="Software\Policies\Microsoft\MicrosoftEdge\Main"
@@ -98,7 +114,7 @@
       </disabledValue>
     </policy>
     <policy name="AllowSearchSuggestionsinAddressBar"
-            class="Both"
+            class="Machine"
             displayName="$(string.AllowSearchSuggestionsinAddressBar)"
             explainText="$(string.AllowSearchSuggestionsinAddressBar_Explain)"
             key="Software\Policies\Microsoft\MicrosoftEdge\SearchScopes"
@@ -113,7 +129,7 @@
       </disabledValue>
     </policy>
     <policy name="AllowSmartScreen"
-            class="Both"
+            class="Machine"
             displayName="$(string.AllowSmartScreen)"
             explainText="$(string.AllowSmartScreen_Explain)"
             key="Software\Policies\Microsoft\MicrosoftEdge\PhishingFilter"
@@ -127,8 +143,23 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="AllowWebContentOnNewTabPage"
+            class="Machine"
+            displayName="$(string.AllowWebContentOnNewTabPage)"
+            explainText="$(string.AllowWebContentOnNewTabPage_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\ServiceUI"
+            valueName="AllowWebContentOnNewTabPage">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_1" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="Cookies"
-            class="Both"
+            class="Machine"
             displayName="$(string.Cookies)"
             explainText="$(string.Cookies_Explain)"
             presentation="$(presentation.Cookies)"
@@ -156,7 +187,7 @@
       </elements>
     </policy>
     <policy name="EnterpriseModeSiteList"
-            class="Both"
+            class="Machine"
             displayName="$(string.EnterpriseModeSiteList)"
             explainText="$(string.EnterpriseModeSiteList_Explain)"
             presentation="$(presentation.EnterpriseModeSiteList_Presentation)"
@@ -168,8 +199,78 @@
         <text id="EnterSiteListPrompt" valueName="SiteList" required="true" />
       </elements>
     </policy>
+    <policy name="HideLocalHostIPAddress"
+            class="Machine"
+            displayName="$(string.HideLocalHostIPAddress)"
+            explainText="$(string.HideLocalHostIPAddress_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Main"
+            valueName="HideLocalHostIP">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_1" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="HomePages"
+            class="Machine"
+            displayName="$(string.HomePages)"
+            explainText="$(string.HomePages_Explain)"
+            presentation="$(presentation.HomePages_Presentation)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Internet Settings"
+            >
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_1" />
+      <elements>
+        <text id="HomePagesPrompt" valueName="ProvisionedHomePages" required="true" />
+      </elements>
+    </policy>
+    <policy name="PreventSmartScreenPromptOverride"
+            class="Machine"
+            displayName="$(string.PreventSmartScreenPromptOverride)"
+            explainText="$(string.PreventSmartScreenPromptOverride_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\PhishingFilter"
+            valueName="PreventOverride">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_1" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="PreventSmartScreenPromptOverrideForFiles"
+            class="Machine"
+            displayName="$(string.PreventSmartScreenPromptOverrideForFiles)"
+            explainText="$(string.PreventSmartScreenPromptOverrideForFiles_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\PhishingFilter"
+            valueName="PreventOverrideAppRepUnknown">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_1" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="Favorites"
+            class="Machine"
+            displayName="$(string.ProvisionedFavorites)"
+            explainText="$(string.ProvisionedFavorites_Explain)"
+            presentation="$(presentation.ProvisionedFavorites_Presentation)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Internet Settings\ProvisionedFavorites">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_1" />
+      <elements>
+        <list id="ProvisionedFavorites_List" additive="true" explicitValue="true" />
+      </elements>
+    </policy>
     <policy name="SendIntranetTraffictoInternetExplorer"
-            class="Both"
+            class="Machine"
             displayName="$(string.SendIntranetTraffictoInternetExplorer)"
             explainText="$(string.SendIntranetTraffictoInternetExplorer_Explain)"
             key="Software\Policies\Microsoft\MicrosoftEdge\Main"

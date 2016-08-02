@@ -537,15 +537,21 @@
         displayName="$(string.DeferUpgrade_Title)"
         explainText="$(string.DeferUpgrade_Help)"
         key="Software\Policies\Microsoft\Windows\WindowsUpdate"
+        presentation="$(presentation.DeferUpgrade_Title)"
         valueName="DeferUpgrade">
         <parentCategory ref="WindowsUpdateCat" />
-        <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+        <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
         <enabledValue>
             <decimal value="1" />
         </enabledValue>
         <disabledValue>
             <decimal value="0" />
         </disabledValue>
+        <elements>
+          <decimal id="DeferUpgradePeriodId" valueName="DeferUpgradePeriod" required="true" minValue="0" maxValue="8" />
+          <decimal id="DeferUpdatePeriodId" valueName="DeferUpdatePeriod" required="true" minValue="0" maxValue="4" />
+          <boolean id="PauseDeferralsId" valueName="PauseDeferrals" />
+        </elements>
     </policy>  
   </policies>
 </policyDefinitions>

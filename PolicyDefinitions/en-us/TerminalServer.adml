@@ -5,14 +5,15 @@
   <description>enter description here</description>
   <resources>
     <stringTable>
+      <string id="TS_SUPPORTED_Windows10">At least Windows 10 or Windows Server 2016 Technical Preview 4</string>
       <string id="TS_SUPPORTED_Windows8_or_ARM">At least Windows 8 or Windows RT</string>
-      <string id="TS_SUPPORTED_Windows8_Server">At least Windows Server Technical Preview 2</string>
-      <string id="TS_SUPPORTED_Windows8_Enterprise_AND_Server"> At least Windows 8 Enterprise or Windows Server Technical Preview 2</string>
+      <string id="TS_SUPPORTED_Windows8_Server">At least Windows Server 2012</string>
+      <string id="TS_SUPPORTED_Windows8_Enterprise_AND_Server"> At least Windows 8 Enterprise or Windows Server 2012</string>
       <string id="TS_SUPPORTED_ONLY_Windows7_OR_SERVER2K8R2">Windows 7 or Windows Server 2008 R2 (and their subsequent Service Packs) only</string>
       <string id="TS_SUPPORTED_ONLY_LEGACY">Windows Server 2008 R2, Windows Server 2008, Windows Server 2003, Windows 7, Windows Vista, and Windows XP</string>
       <string id="TS_SUPPORTED_Windows7_Server">At least Windows Server 2008 R2</string>
       <string id="TS_SUPPORTED_Windows7">At least Windows 7</string>
-      <string id="TS_SUPPORTED_Windows8_Server_With_RDSH"> At least Windows Server Technical Preview 2 with RDSH role installed</string>
+      <string id="TS_SUPPORTED_Windows8_Server_With_RDSH"> At least Windows Server 2012 with RDSH role installed</string>
       <string id="TS_SUPPORTED_Windows7_OR_SERVER2K8R2_SP1">At least Windows 7 with Service Pack 1 or Windows Server 2008 R2 with Service Pack 1</string>
       <string id="TS_SUPPORTED_Vista_SP1">At least Windows Vista with Service Pack 1</string>
       <string id="TS_SUPPORTED_Win2k">At least Windows 2000 Terminal Services</string>
@@ -45,7 +46,7 @@
       <string id="TS_AUDIOMAP_EXPLAIN">This policy setting allows you to specify whether users can redirect the remote computer's audio and video output in a Remote Desktop Services session.
 Users can specify where to play the remote computer's audio output by configuring the remote audio settings on the Local Resources tab in Remote Desktop Connection (RDC). Users can choose to play the remote audio on the remote computer or on the local computer. Users can also choose to not play the audio. Video playback can be configured by using the videoplayback setting in a Remote Desktop Protocol (.rdp) file. By default, video playback is enabled.
 
-By default, audio and video playback redirection is not allowed when connecting to a computer running Windows Server 2008 R2, Windows Server 2008, or Windows Server 2003. Audio and video playback redirection is allowed by default when connecting to a computer running Windows 8, Windows Server Technical Preview 2, Windows 7, Windows Vista, or Windows XP Professional.
+By default, audio and video playback redirection is not allowed when connecting to a computer running Windows Server 2008 R2, Windows Server 2008, or Windows Server 2003. Audio and video playback redirection is allowed by default when connecting to a computer running Windows 8, Windows Server 2012, Windows 7, Windows Vista, or Windows XP Professional.
 
 If you enable this policy setting, audio and video playback redirection is allowed.
 
@@ -149,24 +150,23 @@ If you disable this policy setting, Remote Desktop Services always allows Clipbo
 
 If you do not configure this policy setting, Clipboard redirection is not specified at the Group Policy level. 
 </string>
-      <string id="TS_COLOR_EXPLAIN">
-        This policy setting allows you to specify the maximum color resolution (color depth) for Remote Desktop Services connections.
+      <string id="TS_COLOR_EXPLAIN">This policy setting allows you to specify the maximum color resolution (color depth) for Remote Desktop Services connections.
 
-        You can use this policy setting to set a limit on the color depth of any connection that uses RDP. Limiting the color depth can improve connection performance, particularly over slow links, and reduce server load.
+You can use this policy setting to set a limit on the color depth of any connection that uses RDP. Limiting the color depth can improve connection performance, particularly over slow links, and reduce server load.
 
-        If you enable this policy setting, the color depth that you specify is the maximum color depth allowed for a user's RDP connection. The actual color depth for the connection is determined by the color support available on the client computer. If you select Client Compatible, the highest color depth supported by the client will be used.
+If you enable this policy setting, the color depth that you specify is the maximum color depth allowed for a user's RDP connection. The actual color depth for the connection is determined by the color support available on the client computer. If you select Client Compatible, the highest color depth supported by the client will be used.
 
-        If you disable or do not configure this policy setting, the color depth for connections is not specified at the Group Policy level.
+If you disable or do not configure this policy setting, the color depth for connections is not specified at the Group Policy level.
 
-        Note:
-        1.	Setting the color depth to 24 bits is only supported on Windows Server 2003 and Windows XP Professional.
-        2.	The value specified in this policy setting is not applied to connections from client computers that are using at least Remote Desktop Protocol 8.0 (computers running at least Windows 8 or Windows Server Technical Preview 2). The 32-bit color depth format is always used for these connections.
-        3.	For connections from client computers that are using Remote Desktop Protocol 7.1 or earlier versions that are connecting to computers running at least Windows 8 or Windows Server Technical Preview 2, the minimum of the following values is used as the color depth format:
-        a.	Value specified by this policy setting
-        b.	Maximum color depth supported by the client
-        c.	Value requested by the client
+Note:
+1.	Setting the color depth to 24 bits is only supported on Windows Server 2003 and Windows XP Professional.
+2.	The value specified in this policy setting is not applied to connections from client computers that are using at least Remote Desktop Protocol 8.0 (computers running at least Windows 8 or Windows Server 2012). The 32-bit color depth format is always used for these connections.
+3.	For connections from client computers that are using Remote Desktop Protocol 7.1 or earlier versions that are connecting to computers running at least Windows 8 or Windows Server 2012, the minimum of the following values is used as the color depth format:
+a.	Value specified by this policy setting
+b.	Maximum color depth supported by the client
+c.	Value requested by the client
 
-        If the client does not support at least 16 bits, the connection is terminated.
+If the client does not support at least 16 bits, the connection is terminated.
       </string>
       <string id="TS_COLORDEPTH">Limit maximum color depth</string>
       <string id="TS_Comp_Help">Controls Remote Desktop Services configuration and properties of client sessions for individual computers or groups of computers.</string>
@@ -545,7 +545,7 @@ Notes:
       <string id="TS_SD_Loc">Configure RD Connection Broker server name</string>
       <string id="TS_SD_Loc_Explain">This policy setting allows you to specify the RD Connection Broker server that the RD Session Host server uses to track and redirect user sessions for a load-balanced RD Session Host server farm. The specified server must be running the Remote Desktop Connection Broker service. All RD Session Host servers in a load-balanced farm should use the same RD Connection Broker server.
 
-If you enable this policy setting, you must specify the RD Connection Broker server by using its fully qualified domain name (FQDN). In Windows Server Technical Preview 2, for a high availability setup with multiple RD Connection Broker servers, you must provide a semi-colon separated list of the FQDNs of all the RD Connection Broker servers.
+If you enable this policy setting, you must specify the RD Connection Broker server by using its fully qualified domain name (FQDN). In Windows Server 2012, for a high availability setup with multiple RD Connection Broker servers, you must provide a semi-colon separated list of the FQDNs of all the RD Connection Broker servers.
 
 If you disable or do not configure this policy setting, the policy setting is not specified at the Group Policy level.
 
@@ -913,17 +913,17 @@ If you disable or do not configure this policy setting, the authentication setti
 
     <string id="TS_SERVER_IMAGE_QUALITY">Configure image quality for RemoteFX Adaptive Graphics</string>
     <string id="TS_SERVER_IMAGE_QUALITY_EXPLAIN">This policy setting allows you to specify the visual quality for remote users when connecting to this computer by using Remote Desktop Connection. You can use this policy setting to balance the network bandwidth usage with the visual quality that is delivered.
- 
-If you enable this policy setting and set quality to Medium, RemoteFX Adaptive Graphics uses an encoding mechanism that results in medium quality images. This mode consumes the lowest amount of network bandwidth of the quality modes. 
-If you enable this policy setting and set quality to High, RemoteFX Adaptive Graphics uses an encoding mechanism that results in high quality images and consumes moderate network bandwidth. 
-If you enable this policy setting and set quality to Lossless, RemoteFX Adaptive Graphics uses lossless encoding. In this mode, the color integrity of the graphics data is not impacted. However, this setting results in a significant increase in network bandwidth consumption. We recommend that you set this for very specific cases only. 
- 
-If you disable or do not configure this policy setting, RemoteFX Adaptive Graphics uses an encoding mechanism that results in medium quality images.
-
+      If you enable this policy setting and set quality to Low, RemoteFX Adaptive Graphics uses an encoding mechanism that results in low quality images. This mode consumes the lowest amount of network bandwidth of the quality modes.
+      If you enable this policy setting and set quality to Medium, RemoteFX Adaptive Graphics uses an encoding mechanism that results in medium quality images. This mode provides better graphics quality than low quality and uses less bandwidth than high quality.
+      If you enable this policy setting and set quality to High, RemoteFX Adaptive Graphics uses an encoding mechanism that results in high quality images and consumes moderate network bandwidth.
+      If you enable this policy setting and set quality to Lossless, RemoteFX Adaptive Graphics uses lossless encoding. In this mode, the color integrity of the graphics data is not impacted. However, this setting results in a significant increase in network bandwidth consumption. We recommend that you set this for very specific cases only.
+      If you disable or do not configure this policy setting, RemoteFX Adaptive Graphics uses an encoding mechanism that results in medium quality images.
     </string>
+      
     <string id="TS_SERVER_IMAGE_QUALITY_LOSSLESS">Lossless</string>
     <string id="TS_SERVER_IMAGE_QUALITY_HIGH">High</string>
     <string id="TS_SERVER_IMAGE_QUALITY_MEDIUM">Medium</string>
+    <string id="TS_SERVER_IMAGE_QUALITY_LOW">Low</string>      
 
     <string id="TS_SERVER_PROFILE">Configure RemoteFX Adaptive Graphics</string>
     <string id="TS_SERVER_PROFILE_EXPLAIN">This policy setting allows the administrator to configure the RemoteFX experience for Remote Desktop Session Host or Remote Desktop Virtualization Host servers. By default, the system will choose the best experience based on available nework bandwidth.
@@ -950,19 +950,42 @@ You can also choose not to use an RDP compression algorithm. Choosing not to use
 
 If you disable or do not configure this policy setting, the default RDP compression algorithm will be used.
     </string>
- <string id="TS_SERVER_COMPRESSOR_NCRUSH">Balances memory and network bandwidth</string>
- <string id="TS_SERVER_COMPRESSOR_XCRUSH">Optimized to use less network bandwidth</string>
- <string id="TS_SERVER_COMPRESSOR_MPPC">Optimized to use less memory</string>
- <string id="TS_SERVER_NO_COMPRESSOR">Do not use an RDP compression algorithm</string>
+    <string id="TS_SERVER_COMPRESSOR_NCRUSH">Balances memory and network bandwidth</string>
+    <string id="TS_SERVER_COMPRESSOR_XCRUSH">Optimized to use less network bandwidth</string>
+    <string id="TS_SERVER_COMPRESSOR_MPPC">Optimized to use less memory</string>
+    <string id="TS_SERVER_NO_COMPRESSOR">Do not use an RDP compression algorithm</string>
 
     <string id="TS_SERVER_ADVANCED_REMOTEFX_REMOTEAPP">Use advanced RemoteFX graphics for RemoteApp</string>
-    <string id="TS_SERVER_ADVANCED_REMOTEFX_REMOTEAPP_EXPLAIN">
-    This policy setting allows you to enable RemoteApp programs to use advanced graphics, including support for transparency, live thumbnails, and seamless application moves. This policy setting applies only to RemoteApp programs and does not apply to remote desktop sessions.
+    <string id="TS_SERVER_ADVANCED_REMOTEFX_REMOTEAPP_EXPLAIN">This policy setting allows you to enable RemoteApp programs to use advanced graphics, including support for transparency, live thumbnails, and seamless application moves. This policy setting applies only to RemoteApp programs and does not apply to remote desktop sessions.
 
 If you enable or do not configure this policy setting, RemoteApp programs published from this RD Session Host server will use these advanced graphics.
 
 If you disable this policy setting, RemoteApp programs published from this RD Session Host server will not use these advanced graphics. You may want to choose this option if you discover that applications published as RemoteApp programs do not support these advanced graphics. 
 
+    </string>
+
+    <!--AVC HW Encode Preferred Mode; Introduced Win10+-->
+    <string id="TS_SERVER_AVC_HW_ENCODE_PREFERRED">Configure H.264/AVC hardware encoding for Remote Desktop Connections</string>
+    <string id="TS_SERVER_AVC_HW_ENCODE_PREFERRED_EXPLAIN">This policy setting lets you enable H.264/AVC hardware encoding support for Remote Desktop Connections. When you enable hardware encoding, if an error occurs, we will attempt to use software encoding. If you disable or do not configure this policy, we will always use software encoding.
+        
+If you set the encoding option to “Always Attempt”, Remote Desktop will always try to use H.264/AVC hardware encoding when available, be aware that, for Windows Server running Hyper-V with RemoteFX vGPU enabled, the policy has to be set on the Hyper-V host machine.
+        
+If you set the encoding option to “Attempt only for RemoteFX vGPU virtual machines” be aware that, for Windows Server running Hyper-V with RemoteFX vGPU enabled, the policy has to be set on the Hyper-V host machine.
+        
+If you set the encoding option to “Attempt only for non-RemoteFX vGPU scenarios”, Remote Desktop attempts to use hardware encoding for all scenarios except RemoteFX vGPU.
+    </string>
+    <string id="TS_AVC_HW_ENCODE_ALWAYS">Always attempt</string>
+    <string id="TS_AVC_HW_ENCODE_VGPU">Attempt only for RemoteFX vGPU virtual machines</string>
+    <string id="TS_AVC_HW_ENCODE_NONVGPU">Attempt only for non-RemoteFX vGPU scenarios</string>
+        
+    <!--AVC444 Preferred Mode; Introduced Win10+-->
+    <string id="TS_SERVER_AVC444_MODE_PREFERRED">Prioritize H.264/AVC 444 graphics mode for Remote Desktop Connections</string>
+    <string id="TS_SERVER_AVC444_MODE_PREFERRED_EXPLAIN">This policy setting prioritizes the H.264/AVC 444 graphics mode for non-RemoteFX vGPU scenarios. When you use this setting on the RDP server, the server will use H.264/AVC 444 as the codec in an RDP 10 connection where both the client and server can use H.264/AVC 444.
+    </string>
+
+    <!--Disable Client Hardware Mode; Introduced Win10+-->
+    <string id="TS_CLIENT_DISABLE_HARDWARE_MODE">Do not allow hardware accelerated decoding</string>
+    <string id="TS_CLIENT_DISABLE_HARDWARE_MODE_EXPLAIN">This policy setting specifies whether the Remote Desktop Connection can use hardware acceleration if supported hardware is available. If you use this setting, the Remote Desktop Client will use only software decoding. For example, if you have a problem that you suspect may be related to hardware acceleration, use this setting to disable the acceleration; then, if the problem still occurs, you will know that there are additional issues to investigate. If you disable this setting or leave it not configured, the Remote Desktop client will use hardware accelerated decoding if supported hardware is available.
     </string>
 
     <!--Visual Experience Policy strings; deprecated Win8+-->
@@ -1025,8 +1048,7 @@ By default, Remote Desktop Connection sessions that use RemoteFX are optimized f
       <string id="TS_RemoteDesktopVirtualGraphics_ScreenImageQuality_Lowest">Lowest</string>
 
       <string id="TS_SERVER_LEGACY_RFX">Enable RemoteFX encoding for RemoteFX clients designed for Windows Server 2008 R2 SP1</string>
-      <string id="TS_SERVER_LEGACY_RFX_EXPLAIN">
-       This policy setting allows you to configure graphics encoding to use the RemoteFX Codec on the Remote Desktop Session Host server so that the sessions are compatible with non-Windows thin client devices designed for Windows Server 2008 R2 SP1. These clients only support the Windows Server 2008 R2 SP1 RemoteFX Codec.If you enable this policy setting, users' sessions on this server will only use the Windows Server 2008 R2 SP1 RemoteFX Codec for encoding. This mode is compatible with thin client devices that only support the Windows Server 2008 R2 SP1 RemoteFX Codec.If you disable or do not configure this policy setting, non-Windows thin clients that only support the Windows Server 2008 R2 SP1 RemoteFX Codec will not be able to connect to this server. This policy setting applies only to clients that are using Remote Desktop Protocol (RDP) 7.1, and does not affect clients that are using other RDP versions.
+      <string id="TS_SERVER_LEGACY_RFX_EXPLAIN">This policy setting allows you to configure graphics encoding to use the RemoteFX Codec on the Remote Desktop Session Host server so that the sessions are compatible with non-Windows thin client devices designed for Windows Server 2008 R2 SP1. These clients only support the Windows Server 2008 R2 SP1 RemoteFX Codec.If you enable this policy setting, users' sessions on this server will only use the Windows Server 2008 R2 SP1 RemoteFX Codec for encoding. This mode is compatible with thin client devices that only support the Windows Server 2008 R2 SP1 RemoteFX Codec.If you disable or do not configure this policy setting, non-Windows thin clients that only support the Windows Server 2008 R2 SP1 RemoteFX Codec will not be able to connect to this server. This policy setting applies only to clients that are using Remote Desktop Protocol (RDP) 7.1, and does not affect clients that are using other RDP versions.
       </string>
       
       <string id="TS_RADC">RemoteApp and Desktop Connections</string>
@@ -1242,6 +1264,9 @@ If you disable or do not configure this policy setting, the Start screen is show
       </presentation>
       <presentation id="TS_SERVER_COMPRESSOR">
         <dropdownList refId="TS_COMPRESSOR_LEVELS" noSort="true" defaultItem="0">RDP compression algorithm:</dropdownList>
+      </presentation>
+      <presentation id="TS_SERVER_AVC_HW_ENCODE_PREFERRED">
+        <dropdownList refId="TS_AVC_HW_ENCODE_ENUM" noSort="true" defaultItem="1">Prefer AVC hardware encoding:</dropdownList>
       </presentation>
       <presentation id="TS_SERVER_VISEXP">
         <dropdownList refId="TS_VISEXP_SETTINGS" noSort="true" defaultItem="0">Visual experience:</dropdownList>

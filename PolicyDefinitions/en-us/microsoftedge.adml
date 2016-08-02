@@ -14,76 +14,115 @@
 
       <!-- NOTE: Please try to keep this list sorted by the string id="" field -->
       <!-- Policies -->
-      <string id="AllowActiveScripting">Allows you to run scripts, like Javascript</string>
-      <string id="AllowActiveScripting_Explain">This setting lets you decide whether to let people run scripts, like JavaScript. This setting is enabled by default.
+      <string id="AllowAutofill">Turn off Autofill</string>
+      <string id="AllowAutofill_Explain">This setting lets you decide whether employees can use Autofill to automatically fill in form fields while using Microsoft Edge.
 
-If you enable this setting, scripting is turned on for all your computers. 
+Turning this setting on, or not configuring it, lets employees use Autofill in form fields.
 
-If you disable this setting, scripts can’t run.</string>
-      <string id="AllowAutofill">Allows you to let people use autofill on websites</string>
-      <string id="AllowAutofill_Explain">This setting lets you decide whether people can use autofill on websites. This setting is enabled by default.
+Turning this setting off stops employees from using Autofill in form fields.</string>
+      <string id="AllowDeveloperTools">Turn off Developer Tools</string>
+      <string id="AllowDeveloperTools_Explain">This setting lets you decide whether employees can use F12 Developer Tools on Microsoft Edge.
 
-If you enable this setting, people can use autofill on websites, caching the info locally.
+Turning this setting on, or not configuring it, lets employees use F12 Developer Tools.
 
-If you disable this setting, people can’t use autofill.</string>
-      <string id="AllowDoNotTrack">Allows you to let people send Do Not Track headers</string>
-      <string id="AllowDoNotTrack_Explain">This setting lets you decide whether to let people send Do Not Track headers. This setting is disabled by default.
+Turning this setting off stops employees from using F12 Developer Tools.</string>
+      <string id="AllowDoNotTrack">Allow employees to send Do Not Track headers</string>
+      <string id="AllowDoNotTrack_Explain">This setting lets you decide whether employees can send Do Not Track headers to websites that request tracking info.
 
-If you enable this setting, people can send Do Not Track headers from any computer in your organization.
+Turning this setting on lets your employees send Do Not Track headers.
 
-If you disable this setting, people can’t send Do Not Track headers.</string>
-      <string id="AllowPasswordManager">Allows you to configure password manager</string>
-      <string id="AllowPasswordManager_Explain">This setting lets you decide whether people can save passwords locally on their computers. This setting is enabled by default.
+Turning this setting off, or not configuring it, stops your employees from sending Do Not Track headers.</string>
+      <string id="AllowInPrivate">Turn off InPrivate browsing</string>
+      <string id="AllowInPrivate_Explain">This setting lets you decide whether employees can browse using InPrivate website browsing.
 
-If you enable this setting, Password Manager is turned on and people can save passwords locally on their computers.
+Turning this setting on, or not configuring it, lets employees use InPrivate browsing on the corporate network.
 
-If you disable this setting, Password Manager is turned off and people can’t save passwords locally.</string>
-      <string id="AllowPopups">Allows you to run pop-ups</string>
-      <string id="AllowPopups_Explain">This setting lets you decide whether to allow pop-ups. This setting is disabled by default.
+Turning this setting off stops employees from using InPrivate website browsing.</string>
+      <string id="AllowPasswordManager">Turn off Password Manager</string>
+      <string id="AllowPasswordManager_Explain">This setting lets you decide whether employees can save their passwords locally, using Password Manager.
 
-If you enable this setting, pop-ups can run on all your organization’s computers.
+Turning this setting on, or not configuring it, lets your employees use Password Manager.
 
-If you disable this setting, pop-ups can’t run.</string>
-      <string id="AllowSearchSuggestionsinAddressBar">Stops address bar from showing search suggestions</string>
-      <string id="AllowSearchSuggestionsinAddressBar_Explain">This setting lets you decide whether the address bar should show search suggestions. This setting is enabled by default.
+Turning this setting off stops your employees from using Password Manager.</string>
+      <string id="AllowPopups">Turn off Pop-up Blocker</string>
+      <string id="AllowPopups_Explain">This setting lets you decide whether to turn on Pop-up Blocker and whether to allow pop-ups to appear in secondary windows.
 
-If you enable this setting, people can see search suggestions in the address bar.
+Turning this setting on, or not configuring it, turns on the Pop-up Blocker, which stops pop-ups from appearing.
 
-If you disable this setting, search results don’t appear in the address bar.</string>
-      <string id="AllowSmartScreen">Allows you to configure SmartScreen</string>
-      <string id="AllowSmartScreen_Explain">This setting lets you decide whether to turn on SmartScreen. This setting is enabled by default.
+Turning this setting off turns off Pop-up Blocker and lets pop-ups appear.</string>
+      <string id="AllowSearchSuggestionsinAddressBar">Turn off address bar search suggestions</string>
+      <string id="AllowSearchSuggestionsinAddressBar_Explain">This setting lets you decide whether search suggestions should appear in the Address bar of Microsoft Edge.
 
-If you enable this setting, SmartScreen is turned on for all your computers. 
+Turning this setting on, or not configuring it, lets your employees see search suggestions in the Address bar.
 
-If you disable this setting, SmartScreen is turned off.</string>
-      <string id="Cookies">Configure how Microsoft Edge treats cookies</string>
-      <string id="Cookies_Explain">This settings lets you decide how Microsoft Edge should treat cookies.
+Turning this setting off stops employees from seeing search suggestions in the Address bar.</string>
+      <string id="AllowSmartScreen">Turn off the SmartScreen Filter</string>
+      <string id="AllowSmartScreen_Explain">This setting lets you decide whether to turn on SmartScreen Filter. SmartScreen Filter provides warning messages to help protect your employees from potential phishing scams and malicious software.
 
-If you enable this setting, you have 3 additional options:
-  • Don’t block. Cookies can download from all websites. This is the default value.
-  • Block only third-party cookies. Stops third-party cookies from downloading.
-  • Block all cookies. Stops all cookies from downloading.</string>
-      <string id="CookiesList_Block_None">Don't block</string>
-      <string id="CookiesList_Block_ThirdParty">Block only 3rd-party cookies</string>
-      <string id="CookiesList_Block_All">Block all cookies</string>
-      <string id="EnterpriseModeSiteList">Allows you to configure the Enterprise Site list</string>
-      <string id="EnterpriseModeSiteList_Explain">This setting lets you decide whether to set up and use the Enterprise Site List for compatibility.
+Turning this setting on, or not configuring it, turns on SmartScreen Filter.
 
-If you enable this setting, you have 2 additional options:
-  • Not configured. You can’t use the Enterprise Site List.
-  • UseEnterpriseModeSiteList. Lets you use the Enterprise Site List. If you use this option, you must also include the location to your XML site list in the {URI} box. This is the default value.</string>
-      <string id="HomePage">Allows you to configure your Home page</string>
-      <string id="HomePage_Explain">This setting lets you set up the Home page for your organization. By default, this setting isn’t configured and the App settings are used instead.
+Turning this setting off turns off SmartScreen Filter.</string>
+      <string id="AllowWebContentOnNewTabPage">Open a new tab with an empty tab</string>
+      <string id="AllowWebContentOnNewTabPage_Explain">This policy setting specifies what happens when Microsoft Edge opens a new tab. By default, a new tab page appears.  
+ 
+If you disable this policy setting, Microsoft Edge opens a new, empty tab.  Employees can’t change this option.
+ 
+If you enable or don’t configure this policy setting, Microsoft Edge opens a new tab with a new tab page, including Top Sites, Top Sites with suggested content, or a blank page. Employees can change what type of tab page appears.</string>
+      <string id="Cookies">Configure Cookies</string>
+      <string id="Cookies_Explain">This setting lets you configure how your company deals with cookies.
 
-If you enable this setting, you must also include the location of your website in the {URI} box.</string>
+Turning this setting on lets you decide to:
+Allow all cookies (default). Allows all cookies from all websites.
+Block only 3rd-party cookies. Blocks only cookies from 3rd-party websites.
+Block all cookies. Blocks all cookies from all websites.
+
+Turning this setting off allows all cookies from all websites.</string>
+      <string id="CookiesList_Block_None">Allow all cookies (default).</string>
+      <string id="CookiesList_Block_ThirdParty">Block only 3rd-party cookies.</string>
+      <string id="CookiesList_Block_All">Block all cookies.</string>
+      <string id="EnterpriseModeSiteList">Configure the Enterprise Mode Site List</string>
+      <string id="EnterpriseModeSiteList_Explain">This setting lets you configure whether your company uses Enterprise Mode and the Enterprise Mode Site List to address common compatibility problems with legacy websites.
+
+Turning this setting on lets Microsoft Edge look for the Enterprise Mode Site List XML file. This file includes the sites and domains that need to be viewed using Internet Explorer 11 and Enterprise Mode.
+
+Turning this setting off, or not configuring it, stops Microsoft Edge from using the Enterprise Mode Site List file. In this case, employees might experience compatibility problems while using legacy websites.</string>
+      <string id="HideLocalHostIPAddress">Don't allow WebRTC to share the LocalHost IP address</string>
+      <string id="HideLocalHostIPAddress_Explain">This setting lets you decide whether an employee's LocalHost IP address shows while making phone calls using the WebRTC protocol.
+
+Turning this setting on hides an employee's LocalHost IP address while making phone calls using WebRTC.
+
+Turning this setting off, or not configuring it, shows an employee's LocalHost IP address while making phone calls using WebRTC.</string>
       <string id="ItemNameDisable">Disable</string>
       <string id="ItemNameEnable">Enable</string>
-      <string id="SendIntranetTraffictoInternetExplorer">Sends all intranet traffic over to Internet Explorer</string>
-      <string id="SendIntranetTraffictoInternetExplorer_Explain">This setting lets you decide whether to send all intranet traffic to Internet Explorer. This setting is disabled by default
+      <string id="HomePages">Configure corporate Home pages</string>
+      <string id="HomePages_Explain">This setting lets you configure your corporate Home pages for domain-joined devices. Your employees can change this setting.
+Turning this setting on lets you configure one or more corporate Home pages. If this setting is turned on, you must also include URLs to the pages, separating multiple pages by using angle brackets and this format:
+    &lt;support.contoso.com&gt;&lt;support.microsoft.com&gt;
+Turning this setting off, or not configuring it, sets your default Home page to the webpage you specified in App settings.</string>
+      <string id="PreventSmartScreenPromptOverride">Don't allow SmartScreen Filter warning overrides</string>
+      <string id="PreventSmartScreenPromptOverride_Explain">This setting lets you decide whether employees can override the SmartScreen Filter warnings about potentially malicious websites.
 
-If you enable this setting, your intranet websites automatically open in Internet Explorer.
+Turning this setting on stops employees from ignoring the SmartScreen Filter warnings and blocks them from going to the site.
 
-If you disable this setting, your intranet websites will automatically open in Microsoft Edge.</string>
+Turning this setting off, or not configuring it, lets employees ignore the SmartScreen Filter warnings about potentially malicious websites and to continue to the site.</string>
+      <string id="PreventSmartScreenPromptOverrideForFiles">Don't allow SmartScreen Filter warning overrides for unverified files</string>
+      <string id="PreventSmartScreenPromptOverrideForFiles_Explain">This setting lets you decide whether employees can override the SmartScreen Filter warnings about downloading unverified files.
+
+Turning this setting on stops employees from ignoring the SmartScreen Filter warnings and blocks them from downloading unverified files.
+
+Turning this setting off, or not configuring it, lets employees ignore the SmartScreen Filter warnings about unverified files and lets them continue the download process.</string>
+      <string id="ProvisionedFavorites">Configure Favorites</string>
+      <string id="ProvisionedFavorites_Explain">This setting lets you configure the default list of Favorites that appear for your employees. Your employees can change this setting, adding or removing favorites, at any time.
+
+Turning this setting on lets you configure what default Favorites appear for your employees. If this setting is turned on, you must provide a list of Favorites in the Options section. The list is imported after your policy is deployed.
+
+Turning this setting off, or not configuring it, employees will see the Favorites that they set in Favorites hub.</string>
+      <string id="SendIntranetTraffictoInternetExplorer">Send all intranet sites to Internet Explorer 11</string>
+      <string id="SendIntranetTraffictoInternetExplorer_Explain">This setting lets you decide whether your intranet sites should all open using Internet Explorer 11. This setting should only be used if there are known compatibility problems with Microsoft Edge.
+
+Turning this setting on automatically opens all intranet sites using Internet Explorer 11.
+
+Turning this setting off, or not configuring it, automatically opens all intranet sites using Microsoft Edge.</string>
     </stringTable>
     
     <!-- Presentation -->
@@ -98,8 +137,16 @@ If you disable this setting, your intranet websites will automatically open in M
           <label>Type the location (URL) of your Home Page website</label>
         </textBox>
       </presentation>
+      <presentation id="HomePages_Presentation">
+        <textBox refId="HomePagesPrompt">
+          <label>Use this format:  &lt;support.contoso.com&gt;&lt;https://support.microsoft.com/&gt;</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProvisionedFavorites_Presentation">
+        <listBox refId="ProvisionedFavorites_List">Enter the name of the favorite in the first column and the URL of the favorite in the other column like Contoso http://www.contoso.com/</listBox>
+      </presentation>
       <presentation id="Cookies">
-        <dropdownList refId="CookiesListBox" noSort="true" defaultItem="0">Configure Cookies Setting</dropdownList>
+        <dropdownList refId="CookiesListBox" noSort="true" defaultItem="2">Configure Cookies </dropdownList>
       </presentation>
     </presentationTable>
   </resources>

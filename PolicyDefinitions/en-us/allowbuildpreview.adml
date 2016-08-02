@@ -12,7 +12,7 @@ If you enable or do not configure this policy setting, users can download and in
 
 If you disable this policy setting, the item "Get Insider builds" will be unavailable.
 
-Note: This policy setting applies only to devices running the Pro, Enterprise, or Server editions of Windows 10.
+Note: This policy setting applies only to devices running the Pro, Enterprise, Education or Server editions of Windows 10.
 </string>
     </stringTable>
   </resources>

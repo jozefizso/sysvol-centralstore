@@ -13,6 +13,9 @@
     <category name="MSPassortForWorkPINComplexityCategory" displayName="$(string.MSPassportForWorkPINComplexityCategory)">
         <parentCategory ref="MSPassportForWorkCategory" />
     </category>
+    <category name="MSPassortForWorkRemoteCategory" displayName="$(string.MSPassportForWorkRemoteCategory)">
+        <parentCategory ref="MSPassportForWorkCategory" />
+    </category>
   </categories>
   <policies>
     <!-- Enable Passport Policy -->
@@ -48,6 +51,18 @@
           <decimal value="0" />
         </disabledValue>
     </policy>
+    <!-- Remote policies -->
+    <!-- Use remote passport -->
+    <policy name="MSPassport_UseRemote" class="Machine" displayName="$(string.MSPassport_UseRemote)" explainText="$(string.MSPassport_UseRemoteExplain)" key="SOFTWARE\Policies\Microsoft\PassportForWork\Remote" valueName="Enabled">
+        <parentCategory ref="MSPassortForWorkRemoteCategory" />
+        <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
+        <enabledValue>
+          <decimal value="1" />
+        </enabledValue>
+        <disabledValue>
+          <decimal value="0" />
+        </disabledValue>
+    </policy>
     <!-- Pin Complexity Policy -->
     <!--  Minimum PIN Length -->
     <policy name="MSPassport_MinimumPINLength" class="Both" displayName="$(string.MSPassport_MinimumPINLength)" explainText="$(string.MSPassport_MinimumPINLengthExplain)" presentation="$(presentation.MSPassport_MinimumPINLengthControl)" key="SOFTWARE\Policies\Microsoft\PassportForWork\PINComplexity">
@@ -66,99 +81,63 @@
       </elements>
     </policy>
     <!-- Uppercase Letter  -->
-    <policy name="MSPassport_UppercaseLetters" class="Both" displayName="$(string.MSPassport_UppercaseLetters)" explainText="$(string.MSPassport_UppercaseLettersExplain)" presentation="$(presentation.MSPassport_UppercaseLettersControl)" key="SOFTWARE\Policies\Microsoft\PassportForWork\PINComplexity">
+    <policy name="MSPassport_UppercaseLetters" class="Both" displayName="$(string.MSPassport_UppercaseLetters)" explainText="$(string.MSPassport_UppercaseLettersExplain)" key="SOFTWARE\Policies\Microsoft\PassportForWork\PINComplexity" valueName="UppercaseLetters">
       <parentCategory ref="MSPassortForWorkPINComplexityCategory" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
-      <elements>
-        <enum id="MSPassport_UppercaseLettersChoices" valueName="UppercaseLetters" required="true">
-          <item displayName="$(string.ButtonTextAllow)">
-            <value>
-              <decimal value="0" />
-            </value>
-          </item>
-          <item displayName="$(string.ButtonTextRequired)">
-            <value>
-              <decimal value="1" />
-            </value>
-          </item>
-          <item displayName="$(string.ButtonTextDisallow)">
-            <value>
-              <decimal value="2" />
-            </value>
-          </item>
-        </enum>
-      </elements>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="2" />
+      </disabledValue>
     </policy>
     <!-- Lowercase letters -->
-    <policy name="MSPassport_LowercaseLetters" class="Both" displayName="$(string.MSPassport_LowercaseLetters)" explainText="$(string.MSPassport_LowercaseLettersExplain)" presentation="$(presentation.MSPassport_LowercaseLettersControl)" key="SOFTWARE\Policies\Microsoft\PassportForWork\PINComplexity">
+    <policy name="MSPassport_LowercaseLetters" class="Both" displayName="$(string.MSPassport_LowercaseLetters)" explainText="$(string.MSPassport_LowercaseLettersExplain)" key="SOFTWARE\Policies\Microsoft\PassportForWork\PINComplexity" valueName="LowercaseLetters">
       <parentCategory ref="MSPassortForWorkPINComplexityCategory" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
-      <elements>
-        <enum id="MSPassport_LowercaseLettersChoices" valueName="LowercaseLetters" required="true">
-          <item displayName="$(string.ButtonTextAllow)">
-            <value>
-              <decimal value="0" />
-            </value>
-          </item>
-          <item displayName="$(string.ButtonTextRequired)">
-            <value>
-              <decimal value="1" />
-            </value>
-          </item>
-          <item displayName="$(string.ButtonTextDisallow)">
-            <value>
-              <decimal value="2" />
-            </value>
-          </item>
-        </enum>
-      </elements>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="2" />
+      </disabledValue>
     </policy>
     <!-- Special Characters -->
-    <policy name="MSPassport_SpecialCharacters" class="Both" displayName="$(string.MSPassport_SpecialCharacters)" explainText="$(string.MSPassport_SpecialCharactersExplain)" presentation="$(presentation.MSPassport_SpecialCharactersControl)" key="SOFTWARE\Policies\Microsoft\PassportForWork\PINComplexity">
+    <policy name="MSPassport_SpecialCharacters" class="Both" displayName="$(string.MSPassport_SpecialCharacters)" explainText="$(string.MSPassport_SpecialCharactersExplain)" key="SOFTWARE\Policies\Microsoft\PassportForWork\PINComplexity" valueName="SpecialCharacters">
       <parentCategory ref="MSPassortForWorkPINComplexityCategory" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
-      <elements>
-        <enum id="MSPassport_SpecialCharactersChoices" valueName="SpecialCharacters" required="true">
-          <item displayName="$(string.ButtonTextAllow)">
-            <value>
-              <decimal value="0" />
-            </value>
-          </item>
-          <item displayName="$(string.ButtonTextRequired)">
-            <value>
-              <decimal value="1" />
-            </value>
-          </item>
-          <item displayName="$(string.ButtonTextDisallow)">
-            <value>
-              <decimal value="2" />
-            </value>
-          </item>
-        </enum>
-      </elements>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="2" />
+      </disabledValue>
     </policy>
     <!-- Digits -->
-    <policy name="MSPassport_Digits" class="Both" displayName="$(string.MSPassport_Digits)" explainText="$(string.MSPassport_DigitsExplain)" presentation="$(presentation.MSPassport_DigitsControl)" key="SOFTWARE\Policies\Microsoft\PassportForWork\PINComplexity">
+    <policy name="MSPassport_Digits" class="Both" displayName="$(string.MSPassport_Digits)" explainText="$(string.MSPassport_DigitsExplain)" key="SOFTWARE\Policies\Microsoft\PassportForWork\PINComplexity" valueName="Digits">
+      <parentCategory ref="MSPassortForWorkPINComplexityCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="2" />
+      </disabledValue>
+    </policy>
+    <!-- History -->
+    <policy name="MSPassport_PINHistory" class="Both" displayName="$(string.MSPassport_PINHistory)" explainText="$(string.MSPassport_PINHistoryExplain)" presentation="$(presentation.MSPassport_PINHistoryControl)" key="SOFTWARE\Policies\Microsoft\PassportForWork\PINComplexity">
       <parentCategory ref="MSPassortForWorkPINComplexityCategory" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
       <elements>
-        <enum id="MSPassport_DigitsChoices" valueName="Digits" required="true">
-          <item displayName="$(string.ButtonTextAllow)">
-            <value>
-              <decimal value="0" />
-            </value>
-          </item>
-          <item displayName="$(string.ButtonTextRequired)">
-            <value>
-              <decimal value="1" />
-            </value>
-          </item>
-          <item displayName="$(string.ButtonTextDisallow)">
-            <value>
-              <decimal value="2" />
-            </value>
-          </item>
-        </enum>
+        <decimal id="MSPassport_PINHistoryDataType" valueName="History" minValue="0" maxValue="50" />
+      </elements>
+    </policy>
+    <!-- Expiration -->
+    <policy name="MSPassport_PINExpiration" class="Both" displayName="$(string.MSPassport_PINExpiration)" explainText="$(string.MSPassport_PINExpirationExplain)" presentation="$(presentation.MSPassport_PINExpirationControl)" key="SOFTWARE\Policies\Microsoft\PassportForWork\PINComplexity">
+      <parentCategory ref="MSPassortForWorkPINComplexityCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
+      <elements>
+        <decimal id="MSPassport_PINExpirationDataType" valueName="Expiration" minValue="0" maxValue="730" />
       </elements>
     </policy>
     </policies>

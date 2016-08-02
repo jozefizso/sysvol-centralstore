@@ -219,6 +219,13 @@
         </or>
       </definition>
 
+      <!--Windows Vista to Windows 8.1 only-->
+      <definition name="SUPPORTED_Windows_6_3ToVista" displayName="$(string.SUPPORTED_Windows_6_3ToVista)">
+        <or>
+          <range ref="products:MicrosoftWindows" minVersionIndex="4" maxVersionIndex="12"/>
+        </or>
+      </definition>
+
       <!--At least Windows 8-->
       <definition name="SUPPORTED_Windows8" displayName="$(string.SUPPORTED_Windows8)">
         <or>

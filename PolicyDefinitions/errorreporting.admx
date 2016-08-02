@@ -172,6 +172,26 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="WerAutoApproveOSDumps_1" class="User" displayName="$(string.WerAutoApproveOSDumps)" explainText="$(string.WerAutoApproveOSDumpsExp)" key="SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting" valueName="AutoApproveOSDumps">
+      <parentCategory ref="CAT_WindowsErrorReporting" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3only" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="WerAutoApproveOSDumps_2" class="Machine" displayName="$(string.WerAutoApproveOSDumps)" explainText="$(string.WerAutoApproveOSDumpsExp)" key="SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting" valueName="AutoApproveOSDumps">
+      <parentCategory ref="CAT_WindowsErrorReporting" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3only" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="WerBypassPowerThrottling_1" class="User" displayName="$(string.WerBypassPowerThrottling)" explainText="$(string.WerBypassPowerThrottlingExp)" key="SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting" valueName="BypassPowerThrottling">
       <parentCategory ref="CAT_WindowsErrorReporting" />
       <supportedOn ref="windows:SUPPORTED_Windows8" />
@@ -437,6 +457,62 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="WerDefaultConsent_1" class="User" displayName="$(string.WerDefaultConsent)" explainText="$(string.WerDefaultConsentExp)" presentation="$(presentation.WerDefaultConsent_1)" key="SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting\Consent">
+      <parentCategory ref="CAT_WindowsErrorReportingConsent" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3ToVista" />
+      <elements>
+        <enum id="WerConsent" valueName="DefaultConsent" required="true">
+          <item displayName="$(string.WerConsentAlwaysAsk)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.WerConsentParamsOnly)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.WerConsentParamsAndSafeData)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.WerConsentEverything)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="WerDefaultConsent_2" class="Machine" displayName="$(string.WerDefaultConsent)" explainText="$(string.WerDefaultConsentExp)" presentation="$(presentation.WerDefaultConsent_2)" key="SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting\Consent">
+      <parentCategory ref="CAT_WindowsErrorReportingConsent" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3ToVista" />
+      <elements>
+        <enum id="WerConsent" valueName="DefaultConsent" required="true">
+          <item displayName="$(string.WerConsentAlwaysAsk)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.WerConsentParamsOnly)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.WerConsentParamsAndSafeData)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.WerConsentEverything)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
   </policies>
 </policyDefinitions>

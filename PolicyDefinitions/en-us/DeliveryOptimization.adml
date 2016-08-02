@@ -1,10 +1,5 @@
-﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
-<policyDefinitionResources
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    revision="1.0"
-    schemaVersion="1.0"
-    >
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0">
   <displayName>Delivery Optimization GP</displayName>
   <description>This file describes the Delivery Optimization GP settings</description>
   <resources>
@@ -21,16 +16,13 @@
       <string id="MaxUploadBandwidth">Max Upload Bandwidth</string>
       <string id="MaxUploadBandwidth_Help">Set this policy to define a cap for the upload bandwidth a device will utilize across all concurrent upload activity via Delivery Optimization (set in KB/s)</string>
       <string id="MaxCacheSize">Max Cache Size</string>
-      <string id="MaxCacheSize_Help">Set this policy to define the max cache size Delivery Optimization can utilize, as a percentage of the internal disk size.</string>
+      <string id="MaxCacheSize_Help">Set this policy to define the max cache size Delivery Optimization can utilize, as a percentage of available disk space.</string>
       <string id="MaxCacheAge">Max Cache Age</string>
       <string id="MaxCacheAge_Help">Set this policy to define the max time that each file is held in the Delivery Optimization cache.</string>
     </stringTable>
     <presentationTable>
       <presentation id="DownloadMode">
-        <dropdownList
-            defaultItem="3"
-            refId="DownloadMode"
-            >Download Mode:</dropdownList>
+        <dropdownList defaultItem="1" refId="DownloadMode">Download Mode:</dropdownList>
       </presentation>
       <presentation id="GroupId">
         <textBox refId="GroupId">
@@ -38,23 +30,14 @@
         </textBox>
       </presentation>
       <presentation id="MaxUploadBandwidth">
-        <decimalTextBox
-            defaultItem="0"
-            refId="MaxUploadBandwidth"
-            >Max Upload Bandwidth:</decimalTextBox>
+        <decimalTextBox defaultItem="0" refId="MaxUploadBandwidth">Max Upload Bandwidth:</decimalTextBox>
       </presentation>
       <presentation id="MaxCacheSize">
-        <decimalTextBox
-            defaultItem="20"
-            refId="MaxCacheSize"
-            >Max Cache Size:</decimalTextBox>
+        <decimalTextBox defaultItem="20" refId="MaxCacheSize">Max Cache Size:</decimalTextBox>
         <text>Range is 0 to 100</text>
       </presentation>
       <presentation id="MaxCacheAge">
-        <decimalTextBox
-            MaxCacheAge="0"
-            refId="MaxCacheAge"
-            >Max Cache Age:</decimalTextBox>
+        <decimalTextBox MaxCacheAge="0" refId="MaxCacheAge">Max Cache Age:</decimalTextBox>
       </presentation>
     </presentationTable>
   </resources>

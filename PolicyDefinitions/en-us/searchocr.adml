@@ -42,7 +42,11 @@ Re-indexing is not initiated when you enable this policy and select the OCR lang
       <string id="LangNorwegian">Norwegian</string>
       <string id="LangPolish">Polish</string>
       <string id="LangPortuguese">Portuguese</string>
+      <string id="LangRomanian">Romanian</string>
       <string id="LangRussian">Russian</string>
+      <string id="LangSerbianCyrillic">Serbian (Cyrillic)</string>
+      <string id="LangSerbianLatin">Serbian (Latin)</string>
+      <string id="LangSlovak">Slovak</string>
       <string id="LangSpanish">Spanish</string>
       <string id="LangSwedish">Swedish</string>
       <string id="LangTurkish">Turkish</string>

@@ -142,8 +142,8 @@ If you disable this setting or do not configure it, all pop-up text is displayed
 If you enable this setting, you will prevent a user from selecting an app, resizing a tile, pinning/unpinning a tile or a secondary tile, entering the customize mode and rearranging tiles within Start and Apps.
 
 If you disable or do not configure this setting, you will allow a user to select an app, resize a tile, pin/unpin a tile or a secondary tile, enter the customize mode and rearrange tiles within Start and Apps.</string>
-      <string id="ClearTilesOnExit">Clear history of tile notifications on exit</string>
-      <string id="ClearTilesOnExit_Help">If you enable this setting, the system deletes tile notifications when the user logs off. As a result, the Tiles in the start view will always show their default content when the user logs on. In addition, any cached versions of these notifications will be cleared when the user logs off.
+      <string id="ClearTilesOnExit">Clear tile notifications during log on</string>
+      <string id="ClearTilesOnExit_Help">If you enable this setting, the system deletes tile notifications when the user logs on. As a result, the Tiles in the start view will always show their default content when the user logs on. In addition, any cached versions of these notifications will be cleared when the user logs on.
 
 If you disable or do not configure this setting, the system retains notifications, and when a user logs on, the tiles appear just as they did when the user logged off, including the history of previous notifications for each tile.
 
@@ -567,6 +567,12 @@ If you disable or don't configure this policy setting, the desktop apps won't be
 If you enable this policy setting, the Start screen will appear on the display the user is using when they press the Windows logo key.
 
 If you disable or don't configure this policy setting, the Start screen will always appear on the main display when the user presses the Windows logo key. Users will still be able to open Start on other displays by pressing the Start button on that display. Also, the user will be able to configure this setting.</string>
+      <string id="ForceStartSize_DisplayName">Force Start to be either full screen size or menu size</string>
+      <string id="ForceStartSize_ExplainText">If you enable this policy and set it to Start menu or full screen Start, Start will be that size and users will be unable to change the size of Start in Settings. 
+
+If you disable or don’t configure this policy setting, Windows will automatically select the size based on hardware form factor and users will be able to change the size of Start in Settings.</string>
+      <string id="ForceLauncherSize_Collapsed">Start menu</string>
+      <string id="ForceLauncherSize_Expanded">Full screen Start</string>
     </stringTable>
     <presentationTable>
       <presentation id="PowerButtonAction">
@@ -580,6 +586,9 @@ If you disable or don't configure this policy setting, the Start screen will alw
           <label>Start Layout File</label>
           <defaultValue></defaultValue>
         </textBox>
+      </presentation>
+      <presentation id="ForceStartSize">
+        <dropdownList refId="ForceStartSizeDropdown" noSort="true" defaultItem="0">Choose one of the following sizes</dropdownList>
       </presentation>
     </presentationTable>
   </resources>

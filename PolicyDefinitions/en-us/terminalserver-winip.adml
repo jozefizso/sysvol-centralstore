@@ -8,20 +8,20 @@
             <string id="TS_SUPPORTED_Win7_SP1_Only">Windows 7 with Service Pack 1</string>
             <string id="TS_SERVER_IMAGE_QUALITY">Configure image quality for RemoteFX Adaptive Graphics</string>
             <string id="TS_SERVER_IMAGE_QUALITY_EXPLAIN">This policy setting allows you to specify the visual quality for remote users when connecting to this computer by using Remote Desktop Connection. You can use this policy setting to balance the network bandwidth usage with the visual quality that is delivered.
-
-If you enable this policy setting and set quality to Medium, RemoteFX Adaptive Graphics uses an encoding mechanism that results in medium quality images. This mode consumes the lowest amount of network bandwidth of the quality modes.
-If you enable this policy setting and set quality to High, RemoteFX Adaptive Graphics uses an encoding mechanism that results in high quality images and consumes moderate network bandwidth.
-If you enable this policy setting and set quality to Lossless, RemoteFX Adaptive Graphics uses lossless encoding. In this mode, the color integrity of the graphics data is not impacted. However, this setting results in a significant increase in network bandwidth consumption. We recommend that you set this for very specific cases only.
-
-If you disable or do not configure this policy setting, RemoteFX Adaptive Graphics uses an encoding mechanism that results in medium quality images.
-
+              If you enable this policy setting and set quality to Low, RemoteFX Adaptive Graphics uses an encoding mechanism that results in low quality images. This mode consumes the lowest amount of network bandwidth of the quality modes.
+              If you enable this policy setting and set quality to Medium, RemoteFX Adaptive Graphics uses an encoding mechanism that results in medium quality images. This mode provides better graphics quality than low quality and uses less bandwidth than high quality.
+              If you enable this policy setting and set quality to High, RemoteFX Adaptive Graphics uses an encoding mechanism that results in high quality images and consumes moderate network bandwidth.
+              If you enable this policy setting and set quality to Lossless, RemoteFX Adaptive Graphics uses lossless encoding. In this mode, the color integrity of the graphics data is not impacted. However, this setting results in a significant increase in network bandwidth consumption. We recommend that you set this for very specific cases only.
+              If you disable or do not configure this policy setting, RemoteFX Adaptive Graphics uses an encoding mechanism that results in medium quality images.
             </string>
+          
             <string id="TS_SERVER_IMAGE_QUALITY_LOSSLESS">Lossless</string>
             <string id="TS_SERVER_IMAGE_QUALITY_HIGH">High</string>
             <string id="TS_SERVER_IMAGE_QUALITY_MEDIUM">Medium</string>
+            <string id="TS_SERVER_IMAGE_QUALITY_LOW">Low</string>
 
             <string id="TS_SERVER_PROFILE">Configure RemoteFX Adaptive Graphics</string>
-            <string id="TS_SERVER_PROFILE_EXPLAIN">This policy setting allows the administrator to configure the RemoteFX experience for Remote Desktop Session Host or Remote Desktop Virtualization Host servers. By default, the system will choose the best experience based on available nework bandwidth.
+            <string id="TS_SERVER_PROFILE_EXPLAIN">This policy setting allows the administrator to configure the RemoteFX experience for Remote Desktop Session Host or Remote Desktop Virtualization Host servers. By default, the system will choose the best experience based on available network bandwidth.
 
 If you enable this policy setting, the RemoteFX experience could be set to one of the following options:
 1. Let the system choose the experience for the network condition

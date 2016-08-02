@@ -33,8 +33,6 @@ Note: Enabling this policy setting does not prevent the user from being able to 
       <string id="AdminInfoUrl">Set a support web page link</string>
       <string id="AdminInfoUrl_Help">Sets the target of the More Information link that will be displayed when the user attempts to run a program that is blocked by policy.</string>
       <string id="AdminInfoUrl_TextBox">Information URL</string>
-      <string id="DisableSoftLanding">Turn off soft landing help tips</string>
-      <string id="DisableSoftLanding_Help">Disabling soft landing messages</string>
       <string id="DisableRoamedProfileInit">Do not reinitialize a pre-existing roamed user profile when it is loaded on a machine for the first time</string>
       <string id="DisableRoamedProfileInit_Help">This policy setting allows administrators who have configured roaming profile in conjunction with Delete Cached Roaming Profile Group Policy setting to ensure that Explorer will not reinitialize default program associations and other settings to default values. 
 

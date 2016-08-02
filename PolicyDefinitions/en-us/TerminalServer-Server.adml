@@ -54,7 +54,7 @@ Note: If this policy setting is enabled, then the "Start a program on connection
       <string id="TS_ALLOW_APPS">Allow remote start of unlisted programs</string>
       <string id="TS_ALLOW_APPS_EXPLAIN">This policy setting allows you to specify whether remote users can start any program on the RD Session Host server when they start a Remote Desktop Services session, or whether they can only start programs that are listed in the RemoteApp programs list.
 
-You can control which programs on an RD Session Host server can be started remotely by using the RemoteApp Manager on Windows Server 2008 R2 and Windows Server 2008. If you are using Windows Server Technical Preview 2, you can configure this in the Collection properties sheet by using Server Manager.
+You can control which programs on an RD Session Host server can be started remotely by using the RemoteApp Manager on Windows Server 2008 R2 and Windows Server 2008. If you are using Windows Server 2012, you can configure this in the Collection properties sheet by using Server Manager.
 
 By default, only programs in the RemoteApp Programs list can be started when a user starts a Remote Desktop Services session.
 

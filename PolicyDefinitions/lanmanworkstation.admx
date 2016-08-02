@@ -21,14 +21,30 @@
         presentation="$(presentation.Pol_CipherSuiteOrder)"
         >
       <parentCategory ref="Cat_LanmanWorkstation"/>
-      <!-- ABRACADABRA_THRESHOLD - this value needs to be updated once the Threshold version is defined to indicate that the policy only applies to Threshold and later versions of Windows -->
-      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
       <elements>
         <multiText
             id="MultiText_CipherSuiteOrder"
             valueName="CipherSuiteOrder"
             />
       </elements>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.Pol_EnableInsecureGuestLogons_Name)"
+        explainText="$(string.Pol_EnableInsecureGuestLogons_Help)"
+        key="Software\Policies\Microsoft\Windows\LanmanWorkstation"
+        name="Pol_EnableInsecureGuestLogons"
+        valueName="AllowInsecureGuestAuth"
+        >
+      <parentCategory ref="Cat_LanmanWorkstation"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
     </policy>
   </policies>
 </policyDefinitions>

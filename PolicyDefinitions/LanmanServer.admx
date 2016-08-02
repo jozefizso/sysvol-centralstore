@@ -81,8 +81,7 @@
         presentation="$(presentation.Pol_CipherSuiteOrder)"
         >
       <parentCategory ref="Cat_LanmanServer"/>
-      <!-- ABRACADABRA_THRESHOLD - this value needs to be updated once the Threshold version is defined to indicate that the policy only applies to Threshold and later versions of Windows -->
-      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
       <elements>
         <multiText
             id="MultiText_CipherSuiteOrder"
@@ -99,8 +98,7 @@
         valueName="HonorCipherSuiteOrder"
         >
       <parentCategory ref="Cat_LanmanServer" />
-      <!-- ABRACADABRA_THRESHOLD - this value needs to be updated once the Threshold version is defined to indicate that the policy only applies to Threshold and later versions of Windows -->
-      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>

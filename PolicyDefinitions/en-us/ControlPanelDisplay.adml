@@ -253,6 +253,8 @@ If the "Force a specific Start background" policy is also set on a supported ver
         </textBox>
         <text>Example: Using a local path:   C:\windows\web\screen\lockscreen.jpg</text>
         <text>Example: Using a UNC path:     \\Server\Share\Corp.jpg</text>
+        <text> </text>
+        <checkBox refId="LockScreenOverlaysDisabled">Turn off fun facts, tips, tricks, and more on lock screen</checkBox>
       </presentation>
       <presentation id="PersonalColors">
         <textBox refId="PersonalColors_Background">

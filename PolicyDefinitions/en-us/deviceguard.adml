@@ -19,16 +19,20 @@ Warning: All drivers on the system must be compatible with this feature or the s
 
 Credential Guard
 
-This setting lets you decide whether users can turn on Credential Guard with virtualization-based security to help protect credentials.
- 
-Disabling these settings does not remove the feature from the computer.  Instead, you must also remove the security functionality from each computer, with a physically present user, in order to clear configuration persisted in Secure Boot.
+This setting lets users turn on Credential Guard with virtualization-based security to help protect credentials.
 
-Please refer to the documentation for a complete set of requirements to securely configure this feature.
+The "Disabled" option turns off Credential Guard remotely if it was previously turned on with the "Enabled without lock" option.
+
+The "Enabled with UEFI lock" option ensures that Credential Guard cannot be disabled remotely. In order to disable the feature, you must set the Group Policy to "Disabled" as well as remove the security functionality from each computer, with a physically present user, in order to clear configuration persisted in UEFI.
+
+The "Enabled without lock" option allows Credential Guard to be disabled remotely by using Group Policy. The devices that use this setting must be running at least Windows 10 (Version 1511).
       </string>
       <string id="SecureBoot">Secure Boot</string>
       <string id="SecureBootAndDmaProtection">Secure Boot and DMA Protection</string>
       <string id="Disabled">Disabled</string>
       <string id="Enabled">Enabled</string>
+      <string id="EnabledWithoutLock">Enabled without lock</string>
+      <string id="EnabledWithUefiLock">Enabled with UEFI lock</string>
       <string id="ConfigCIPolicy">Deploy Code Integrity Policy</string>
       <string id="ConfigCIPolicyHelp">Deploy Code Integrity Policy
 
@@ -48,7 +52,7 @@ If using a signed and protected policy then disabling this policy setting doesn'
       <presentation id="VirtualizationBasedSecurity">
         <dropdownList refId="RequirePlatformSecurityFeaturesDrop" defaultItem="0">Select Platform Security Level:</dropdownList>
         <checkBox refId="HypervisorEnforcedCodeIntegrityCheck" defaultChecked="false">Enable Virtualization Based Protection of Code Integrity</checkBox>
-        <checkBox refId="CredentialIsolationCheck" defaultChecked="false">Enable Credential Guard</checkBox>
+        <dropdownList refId="CredentialIsolationDrop" defaultItem="0">Credential Guard Configuration:</dropdownList>
       </presentation>
       <presentation id="ConfigCIPolicy">
         <textBox refId="ConfigCIPolicyFilePathText">

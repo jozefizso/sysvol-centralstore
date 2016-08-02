@@ -6,11 +6,11 @@
   <resources>
     <stringTable>
       <string id="AllowTelemetry">Allow Telemetry</string>
-      <string id="AllowTelemetry_0">0 - Off [Enterprise Only]</string>
+      <string id="AllowTelemetry_0">0 - Security [Enterprise Only]</string>
       <string id="AllowTelemetry_1">1 - Basic</string>
       <string id="AllowTelemetry_2">2 - Enhanced</string>
       <string id="AllowTelemetry_3">3 - Full</string>
-      <string id="AllowTelemetry_Explain">This policy setting determines the amount of diagnostic and usage data reported to Microsoft. A value of 0 indicates that no telemetry data from OS components is sent to Microsoft. Setting a value of 0 is applicable to enterprise and server devices only. Setting a value of 0 for other devices is equivalent to choosing a value of 1. A value of 1 sends only a limited, or basic, amount of diagnostic and usage data. Note that setting values of 0 or 1 will degrade certain experiences on the device. A value of 2 sends enhanced diagnostic and usage data. A value of 3 sends the same data as a value of 2, plus additional diagnostics data, such as the system state at the time of a hang or crash, and the files and content that may have caused the problem.
+      <string id="AllowTelemetry_Explain">This policy setting determines the amount of diagnostic and usage data reported to Microsoft. A value of 0 will send minimal data to Microsoft. This data includes Malicious Software Removal Tool (MSRT) &amp; Windows Defender data, if enabled, and telemetry client settings. Setting a value of 0 applies to enterprise, EDU, IoT and server devices only. Setting a value of 0 for other devices is equivalent to choosing a value of 1. A value of 1 sends only a basic amount of diagnostic and usage data. Note that setting values of 0 or 1 will degrade certain experiences on the device. A value of 2 sends enhanced diagnostic and usage data. A value of 3 sends the same data as a value of 2, plus additional diagnostics data, including the files and content that may have caused the problem. Windows 10 telemetry settings applies to the Windows operating system and some first party apps. This setting does not apply to third party apps running on Windows 10.
 
 If you disable or do not configure this policy setting, users can configure the Telemetry level in Settings.
 

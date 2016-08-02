@@ -473,5 +473,23 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="ForceStartSize" class="User" displayName="$(string.ForceStartSize_DisplayName)" explainText="$(string.ForceStartSize_ExplainText)" presentation="$(presentation.ForceStartSize)" key="Software\Policies\Microsoft\Windows\Explorer">
+      <parentCategory ref="windows:StartMenu" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
+      <elements>
+        <enum id="ForceStartSizeDropdown" valueName="ForceStartSize" required="true">
+          <item displayName="$(string.ForceLauncherSize_Collapsed)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceLauncherSize_Expanded)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
   </policies>
 </policyDefinitions>

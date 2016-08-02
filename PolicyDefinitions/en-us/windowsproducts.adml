@@ -58,11 +58,11 @@
       <string id="MicrosoftWindows_6_4">Windows 10 operating systems</string>
       <string id="MicrosoftWindows_6_4_RTM">Windows 10</string>
 
-      <string id="MicrosoftWindowsServer_6_4">Windows Server Technical Preview 2 operating systems</string>
-      <string id="MicrosoftWindowsServer_6_4_RTM">Windows Server Technical Preview 2</string>
+      <string id="MicrosoftWindowsServer_6_4">Windows Server 2016 Technical Preview 4 operating systems</string>
+      <string id="MicrosoftWindowsServer_6_4_RTM">Windows Server 2016 Technical Preview 4</string>
       
-      <string id="MicrosoftWindows_6_4_RT">Windows RT 8.1 operating systems</string>
-      <string id="MicrosoftWindows_6_4_RT_RTM">Windows RT 8.1</string>
+      <string id="MicrosoftWindows_6_4_RT">Windows 10 operating systems</string>
+      <string id="MicrosoftWindows_6_4_RT_RTM">Windows 10</string>
 
       <string id="MicrosoftWindows_10_0">Windows 10 operating systems</string>
       <string id="MicrosoftWindows_10_0_RTM">Windows 10</string>

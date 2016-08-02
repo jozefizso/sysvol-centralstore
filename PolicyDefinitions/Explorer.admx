@@ -64,16 +64,6 @@
           <text id="AdminInfoUrl_TextBox" valueName="AdminInfoUrl"/>
       </elements>
     </policy>
-    <policy name="DisableSoftLanding" class="User" displayName="$(string.DisableSoftLanding)" explainText="$(string.DisableSoftLanding_Help)" key="Software\Microsoft\Windows\CurrentVersion\SoftLanding" valueName="Enabled">
-      <parentCategory ref="windows:WindowsExplorer" />
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
-      <enabledValue>
-        <decimal value="0" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="1" />
-      </disabledValue>
-    </policy>
     <policy name="DisableRoamedProfileInit" class="Machine" displayName="$(string.DisableRoamedProfileInit)" explainText="$(string.DisableRoamedProfileInit_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="DisableRoamedProfileInit">
       <parentCategory ref="windows:WindowsExplorer" />
       <supportedOn ref="windows:SUPPORTED_Windows_6_2" />

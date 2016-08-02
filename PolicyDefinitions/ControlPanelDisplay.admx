@@ -259,6 +259,7 @@
       <supportedOn ref="windows:SUPPORTED_Windows8" />
       <elements>
         <text id="LockScreenImage" valueName="LockScreenImage" required="true" />
+        <boolean id="LockScreenOverlaysDisabled" valueName="LockScreenOverlaysDisabled" />
       </elements>
     </policy>
   </policies>

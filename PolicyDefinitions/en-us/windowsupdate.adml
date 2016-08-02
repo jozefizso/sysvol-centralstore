@@ -293,12 +293,20 @@ Enabling this policy will disable that functionality, and may cause connection t
 
 Note: This policy applies only when this PC is configured to connect to an intranet update service using the "Specify intranet Microsoft update service location" policy.</string>
 
-      <string id="DeferUpgrade_Title">Defer Upgrade</string>
-      <string id="DeferUpgrade_Help">If you enable this policy setting, in Pro and Enterprise SKUs you can defer upgrades till the next upgrade period (at least a few months). 
+      <string id="DeferUpgrade_Title">Defer Upgrades and Updates</string>
+      <string id="DeferUpgrade_Help">Enable this policy in order to defer upgrades for up to eight months.
       
-If you do not have it set you will receive upgrades once they are available that will be installed as part of your update policies. 
+You can also choose to delay updates for up to one month. If you do not delay updates, your PC will remain up to date with security updates as they become available.
 
-Security updates will not be impacted by this policy. For more information on available upgrades see windows.com/itpro.</string>
+If an issue arises with an update or upgrade, select "Pause Upgrades and Updates". This will delay updates and upgrades until the next monthly update or upgrade becomes available. Once a new update or upgrade it available, the value will go back to the previously selected option, re-enabling your validation groups.
+
+Note: Definition updates will not be impacted by this policy.
+
+Note: If the "Specify intranet Microsoft update service location" policy is enabled, then the “Defer upgrades by”, “Defer updates by” and “Pause Updates and Upgrades” settings have no effect.
+ 
+Note: If the “Allow Telemetry” policy is enabled and the Options value is set to 0, then the “Defer upgrades by”, “Defer updates by” and “Pause Updates and Upgrades” settings have no effect.
+
+To stay informed about new features in Windows 10, see go.microsoft.com/fwlink/?LinkID=529169.</string>
     </stringTable>
     <presentationTable>
       <presentation id="RemoveWindowsUpdate">
@@ -352,6 +360,13 @@ Security updates will not be impacted by this policy. For more information on av
         <text>The restart timer will give users</text>
         <text>this much time to save their</text>
         <decimalTextBox refId="AlwaysAutoRebootAtScheduledTime_Minutes" defaultValue="15">work (minutes): </decimalTextBox>
+      </presentation>
+      <presentation id="DeferUpgrade_Title">
+        <text>Defer upgrades for the following</text>
+        <decimalTextBox refId="DeferUpgradePeriodId" defaultValue="0">duration (months): </decimalTextBox>
+        <text>Defer updates for the following</text>
+        <decimalTextBox refId="DeferUpdatePeriodId" defaultValue="0">duration (weeks): </decimalTextBox>
+        <checkBox refId="PauseDeferralsId" defaultChecked="false">Pause Upgrades and Updates</checkBox>
       </presentation>
     </presentationTable>
   </resources>

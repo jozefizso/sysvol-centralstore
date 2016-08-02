@@ -222,12 +222,26 @@ If you enable this policy setting you will be able to choose an encryption algor
 If you disable or do not configure this policy setting, BitLocker will use AES with the same bit strength (128-bit or 256-bit) as the "Choose drive encryption method and cipher strength (Windows Vista, Windows Server 2008, Windows 7)" policy setting, if it is set. If neither policy is set, BitLocker will use the default encryption method of AES 128-bit or the encryption method specified by the setup script.
 
       </string>
+      <string id="EncryptionMethodWithXts_Help">This policy setting allows you to configure the algorithm and cipher strength used by BitLocker Drive Encryption. This policy setting is applied when you turn on BitLocker. Changing the encryption method has no effect if the drive is already encrypted, or if encryption is in progress.
+
+If you enable this policy setting you will be able to configure an encryption algorithm and key cipher strength for fixed data drives, operating system drives, and removable data drives individually. For fixed and operating system drives, we recommend that you use the XTS-AES algorithm. For removable drives, you should use AES-CBC 128-bit or AES-CBC 256-bit if the drive will be used in other devices that are not running Windows 10 (Version 1511).
+
+If you disable or do not configure this policy setting, BitLocker will use AES with the same bit strength (128-bit or 256-bit) as the "Choose drive encryption method and cipher strength (Windows Vista, Windows Server 2008, Windows 7)" and "Choose drive encryption method and cipher strength" policy settings (in that order), if they are set. If none of the policies are set, BitLocker will use the default encryption method of XTS-AES 128-bit or the encryption method specified by the setup script.”
+
+      </string>
       <string id="EncryptionMethod_Name">Choose drive encryption method and cipher strength (Windows Vista, Windows Server 2008, Windows 7, Windows Server 2008 R2)</string>
-      <string id="EncryptionMethodNoDiffuser_Name">Choose drive encryption method and cipher strength</string>
+      <string id="EncryptionMethodNoDiffuser_Name">Choose drive encryption method and cipher strength (Windows 8, Windows Server 2012, Windows 8.1, Windows Server 2012 R2, Windows 10 [Version 1507])</string>
+      <string id="EncryptionMethodWithXts_Name">Choose drive encryption method and cipher strength (Windows 10 [Version 1511] and later)</string>
       <string id="EncryptionMethodDropDown_AES128Diffuser_Name">AES 128-bit with Diffuser</string>
       <string id="EncryptionMethodDropDown_AES256Diffuser_Name">AES 256-bit with Diffuser</string>
       <string id="EncryptionMethodDropDown_AES128_Name">AES 128-bit (default)</string>
+      <string id="EncryptionMethodDropDown_AES128_Name2">AES-CBC 128-bit</string>
+      <string id="EncryptionMethodDropDown_AES128_Name3">AES-CBC 128-bit  (default)</string>
       <string id="EncryptionMethodDropDown_AES256_Name">AES 256-bit</string>
+      <string id="EncryptionMethodDropDown_AES256_Name2">AES-CBC 256-bit</string>
+      <string id="EncryptionMethodDropDown_XTS_AES128_Name">XTS-AES 128-bit (default)</string>
+      <string id="EncryptionMethodDropDown_XTS_AES128_Name2">XTS-AES 128-bit</string>
+      <string id="EncryptionMethodDropDown_XTS_AES256_Name">XTS-AES 256-bit</string>
 
       <string id="FVECategory">BitLocker Drive Encryption</string>
       <string id="PlatformValidation_Deprecated_Help">This policy setting allows you to configure how the computer's Trusted Platform Module (TPM) security hardware secures the BitLocker encryption key. This policy setting does not apply if the computer does not have a compatible TPM or if BitLocker has already been turned on with TPM protection.
@@ -739,6 +753,12 @@ Note: Not all characters and languages are supported in pre-boot. It is strongly
 
       <presentation id="EncryptionMethodNoDiffuser_Name">
         <dropdownList refId="EncryptionMethodNoDiffDropDown_Name" noSort="true" defaultItem="0">Select the encryption method:</dropdownList>
+      </presentation>
+
+      <presentation id="EncryptionMethodWithXts_Name">
+        <dropdownList refId="EncryptionMethodWithXtsOsDropDown_Name" noSort="true" defaultItem="2">Select the encryption method for operating system drives:</dropdownList>
+        <dropdownList refId="EncryptionMethodWithXtsFdvDropDown_Name" noSort="true" defaultItem="2">Select the encryption method for fixed data drives:</dropdownList>
+        <dropdownList refId="EncryptionMethodWithXtsRdvDropDown_Name" noSort="true" defaultItem="0">Select the encryption method for removable data drives:</dropdownList>
       </presentation>
 
       <presentation id="OSEncryptionType">
