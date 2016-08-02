@@ -72,5 +72,41 @@
         </enum>
       </elements>
     </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.Pol_CipherSuiteOrder_Name)"
+        explainText="$(string.Pol_CipherSuiteOrder_Help)"
+        key="Software\Policies\Microsoft\Windows\LanmanServer"
+        name="Pol_CipherSuiteOrder"
+        presentation="$(presentation.Pol_CipherSuiteOrder)"
+        >
+      <parentCategory ref="Cat_LanmanServer"/>
+      <!-- ABRACADABRA_THRESHOLD - this value needs to be updated once the Threshold version is defined to indicate that the policy only applies to Threshold and later versions of Windows -->
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <elements>
+        <multiText
+            id="MultiText_CipherSuiteOrder"
+            valueName="CipherSuiteOrder"
+            />
+      </elements>
+    </policy>
+    <policy 
+        class="Machine"
+        displayName="$(string.Pol_HonorCipherSuiteOrder_Name)"
+        explainText="$(string.Pol_HonorCipherSuiteOrder_Help)"
+        key="Software\Policies\Microsoft\Windows\LanmanServer"
+        name="Pol_HonorCipherSuiteOrder"    
+        valueName="HonorCipherSuiteOrder"
+        >
+      <parentCategory ref="Cat_LanmanServer" />
+      <!-- ABRACADABRA_THRESHOLD - this value needs to be updated once the Threshold version is defined to indicate that the policy only applies to Threshold and later versions of Windows -->
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

@@ -5,10 +5,10 @@
   <description>enter description here</description>
   <resources>
     <stringTable>
-      <string id="WAU">Add features to Windows 8.1</string>
-      <string id="WAU_Help">Contains settings to control the behavior of the Add features to Windows 8.1 wizard.</string>
+      <string id="WAU">Add features to Windows 10</string>
+      <string id="WAU_Help">Contains settings to control the behavior of the Add features to Windows 10 wizard.</string>
       <string id="DisableWAU">Prevent the wizard from running.</string>
-      <string id="DisableWAU_Help">By default, Add features to Windows 8.1 is available for all administrators. 
+      <string id="DisableWAU_Help">By default, Add features to Windows 10 is available for all administrators. 
 
 If you enable this policy setting, the wizard will not run.
 

@@ -710,6 +710,23 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>    
+    <policy
+        class="Machine"
+        displayName="$(string.ShowJobTitleInEventLogs)"
+        explainText="$(string.ShowJobTitleInEventLogs_Help)"
+        key="Software\Policies\Microsoft\Windows NT\Printers"
+        name="ShowJobTitleInEventLogs"
+        valueName="ShowJobTitleInEventLogs"
+      >
+      <parentCategory ref="windows:Printers"/>
+      <supportedOn ref="windows:SUPPORTED_Windows8"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
   </policies>
 </policyDefinitions>

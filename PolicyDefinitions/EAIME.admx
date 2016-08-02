@@ -89,5 +89,15 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="L_TurnOnCloudCandidate" class="User" displayName="$(string.L_TurnOnCloudCandidate)" explainText="$(string.L_TurnOnCloudCandidateExplain)" key="Software\Policies\Microsoft\InputMethod\Settings\Shared" valueName="Enable Cloud Candidate">
+      <parentCategory ref="L_IME" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

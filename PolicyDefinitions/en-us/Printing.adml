@@ -241,6 +241,16 @@ Notes:
 -Other system or driver policy settings may alter the process in which a print driver is executed.
 -This policy setting applies only to print drivers loaded by the print spooler. Print drivers loaded by applications are not affected.
 -This policy setting takes effect without restarting the print spooler service.</string>
+      <string id="ShowJobTitleInEventLogs">Allow job name in event logs</string>
+      <string id="ShowJobTitleInEventLogs_Help">
+        This policy controls whether the print job name will be included in print event logs.
+
+        If you disable or do not configure this policy setting, the print job name will not be included.
+
+        If you enable this policy setting, the print job name will be included in new log entries.
+
+        Note: This setting does not apply to Branch Office Direct Printing jobs.
+      </string>
       <string id="DoNotInstallCompatibleDriverFromWindowsUpdate">Extend Point and Print connection to search Windows Update</string>
       <string id="DoNotInstallCompatibleDriverFromWindowsUpdate_Help">This policy setting allows you to manage where client computers search for Point and Printer drivers.
 
@@ -259,7 +269,7 @@ By default, Windows Ultimate, Professional and Home SKUs will continue to search
 
         If you disable this policy setting or do not configure it, then all printer extensions that have been installed will be allowed to run.</string>
       <string id="MXDWUseLegacyOutputFormatMSXPS">Change Microsoft XPS Document Writer (MXDW) default output format to the legacy Microsoft XPS format (*.xps)</string>
-      <string id="MXDWUseLegacyOutputFormatMSXPS_Help">Microsoft XPS Document Writer (MXDW) generates OpenXPS (*.oxps) files by default in Windows 8.1, Windows RT 8.1 and Windows Server 2012 R2.
+      <string id="MXDWUseLegacyOutputFormatMSXPS_Help">Microsoft XPS Document Writer (MXDW) generates OpenXPS (*.oxps) files by default in Windows 10, Windows RT 8.1 and Windows Server Technical Preview 2.
 
           If you enable this group policy setting, the default MXDW output format is the legacy Microsoft XPS (*.xps).
 

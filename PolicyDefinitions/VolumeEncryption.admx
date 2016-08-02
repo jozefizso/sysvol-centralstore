@@ -11,6 +11,8 @@
     <definitions>
       <!-- We must make our own definition for Windows 8 without ARM -->  
       <definition name="SUPPORTED_Windows8NoARM" displayName="$(string.SUPPORTED_Windows8NoARM)" />  
+      <!-- Make our own definition for Windows Vista through Blue -->  
+      <definition name="SUPPORTED_Windows_6_3ToVista" displayName="$(string.SUPPORTED_Windows_6_3ToVista)" />  
     </definitions>
   </supportedOn>
   <categories>
@@ -152,7 +154,7 @@
 
     <policy name="MorBehavior_Name" class="Machine" displayName="$(string.MorBehavior_Name)" explainText="$(string.MorBehavior_Help)" presentation="$(presentation.MorBehavior_Name)" key="Software\Policies\Microsoft\FVE" valueName="MorBehavior">
       <parentCategory ref="FVECategory" />
-       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <supportedOn ref="SUPPORTED_Windows_6_3ToVista" />
 
       <enabledValue>
         <decimal value="1" />
@@ -160,6 +162,37 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+
+    <policy name="PrebootRecoveryInfo_Name" class="Machine" displayName="$(string.PrebootRecoveryInfo_Name)" explainText="$(string.PrebootRecoveryInfo_Help)" presentation="$(presentation.PrebootRecoveryInfo)" key="Software\Policies\Microsoft\FVE">
+      <parentCategory ref="FVEOSCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
+      <elements>
+        <enum id="PrebootRecoveryInfoDropDown_Name" valueName="RecoveryKeyMessageSource" required="true">
+          <item displayName="$(string.PrebootRecoveryInfoEmpty)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.PrebootRecoveryInfoUseDefault)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.PrebootRecoveryInfoUseMessage)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.PrebootRecoveryInfoUseUrl)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+        <text id="RecoveryMessage_Input" valueName="RecoveryKeyMessage" required="false" maxLength="900" />
+        <text id="RecoveryUrl_Input" valueName="RecoveryKeyUrl" required="false" maxLength="500" />
+      </elements>
     </policy>
 
     <policy name="EnhancedPIN_Name" class="Machine" displayName="$(string.EnhancedPIN_Name)" explainText="$(string.EnhancedPIN_Help)" presentation="$(presentation.EnhancedPIN)" key="Software\Policies\Microsoft\FVE" valueName="UseEnhancedPin">

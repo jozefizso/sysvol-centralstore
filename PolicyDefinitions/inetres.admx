@@ -180,6 +180,14 @@
         </and>
       </definition>
 
+      <!--At least Internet Explorer 11.0 on Windows 8-->
+      <definition name="SUPPORTED_IE11WIN8" displayName="$(string.SUPPORTED_IE11WIN8)">
+        <and>
+          <range ref="products:InternetExplorer" minVersionIndex="11"/>
+          <reference ref="windows:SUPPORTED_Windows_6_3"/>
+        </and>
+      </definition>
+
       <!--Only Internet Explorer 7.0-->
       <definition name="SUPPORTED_IE7ONLY" displayName="$(string.SUPPORTED_IE7ONLY)">
         <or>
@@ -782,15 +790,39 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
-    <policy name="Advanced_EnableSPDY3_0" class="Both" displayName="$(string.Advanced_EnableSPDY3_0)" explainText="$(string.Advanced_ExplainEnableSPDY3_0)" key="SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Internet Settings" valueName="EnableSPDY3_0">
+    <policy name="Advanced_EnableHTTP2" class="Both" displayName="$(string.Advanced_EnableHTTP2)" explainText="$(string.Advanced_ExplainEnableHTTP2)" key="SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Internet Settings" valueName="EnableHTTP2">
       <parentCategory ref="AdvancedPage" />
-      <supportedOn ref="SUPPORTED_IE11" />
+      <supportedOn ref="SUPPORTED_IE11WIN8" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="Advanced_EnableSSL3Fallback" class="Machine" displayName="$(string.Advanced_EnableSSL3Fallback)" explainText="$(string.Advanced_ExplainEnableSSL3Fallback)" presentation="$(presentation.Advanced_EnableSSL3Fallback)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings">
+      <parentCategory ref="SecurityFeatures" />
+      <supportedOn ref="SUPPORTED_IE7" />
+      <elements>
+        <!-- This item is a bitmask of protection modes where bits 1-2 are (respectively): Non protected, Protected-->
+        <enum id="Advanced_EnableSSL3FallbackOptions" valueName="EnableSSL3Fallback" required="false">
+          <item displayName="$(string.Advanced_FallbackNone)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.Advanced_FallbackNonProtected)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.Advanced_FallbackAll)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
     <policy name="Advanced_SetWinInetProtocols" class="Both" displayName="$(string.Advanced_SetWinInetProtocols)" explainText="$(string.Advanced_ExplainSetWinInetProtocols)" presentation="$(presentation.Advanced_SetWinInetProtocols)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings">
       <parentCategory ref="AdvancedPage" />
@@ -1485,6 +1517,49 @@
     <policy name="ICWComplete" class="User" displayName="$(string.ICWComplete)" explainText="$(string.ICWComplete_Explain)" key="Software\Policies\Microsoft\Internet Connection Wizard" valueName="DisableICW">
       <parentCategory ref="ICWSettings" />
       <supportedOn ref="SUPPORTED_IE7_NONVISTA" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="VerMgmtAuditModeEnable" class="Both" displayName="$(string.VerMgmtAuditModeEnable)" explainText="$(string.IE_ExplainVerMgmtAuditModeEnable)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Ext" valueName="AuditModeEnabled">
+      <parentCategory ref="IESF_AddOnManagement" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+   <policy name="VerMgmtDisableRunThisTime" class="Both" displayName="$(string.VerMgmtDisableRunThisTime)" explainText="$(string.IE_ExplainVerMgmtDisableRunThisTime)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Ext" valueName="RunThisTimeEnabled">
+      <parentCategory ref="IESF_AddOnManagement" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="VerMgmtDomainAllowlist" class="Both" displayName="$(string.VerMgmtDomainAllowlist)" explainText="$(string.IE_ExplainVerMgmtDomainAllowlist)" presentation="$(presentation.VerMgmtDomainAllowlist_1)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Ext" valueName="ListBox_DomainAllowlist" >
+      <parentCategory ref="IESF_AddOnManagement" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <list id="DomainList" key="Software\Microsoft\Windows\CurrentVersion\Policies\Ext\Domain" additive="true"/>
+      </elements>
+    </policy>
+    <policy name="VerMgmtDisable" class="Both" displayName="$(string.VerMgmtDisable)" explainText="$(string.IE_ExplainVerMgmtDisable)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Ext" valueName="VersionCheckEnabled">
+      <parentCategory ref="IESF_AddOnManagement" />
+      <supportedOn ref="SUPPORTED_IE8" />
       <enabledValue>
         <decimal value="0" />
       </enabledValue>
@@ -33587,6 +33662,16 @@
       <parentCategory ref="Menus" />
       <supportedOn ref="SUPPORTED_IE5" />
     </policy>
+      <policy name="NoReportSiteProblems" class="Both" displayName="$(string.NoReportSiteProblems)" explainText="$(string.IE_ExplainNoReportSiteProblems)" key="Software\Policies\Microsoft\Internet Explorer\Main" valueName="NoReportSiteProblems">
+      <parentCategory ref="Menus" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <enabledValue>
+        <string>yes</string>
+      </enabledValue>
+      <disabledValue>
+        <string>no</string>
+      </disabledValue>
+    </policy>
     <policy name="View_NoTheaterMode" class="User" displayName="$(string.View_NoTheaterMode)" explainText="$(string.IE_ExplainView_NoTheaterMode)" key="Software\Policies\Microsoft\Internet Explorer\Restrictions" valueName="NoTheaterMode">
       <parentCategory ref="Menus" />
       <supportedOn ref="SUPPORTED_IE5" />
@@ -33824,24 +33909,6 @@
             </value>
           </item>
           <item displayName="$(string.AutoSearch0)">
-            <value>
-              <decimal value="0" />
-            </value>
-          </item>
-        </enum>
-      </elements>
-    </policy>
-    <policy name="TopResultPol" class="Both" displayName="$(string.TopResultPol)" explainText="$(string.TopResultPol_Explain)" presentation="$(presentation.TopResultPol)" key="Software\Policies\Microsoft\Internet Explorer\SearchScopes">
-      <parentCategory ref="Searching" />
-      <supportedOn ref="SUPPORTED_IE9" />
-      <elements>
-        <enum id="TopResult" valueName="TopResult">
-          <item displayName="$(string.TopResult1)">
-            <value>
-              <decimal value="1" />
-            </value>
-          </item>
-          <item displayName="$(string.TopResult0)">
             <value>
               <decimal value="0" />
             </value>
@@ -34443,6 +34510,20 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="EnterpriseModeEnable" class="Both" displayName="$(string.EnterpriseModeEnable)" explainText="$(string.IE_ExplainEnterpriseModeEnable)" presentation="$(presentation.EnterpriseModeEnable_1)" key="Software\Policies\Microsoft\Internet Explorer\Main\EnterpriseMode">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <elements>
+        <text id="EnterReportBackPrompt" valueName="Enable" />
+      </elements>
+    </policy>
+    <policy name="EnterpriseModeSiteList" class="Both" displayName="$(string.EnterpriseModeSiteList)" explainText="$(string.IE_ExplainEnterpriseModeSiteList)" presentation="$(presentation.EnterpriseModeSiteList_1)" key="Software\Policies\Microsoft\Internet Explorer\Main\EnterpriseMode">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <elements>
+        <text id="EnterSiteListPrompt" valueName="SiteList" required="true" />
+      </elements>
+    </policy>
     <policy name="DefaultDomainCacheLimitInMB" class="Both" displayName="$(string.DefaultDomainCacheLimitInMB)" explainText="$(string.IE_ExplainDefaultDomainCacheLimitInMB)" presentation="$(presentation.DefaultDomainCacheLimitInMB)" key="Software\Policies\Microsoft\Internet Explorer\BrowserStorage">
       <parentCategory ref="CategoryBrowsingHistory" />
       <supportedOn ref="SUPPORTED_IE10" />
@@ -34571,6 +34652,37 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="SiteDiscoveryEnableWMI" class="Both" displayName="$(string.SiteDiscoveryEnableWMI)" explainText="$(string.IE_Explain_SiteDiscoveryEnableWMI)" key="Software\Microsoft\Internet Explorer\WMITelemetry" valueName="Active">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SiteDiscoveryEnableXML" class="Both" displayName="$(string.SiteDiscoveryEnableXML)" explainText="$(string.IE_Explain_SiteDiscoveryEnableXML)" presentation="$(presentation.SiteDiscoveryEnableXML)" key="Software\Microsoft\Internet Explorer\WMITelemetry">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <elements>
+        <text id="SiteDiscoveryXMLPath" valueName="XMLPath" required="true" />
+      </elements>
+    </policy>
+    <policy name="SiteDiscoveryZoneAllowList" class="Both" displayName="$(string.SiteDiscoveryZoneAllowList)" explainText="$(string.IE_Explain_SiteDiscoveryZoneAllowList)" presentation="$(presentation.SiteDiscoveryZoneAllowList)" key="Software\Microsoft\Internet Explorer\WMITelemetry">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <elements>
+        <decimal id="SiteDiscoveryZoneAllowList" valueName="ZoneAllowList" required="true" />
+      </elements>
+    </policy>
+    <policy name="SiteDiscoveryDomainAllowList" class="Both" displayName="$(string.SiteDiscoveryDomainAllowList)" explainText="$(string.IE_Explain_SiteDiscoveryDomainAllowList)" presentation="$(presentation.SiteDiscoveryDomainAllowList)" key="Software\Microsoft\Internet Explorer\WMITelemetry">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE8" />
+      <elements>
+        <multiText id="SiteDiscoveryDomainAllowList" valueName="DomainAllowList" required="true" />
+      </elements>
     </policy>
   </policies>
 </policyDefinitions>

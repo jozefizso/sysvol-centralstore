@@ -1974,18 +1974,18 @@
             </value>
           </item>
         </enum>
-        <enum id="TS_RemoteDesktopVirtualGraphics_ScreeenImageQuality" valueName="VGOptimization_CompressionRatio">
-          <item displayName="$(string.TS_RemoteDesktopVirtualGraphics_ScreeenImageQuality_Highest)">
+        <enum id="TS_RemoteDesktopVirtualGraphics_ScreenImageQuality" valueName="VGOptimization_CompressionRatio">
+          <item displayName="$(string.TS_RemoteDesktopVirtualGraphics_ScreenImageQuality_Highest)">
             <value>
               <decimal value="1" />
             </value>
           </item>
-          <item displayName="$(string.TS_RemoteDesktopVirtualGraphics_ScreeenImageQuality_Medium)">
+          <item displayName="$(string.TS_RemoteDesktopVirtualGraphics_ScreenImageQuality_Medium)">
             <value>
               <decimal value="2" />
             </value>
           </item>
-          <item displayName="$(string.TS_RemoteDesktopVirtualGraphics_ScreeenImageQuality_Lowest)">
+          <item displayName="$(string.TS_RemoteDesktopVirtualGraphics_ScreenImageQuality_Lowest)">
             <value>
               <decimal value="3" />
             </value>

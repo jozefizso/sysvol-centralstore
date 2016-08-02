@@ -14,6 +14,8 @@
       <string id="WU_SUPPORTED_Windows7_To_Win2kSP3_Or_XPSP1">Windows 7, Windows Server 2008 R2, Windows Vista, Windows Server 2003, Windows XP SP2, Windows XP SP1 , Windows 2000 SP4, Windows 2000 SP3</string>
       <string id="WU_SUPPORTED_Win2kSP3_Or_XPSP1_NoWinRT">At least Windows XP Professional Service Pack 1 or Windows 2000 Service Pack 3, excluding Windows RT</string>
       <string id="WU_SUPPORTED_WindowsXPSP1_NoWinRT">At least Windows Server 2003 operating systems or Windows XP Professional with SP1, excluding Windows RT</string>
+      <string id="WU_SUPPORTED_Win2kSP3_Or_XPSP1_Through_Win81_or_Server2012R2">At least Windows XP Professional Service Pack 1 or At least Windows 2000 Service Pack 3 through Windows 8.1 or Windows Server 2012 R2 with most current service pack</string>
+      <string id="WU_SUPPORTED_WindowsVista_Through_Win81_or_Server2012R2">At least Windows Vista through Windows 8.1 or Windows Server 2012 R2 with most current service pack</string>
       <string id="AUDontShowUasHelp">This policy setting allows you to manage whether the 'Install Updates and Shut Down' option is displayed in the Shut Down Windows dialog box.
 
 If you enable this policy setting, 'Install Updates and Shut Down' will not appear as a choice in the Shut Down Windows dialog box, even if updates are available for installation when the user selects the Shut Down option in the Start menu.
@@ -290,6 +292,13 @@ Note: This policy is not supported on Windows RT. Setting this policy will not h
 Enabling this policy will disable that functionality, and may cause connection to public services such as the Windows Store to stop working.
 
 Note: This policy applies only when this PC is configured to connect to an intranet update service using the "Specify intranet Microsoft update service location" policy.</string>
+
+      <string id="DeferUpgrade_Title">Defer Upgrade</string>
+      <string id="DeferUpgrade_Help">If you enable this policy setting, in Pro and Enterprise SKUs you can defer upgrades till the next upgrade period (at least a few months). 
+      
+If you do not have it set you will receive upgrades once they are available that will be installed as part of your update policies. 
+
+Security updates will not be impacted by this policy. For more information on available upgrades see windows.com/itpro.</string>
     </stringTable>
     <presentationTable>
       <presentation id="RemoveWindowsUpdate">

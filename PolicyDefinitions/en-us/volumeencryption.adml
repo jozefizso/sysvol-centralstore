@@ -215,12 +215,11 @@ If you enable this policy setting you will be able to choose an encryption algor
 If you disable or do not configure this policy setting, BitLocker will use the default encryption method of AES 128-bit with Diffuser or the encryption method specified by the setup script.
 
       </string>
-      <string id="EncryptionMethodNoDiffuser_Help">
-          This policy setting allows you to configure the algorithm and cipher strength used by BitLocker Drive Encryption. This policy setting is applied when you turn on BitLocker. Changing the encryption method has no effect if the drive is already encrypted or if encryption is in progress. Consult the BitLocker Drive Encryption Deployment Guide on Microsoft TechNet for more information about the encryption methods available. This policy is only applicable to computers running Windows 8 and later.
+      <string id="EncryptionMethodNoDiffuser_Help">This policy setting allows you to configure the algorithm and cipher strength used by BitLocker Drive Encryption. This policy setting is applied when you turn on BitLocker. Changing the encryption method has no effect if the drive is already encrypted or if encryption is in progress. Consult the BitLocker Drive Encryption Deployment Guide on Microsoft TechNet for more information about the encryption methods available. This policy is only applicable to computers running Windows 8 and later.
 
-          If you enable this policy setting you will be able to choose an encryption algorithm and key cipher strength for BitLocker to use to encrypt drives.
+If you enable this policy setting you will be able to choose an encryption algorithm and key cipher strength for BitLocker to use to encrypt drives.
 
-          If you disable or do not configure this policy setting, BitLocker will use AES with the same bit strength (128-bit or 256-bit) as the "Choose drive encryption method and cipher strength (Windows Vista, Windows Server 2008, Windows 7)" policy setting, if it is set. If neither policy is set, BitLocker will use the default encryption method of AES 128-bit or the encryption method specified by the setup script.
+If you disable or do not configure this policy setting, BitLocker will use AES with the same bit strength (128-bit or 256-bit) as the "Choose drive encryption method and cipher strength (Windows Vista, Windows Server 2008, Windows 7)" policy setting, if it is set. If neither policy is set, BitLocker will use the default encryption method of AES 128-bit or the encryption method specified by the setup script.
 
       </string>
       <string id="EncryptionMethod_Name">Choose drive encryption method and cipher strength (Windows Vista, Windows Server 2008, Windows 7, Windows Server 2008 R2)</string>
@@ -617,8 +616,8 @@ Note that if you do not enable this policy setting, options in the "Require addi
 - Configure use of passwords for operating system drives.
       </string>
 
-    <string id="AllowSecureBootForIntegrity_Name">Allow Secure Boot for integrity validation</string>
-    <string id="AllowSecureBootForIntegrity_Help">This policy setting allows you to configure whether Secure Boot will be allowed as the platform integrity provider for BitLocker operating system drives.
+      <string id="AllowSecureBootForIntegrity_Name">Allow Secure Boot for integrity validation</string>
+      <string id="AllowSecureBootForIntegrity_Help">This policy setting allows you to configure whether Secure Boot will be allowed as the platform integrity provider for BitLocker operating system drives.
 
 Secure Boot ensures that the PC's pre-boot environment only loads firmware that is digitally signed by authorized software publishers. Secure Boot also provides more flexibility for managing pre-boot configuration than legacy BitLocker integrity checks.
 
@@ -631,9 +630,25 @@ When this policy is enabled and the hardware is capable of using Secure Boot for
 Note: If the group policy setting "Configure TPM platform validation profile for native UEFI firmware configurations" is enabled and has PCR 7 omitted, Bitlocker will be prevented from using Secure Boot for platform or Boot Configuration Data (BCD) integrity validation.
 
 Warning: Disabling this policy may result in BitLocker recovery when firmware is updated. If you disable this policy, suspend BitLocker prior to applying firmware updates.
-    </string>
-    <string id="SUPPORTED_Windows8NoARM">At least Windows Server 2012 or Windows 8</string>  
-</stringTable>
+      </string>
+      <string id="SUPPORTED_Windows8NoARM">At least Windows Server 2012 or Windows 8</string>  
+      <string id="SUPPORTED_Windows_6_3ToVista">Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008, Windows 7, and Windows Vista</string>
+      <string id="PrebootRecoveryInfo_Name">Configure pre-boot recovery message and URL</string>
+      <string id="PrebootRecoveryInfoEmpty"></string>
+      <string id="PrebootRecoveryInfoUseDefault">Use default recovery message and URL</string>
+      <string id="PrebootRecoveryInfoUseMessage">Use custom recovery message</string>
+      <string id="PrebootRecoveryInfoUseUrl">Use custom recovery URL</string>
+      <string id="PrebootRecoveryInfo_Help">This policy setting lets you configure the entire recovery message or replace the existing URL that are displayed on the pre-boot key recovery screen when the OS drive is locked.
+
+If you select the "Use default recovery message and URL" option, the default BitLocker recovery message and URL will be displayed in the pre-boot key recovery screen. If you have previously configured a custom recovery message or URL and want to revert to the default message, you must keep the policy enabled and select the "Use default recovery message and URL" option.
+
+If you select the "Use custom recovery message" option, the message you type in the "Custom recovery message option" text box will be displayed in the pre-boot key recovery screen. If a recovery URL is available, include it in the message.
+
+If you select the "Use custom recovery URL" option, the URL you type in the "Custom recovery URL option" text box will replace the default URL in the default recovery message, which will be displayed in the pre-boot key recovery screen.
+
+Note: Not all characters and languages are supported in pre-boot. It is strongly recommended that you test that the characters you use for the custom message or URL appear correctly on the pre-boot recovery screen.
+      </string>
+    </stringTable>
     <presentationTable>
       <presentation id="ActiveDirectoryBackup_Name">
         <checkBox refId="RequireActiveDirectoryBackup_Name" defaultChecked="true">Require BitLocker backup to AD DS</checkBox>
@@ -957,6 +972,18 @@ Warning: Disabling this policy may result in BitLocker recovery when firmware is
         <textBox refId="RDVAllowedAlgos">
           <label>Restrict crypto algorithms or cipher suites to the following:</label>
           <defaultValue>2.16.840.1.101.3.4.1.2;2.16.840.1.101.3.4.1.42</defaultValue>
+        </textBox>
+      </presentation>
+
+      <presentation id="PrebootRecoveryInfo">
+        <dropdownList refId="PrebootRecoveryInfoDropDown_Name" noSort="true" defaultItem="0">Select an option for the pre-boot recovery message:</dropdownList>
+        <textBox refId="RecoveryMessage_Input">
+          <label>Custom recovery message option:</label>
+          <defaultValue/>
+        </textBox>
+        <textBox refId="RecoveryUrl_Input">
+          <label>Custom recovery URL option:</label>
+          <defaultValue/>
         </textBox>
       </presentation>
 

@@ -33,7 +33,7 @@
       
       If this policy setting is enabled, when the computer has at least one active connection to the Internet, a new automatic connection attempt to the Internet is blocked. When the computer has at least one active connection to a Windows domain, a new automatic connection to the same Windows domain is also blocked. Additional manual connection attempts by users to the Internet or to a Windows domain are not blocked by this policy setting.
       
-      In circumstances where there are multiple simultaneous connections to either the Internet or to a Windows domain, Windows disconnects the less preferred connection when the amount of network traffic over the less preferred connection drops below a certain threshold. For example, when a computer is connected to Internet using a Wi-Fi connection and the user plugs in to an Ethernet network, network traffic is routed through the faster Ethernet connection, and the Wi-Fi traffic diminishes. Windows detects this circumstance and responds by disconnecting the Wi-Fi connection.
+      In circumstances where there are multiple simultaneous connections to either the Internet or to a Windows domain, Windows disconnects the less preferred connection when the amount of network traffic over the less preferred connection drops below a certain threshold. For example, when a computer is connected to Internet using a WLAN connection and the user plugs in to an Ethernet network, network traffic is routed through the faster Ethernet connection, and the WLAN traffic diminishes. Windows detects this circumstance and responds by disconnecting the WLAN connection.
 
       If this policy setting is disabled, multiple simultaneous connections to the Internet, to a Windows domain, or to both are allowed.
 

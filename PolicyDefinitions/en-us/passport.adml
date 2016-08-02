@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Microsoft Passport for Work</displayName>
+  <description>Configuration for Microsoft Passport for Work</description>
+  <resources>
+    <stringTable>
+        <string id="MSPassportForWorkCategory">Microsoft Passport for Work</string>
+        <string id="MSPassportForWorkPINComplexityCategory">PIN Complexity</string>
+        <string id="MSPassport_UsePassportForWork">Use Microsoft Passport for Work</string>
+        <!-- DropdownList Button strings -->
+        <string id="ButtonTextAllow">Allow</string>
+        <string id="ButtonTextDisallow">Disallow</string>
+        <string id="ButtonTextRequired">Required</string>
+        <string id="MSPassport_UsePassportForWorkExplain">Microsoft Passport for Work is an alternative method for signing into Windows using your Active Directory or Azure Active Directory account that can replace passwords, Smart Cards, and Virtual Smart Cards.
+
+If you enable or do not configure this policy setting, the device provisions Microsoft Passport for Work for all users.
+
+If you disable this policy setting, the device does not provision Microsoft Passport for Work for any user.</string>
+        <string id="MSPassport_RequireSecurityDevice">Use a hardware security device</string>
+        <string id="MSPassport_RequireSecurityDeviceExplain">A Trusted Platform Module (TPM) provides additional security benefits over software because data stored within it cannot be used on other devices.
+
+If you enable this policy setting, only devices with a usable TPM provision Microsoft Passport for Work.
+
+If you disable this policy setting, all devices provision Microsoft Passport for Work using software even if there is a usable TPM.
+
+If you do not configure this policy setting, all devices provision Microsoft Passport for Work using software if the TPM is non-functional or unavailable.
+        </string>
+        <string id="MSPassport_MinimumPINLength">Minimum PIN length</string>
+        <string id="MSPassport_MinimumPINLengthExplain">Minimum PIN length configures the minimum number of characters required for the work PIN.  The lowest number you can configure for this policy setting is 4.  The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest.
+
+If you configure this policy setting, the work PIN length must be greater than or equal to this number.
+
+If you disable or do not configure this policy setting, the work PIN length must be greater than or equal to 4.
+
+NOTE: If the above specified conditions for the minimum PIN length are not met, default values will be used for both the maximum and minimum PIN lengths.
+        </string>
+        <string id="MSPassport_MaximumPINLength">Maximum PIN length</string>
+        <string id="MSPassport_MaximumPINLengthExplain">Maximum PIN length configures the maximum number of characters allowed for the work PIN.  The largest number you can configure for this policy setting is 127. The lowest number you can configure must be larger than the number configured in the Minimum PIN length policy setting or the number 4, whichever is greater.
+
+If you configure this policy setting, the work PIN length must be less than or equal to this number.
+
+If you disable or do not configure this policy setting, the work PIN length must be less than or equal to 127.
+
+NOTE: If the above specified conditions for the maximum PIN length are not met, default values will be used for both the maximum and minimum PIN lengths.
+        </string>
+        <string id="MSPassport_UppercaseLetters">Use uppercase letters</string>
+        <string id="MSPassport_UppercaseLettersExplain">Use this policy setting to configure the use of uppercase letters in the Microsoft Passport for work PIN.
+
+If you configure this policy setting to “Allow” Microsoft Passport for Work allows users to use uppercase letters in their work PIN.
+
+If you configure this policy setting to “Disallow”, Microsoft Passport for Work prevents users from using uppercase letters in their work PIN.
+
+If you configure this policy setting to “Required”, Microsoft Passport for Work requires users to include at least one uppercase letter in their work PIN.
+
+If you disable or do configure this policy setting, Microsoft Passport for Work allows users to use uppercase letters in their work PIN.
+                </string>
+        <string id="MSPassport_LowercaseLetters">Use lowercase letters</string>
+        <string id="MSPassport_LowercaseLettersExplain">Use this policy setting to configure the use of lowercase letters in the Microsoft Passport for work PIN.
+
+If you configure this policy setting to “Allow”, Microsoft Passport for Work allows users to use lowercase letters in their work PIN.
+
+If you configure this policy setting to “Disallow”, Microsoft Passport for Work prevents users from using lowercase letters in their work PIN.
+
+If you configure this policy setting to “Required”, Microsoft Passport for Work requires users to include at least one lowercase letter in their work PIN.
+
+If you disable or do not configure this policy setting, Microsoft Passport for Work allows users to use lowercase letters in their work PIN.
+                </string>
+        <string id="MSPassport_SpecialCharacters">Use special characters</string>
+        <string id="MSPassport_SpecialCharactersExplain"><![CDATA[Use this policy setting to configure the use of special characters in the Microsoft Passport for work PIN gesture.  Valid special characters for Microsoft Passport for work PIN gestures include: ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~ .
+
+If you configure this policy setting to “Allow”, Microsoft Passport for Work allows users to use special characters in their work PIN.
+
+If you configure this policy setting to “Disallow”, Microsoft Passport for Work prevents users from using special characters in their work PIN.
+
+If you configure this policy setting to “Required”, Microsoft Passport for Work requires users to include at least one special character in their work PIN.
+
+If you disable or do not configure this policy setting, Microsoft Passport for Work allows users to use special characters in their work PIN.
+                ]]></string>
+        <string id="MSPassport_Digits">Use digits</string>
+        <string id="MSPassport_DigitsExplain">Use this policy setting to configure the use of digits in the Microsoft Passport for work PIN.
+
+If you configure this policy setting to “Allow”, Microsoft Passport for Work allows users to use digits in their work PIN.
+
+If you configure this policy setting to “Disallow”, Microsoft Passport for Work prevents users from using digits in their work PIN.
+
+If you configure this policy setting to “Required”, Microsoft Passport for Work requires users to include at least one digit in their work PIN.
+
+If you disable or do not configure this policy setting, Microsoft Passport for Work allows users to use digits in their work PIN.
+
+        </string>
+        <string id="MSPassport_UseBiometrics">Use biometrics</string>
+        <string id="MSPassport_UseBiometricsExplain">Microsoft Passport for Work enables users to use biometric gestures, such as face and fingerprints, as an alternative to the PIN gesture. However users must still configure a work PIN to use in case of failures.
+
+If you enable this policy setting, Microsoft Passport for Work allows the use biometric gestures on.
+
+If you disable this policy setting, Microsoft Passport for Work prevents the use of biometric gestures.
+
+If you do not configure this policy setting, Microsoft Passport for Work allows the use of biometric gestures.
+
+NOTE: Disabling this policy prevents the user of biometric gestures on the device for all account types.
+        </string>
+    </stringTable>
+    <presentationTable>
+        <presentation id="MSPassport_MinimumPINLengthControl">
+            <decimalTextBox refId="MSPassport_MinimumPINLengthDataType" spin="true" spinStep="1" defaultvalue="4">Minimum PIN length</decimalTextBox>
+        </presentation>
+        <presentation id="MSPassport_MaximumPINLengthControl">
+            <decimalTextBox refId="MSPassport_MaximumPINLengthDataType" spin="true" spinStep="1" defaultvalue="127">Maximum PIN length</decimalTextBox>
+        </presentation>
+        <presentation id="MSPassport_UppercaseLettersControl">
+            <dropdownList refId="MSPassport_UppercaseLettersChoices" defaultItem="0">Uppercase letters:</dropdownList>
+        </presentation>
+        <presentation id="MSPassport_LowercaseLettersControl">
+            <dropdownList refId="MSPassport_LowercaseLettersChoices" defaultItem="0">Lowercase letters:</dropdownList>
+        </presentation>
+        <presentation id="MSPassport_SpecialCharactersControl">
+            <dropdownList refId="MSPassport_SpecialCharactersChoices" defaultItem="0">Special characters:</dropdownList>
+        </presentation>
+        <presentation id="MSPassport_DigitsControl">
+            <dropdownList refId="MSPassport_DigitsChoices" defaultItem="0">digits:</dropdownList>
+        </presentation>
+
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

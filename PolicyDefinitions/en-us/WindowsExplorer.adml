@@ -455,7 +455,7 @@ If you enable this policy setting, Windows SmartScreen behavior may be controlle
 • Give user a warning before running downloaded unknown software
 • Turn off SmartScreen
 
-If you disable or do not configure this policy setting, Windows SmartScreen behavior is managed by administrators on the PC by using Windows SmartScreen Settings in Action Center.
+If you disable or do not configure this policy setting, Windows SmartScreen behavior is managed by administrators on the PC by using Windows SmartScreen Settings in Security and Maintenance.
 
 Options:
 • Require approval from an administrator before running downloaded unknown software
@@ -520,7 +520,7 @@ If the policy is enabled, disabled, or not configured, users will still be able 
     </stringTable>
     <presentationTable>
       <presentation id="MaxRecentDocs">
-        <decimalTextBox refId="MaxRecentDocs" defaultValue="15">Maximum number of recent documents</decimalTextBox>
+        <decimalTextBox refId="MaxRecentDocs" defaultValue="150">Maximum number of recent documents</decimalTextBox>
       </presentation>
       <presentation id="TryHarderPinnedOpenSearch">
         <text>Internet search sites to add:</text>

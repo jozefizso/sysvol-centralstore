@@ -14,6 +14,7 @@
       <string id="SUPPORTED_Win2kSP1">At least Windows 2000 Service Pack 1</string>
       <string id="SUPPORTED_Win2kSP3">At least Windows 2000 Service Pack 3</string>
       <string id="SUPPORTED_Win2kSP3_Or_XPSP1">Windows XP Professional Service Pack 1 or At least Windows 2000 Service Pack 3</string>
+      <string id="SUPPORTED_Windows_6_3ToXPSP1_Or_Win2kSP3">Windows Server 2012 R2, Windows 8.1, Windows RT 8.1, Windows Server 2008, Windows Server 2003, Windows 7, Windows Vista, Windows XP Professional Service Pack 1 and Windows 2000 Service Pack 3</string>
       <string id="SUPPORTED_WindowsNET">At least Windows Server 2003</string>
       <string id="SUPPORTED_WindowsNETOnly">Windows Server 2003 only</string>
       <string id="SUPPORTED_WindowsNET_XP">Windows Server 2003 and Windows XP only</string>
@@ -34,11 +35,18 @@
       <string id="SUPPORTED_WindowsXPOrServerOnly">Windows Server 2003 and Windows XP only</string>
       <string id="SUPPORTED_Windows7">At least Windows Server 2008 R2 or Windows 7</string>
       <string id="SUPPORTED_Windows8">At least Windows Server 2012, Windows 8 or Windows RT</string>
-      <!-- Remove SUPPORTED_WindowsBlue since 6.3 is now defined.  PS_WinBlue(118895) -->
-      <string id="SUPPORTED_WindowsBlue">At least [Windows Server vNext], [Windows Client vNext] or [Windows ARM vNext]</string>
       <string id="SUPPORTED_Windows_6_3">At least Windows Server 2012 R2, Windows 8.1 or Windows RT 8.1</string>
       <string id="SUPPORTED_Windows_6_3_NOARM">At least Windows Server 2012 R2 or Windows 8.1</string>
       <string id="SUPPORTED_Windows_6_3_NOSERVER">At least Windows 8.1 or Windows RT 8.1</string>
+      <string id="SUPPORTED_Windows8_Or_Windows_6_3_Only">Windows Server 2012, Windows 8, Windows RT, Windows Server 2012 R2, Windows 8.1 or Windows RT 8.1 only</string>
+      <string id="SUPPORTED_Windows_6_3only">Windows Server 2012 R2, Windows 8.1 or Windows RT 8.1 only</string>
+      <string id="SUPPORTED_Windows_6_3To2k">Windows Server 2012 R2, Windows 8.1, Windows RT 8.1, Windows Server 2008, Windows Server 2003, Windows 7, Windows Vista, Windows XP, and Windows 2000</string>
+      <string id="SUPPORTED_Windows_6_4">At least Windows Server Technical Preview 2, Windows 10 or Windows RT 8.1</string>
+      <string id="SUPPORTED_Windows_6_4_NOARM">At least Windows Server Technical Preview 2 or Windows 10</string>
+      <string id="SUPPORTED_Windows_6_4_NOSERVER">At least Windows 10 or Windows RT 8.1</string>
+      <string id="SUPPORTED_Windows_10_0">At least Windows 10 Server, Windows 10 or Windows 10 RT</string>
+      <string id="SUPPORTED_Windows_10_0_NOARM">At least Windows 10 Server or Windows 10</string>
+      <string id="SUPPORTED_Windows_10_0_NOSERVER">At least Windows 10 or Windows 10 RT</string>
       <string id="SUPPORTED_Windows8_Or_IE10">At least Windows Server 2012, Windows 8 or Windows RT or at least Internet Explorer 10</string>
       <string id="SUPPORTED_WindowsVistaTo2k">Windows Server 2008, Windows Server 2003, Windows Vista, Windows XP, and Windows 2000</string>
       <string id="SUPPORTED_WindowsVistaToXP">Windows Server 2008, Windows Server 2003, Windows Vista, and Windows XP</string>
@@ -47,6 +55,13 @@
       <string id="SUPPORTED_Windows7ToVista">Windows Server 2008, Windows 7, and Windows Vista</string>
       <string id="SUPPORTED_Windows7ToXP">Windows Server 2008, Windows Server 2003, Windows 7, Windows Vista, and Windows XP</string>
       <string id="SUPPORTED_Windows7To2k">Windows Server 2008, Windows Server 2003, Windows 7, Windows Vista, Windows XP, and Windows 2000</string>
+      <string id="SUPPORTED_Windows81To2k">At least Windows 2000 through Windows 8.1 or Windows Server 2012 R2</string>
+      <string id="SUPPORTED_Windows7ToVistaAndWindows10">Windows Server 2008, Windows 7, Windows Vista, and Windows 10</string>
+      <string id="SUPPORTED_Windows7ToXPAndWindows10">Windows Server 2008, Windows Server 2003, Windows 7, Windows Vista, Windows XP, and Windows 10</string>
+      <string id="SUPPORTED_Windows7To2kAndWindows10">Windows Server 2008, Windows Server 2003, Windows 7, Windows Vista, Windows XP, Windows 2000, and Windows 10</string>
+      <string id="SUPPORTED_Windows_6_3_Update2">At least Windows 8.1 Update 2</string>
+      <string id="SUPPORTED_WindowsVistaTo7">Windows operating systems from Windows Vista through Windows 7</string>
+      <string id="SUPPORTED_WindowsServer_And_XPproTo7">Windows Server 2003 and versions of Windows from Windows XP Professional through Windows 7.</string>
       <string id="System">System</string>
       <string id="System_Help">Allows configuration of various system component settings.</string>
       <string id="InternetManagement">Internet Communication Management</string>
@@ -57,6 +72,7 @@
       <string id="WindowsExplorer">File Explorer</string>
       <string id="WindowsExplorer_Help">Manages File Explorer settings. These include shell properties, folder options, file menus, and available drives.</string>
       <string id="TabletPC">Tablet PC</string>
+      <string id="DataCollectionAndPreviewBuilds">Data Collection and Preview Builds</string>
       <string id="Network">Network</string>
       <string id="Network_Help">Allows configuration of components of the operating system used by a client computer to connect to a network. This includes DNS settings and Offline Files.</string>
       <string id="SharedFolders">Shared Folders</string>

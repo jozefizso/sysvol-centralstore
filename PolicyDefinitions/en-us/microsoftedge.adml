@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Microsoft Edge Group Policies</displayName>
+  <description>Policies defined to manage Microsoft Edge settings via Group Policy Management services.</description>
+  <resources>
+    <stringTable>
+      <!-- Product -->
+      <string id="SUPPORTED_INTERNET_BROWSER_1_DisplayName">Only Microsoft Edge 1.0</string>
+      <string id="InternetBrowser_DisplayName">Microsoft Edge</string>
+      <string id="InternetBrowser_ExplainCat">Microsoft Edge Category</string>
+      
+      <!-- Categories -->
+
+      <!-- NOTE: Please try to keep this list sorted by the string id="" field -->
+      <!-- Policies -->
+      <string id="AllowActiveScripting">Allows you to run scripts, like Javascript</string>
+      <string id="AllowActiveScripting_Explain">This setting lets you decide whether to let people run scripts, like JavaScript. This setting is enabled by default.
+
+If you enable this setting, scripting is turned on for all your computers. 
+
+If you disable this setting, scripts can’t run.</string>
+      <string id="AllowAutofill">Allows you to let people use autofill on websites</string>
+      <string id="AllowAutofill_Explain">This setting lets you decide whether people can use autofill on websites. This setting is enabled by default.
+
+If you enable this setting, people can use autofill on websites, caching the info locally.
+
+If you disable this setting, people can’t use autofill.</string>
+      <string id="AllowDoNotTrack">Allows you to let people send Do Not Track headers</string>
+      <string id="AllowDoNotTrack_Explain">This setting lets you decide whether to let people send Do Not Track headers. This setting is disabled by default.
+
+If you enable this setting, people can send Do Not Track headers from any computer in your organization.
+
+If you disable this setting, people can’t send Do Not Track headers.</string>
+      <string id="AllowPasswordManager">Allows you to configure password manager</string>
+      <string id="AllowPasswordManager_Explain">This setting lets you decide whether people can save passwords locally on their computers. This setting is enabled by default.
+
+If you enable this setting, Password Manager is turned on and people can save passwords locally on their computers.
+
+If you disable this setting, Password Manager is turned off and people can’t save passwords locally.</string>
+      <string id="AllowPopups">Allows you to run pop-ups</string>
+      <string id="AllowPopups_Explain">This setting lets you decide whether to allow pop-ups. This setting is disabled by default.
+
+If you enable this setting, pop-ups can run on all your organization’s computers.
+
+If you disable this setting, pop-ups can’t run.</string>
+      <string id="AllowSearchSuggestionsinAddressBar">Stops address bar from showing search suggestions</string>
+      <string id="AllowSearchSuggestionsinAddressBar_Explain">This setting lets you decide whether the address bar should show search suggestions. This setting is enabled by default.
+
+If you enable this setting, people can see search suggestions in the address bar.
+
+If you disable this setting, search results don’t appear in the address bar.</string>
+      <string id="AllowSmartScreen">Allows you to configure SmartScreen</string>
+      <string id="AllowSmartScreen_Explain">This setting lets you decide whether to turn on SmartScreen. This setting is enabled by default.
+
+If you enable this setting, SmartScreen is turned on for all your computers. 
+
+If you disable this setting, SmartScreen is turned off.</string>
+      <string id="Cookies">Configure how Microsoft Edge treats cookies</string>
+      <string id="Cookies_Explain">This settings lets you decide how Microsoft Edge should treat cookies.
+
+If you enable this setting, you have 3 additional options:
+  • Don’t block. Cookies can download from all websites. This is the default value.
+  • Block only third-party cookies. Stops third-party cookies from downloading.
+  • Block all cookies. Stops all cookies from downloading.</string>
+      <string id="CookiesList_Block_None">Don't block</string>
+      <string id="CookiesList_Block_ThirdParty">Block only 3rd-party cookies</string>
+      <string id="CookiesList_Block_All">Block all cookies</string>
+      <string id="EnterpriseModeSiteList">Allows you to configure the Enterprise Site list</string>
+      <string id="EnterpriseModeSiteList_Explain">This setting lets you decide whether to set up and use the Enterprise Site List for compatibility.
+
+If you enable this setting, you have 2 additional options:
+  • Not configured. You can’t use the Enterprise Site List.
+  • UseEnterpriseModeSiteList. Lets you use the Enterprise Site List. If you use this option, you must also include the location to your XML site list in the {URI} box. This is the default value.</string>
+      <string id="HomePage">Allows you to configure your Home page</string>
+      <string id="HomePage_Explain">This setting lets you set up the Home page for your organization. By default, this setting isn’t configured and the App settings are used instead.
+
+If you enable this setting, you must also include the location of your website in the {URI} box.</string>
+      <string id="ItemNameDisable">Disable</string>
+      <string id="ItemNameEnable">Enable</string>
+      <string id="SendIntranetTraffictoInternetExplorer">Sends all intranet traffic over to Internet Explorer</string>
+      <string id="SendIntranetTraffictoInternetExplorer_Explain">This setting lets you decide whether to send all intranet traffic to Internet Explorer. This setting is disabled by default
+
+If you enable this setting, your intranet websites automatically open in Internet Explorer.
+
+If you disable this setting, your intranet websites will automatically open in Microsoft Edge.</string>
+    </stringTable>
+    
+    <!-- Presentation -->
+    <presentationTable>
+      <presentation id="EnterpriseModeSiteList_Presentation">
+        <textBox refId="EnterSiteListPrompt">
+          <label>Type the location (URL) of your Enterprise Mode IE website list</label>
+        </textBox>
+      </presentation>
+      <presentation id="HomePageSite_Presentation">
+        <textBox refId="HomePageSitePrompt">
+          <label>Type the location (URL) of your Home Page website</label>
+        </textBox>
+      </presentation>
+      <presentation id="Cookies">
+        <dropdownList refId="CookiesListBox" noSort="true" defaultItem="0">Configure Cookies Setting</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

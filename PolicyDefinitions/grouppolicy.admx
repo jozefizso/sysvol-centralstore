@@ -10,8 +10,34 @@
     <category name="PolicyPolicies" displayName="$(string.PolicyPolicies)">
       <parentCategory ref="windows:System" />
     </category>
+    <category name="MitOptions" displayName="$(string.MitigationOptions)">  
+      <parentCategory ref="windows:System" />  
+    </category> 
   </categories>
   <policies>
+     <policy name="FontMitigation" clientExtension="{2A8FDC61-2347-4C87-92F6-B05EB91A201A}" class="Machine" displayName="$(string.Font_List)" explainText="$(string.Font_List_Help)" presentation="$(presentation.Font_List)" key="SOFTWARE\Policies\Microsoft\Windows NT\MitigationOptions">
+      <parentCategory ref="MitOptions" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <elements>
+        <enum id="FontMitigation_DL" valueName="MitigationOptions_FontBocking" required="true">
+          <item displayName="$(string.FontMitigation_On)">
+            <value>
+              <string>1000000000000</string>
+            </value>
+          </item>
+          <item displayName="$(string.FontMitigation_Off)">
+            <value>
+              <string>2000000000000</string>
+            </value>
+          </item>
+          <item displayName="$(string.FontMitigation_Audit)">
+            <value>
+              <string>3000000000000</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy name="EnableLogonOptimization" class="Machine" displayName="$(string.EnableLogonOptimization)" explainText="$(string.EnableLogonOptimization_Help)" presentation="$(presentation.SyncModeThreshold)" key="Software\Policies\Microsoft\Windows\System" valueName="EnableLogonOptimization">
       <parentCategory ref="PolicyPolicies" />
       <supportedOn ref="windows:SUPPORTED_Windows_6_3" />

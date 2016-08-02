@@ -1522,6 +1522,11 @@ If you disable this policy or do not configure it, users can change their Intern
 Caution: This policy does not prevent users from viewing and changing Internet settings by clicking the Internet Options icon in Windows Control Panel.
 
 Also, see policies for Internet options in the \Administrative Templates\Windows Components\Internet Explorer and in \Administrative Templates\Windows Components\Internet Explorer\Internet Control Panel folders.</string>
+      <string id="IE_ExplainNoReportSiteProblems">This policy setting allows you to manage whether users can launch the report site problems dialog using a menu option.
+
+If you enable this policy setting, a menu option won’t be available in Internet Explorer settings, or in the tools menu in the desktop. Users won’t be able to use it to launch the report site problems dialog box.
+
+If you disable or do not configure this policy setting, the menu options will be available.</string>
       <string id="IE_ExplainUserProxy">Applies proxy settings to all users of the same computer.
 
 If you enable this policy, users cannot set user-specific proxy settings. They must use the zones created for all users of the computer.
@@ -3113,6 +3118,7 @@ If you do not configure this policy setting, the user can turn smooth scrolling 
       <string id="SUPPORTED_IE9">At least Internet Explorer 9.0</string>
       <string id="SUPPORTED_IE10">At least Internet Explorer 10.0</string>
       <string id="SUPPORTED_IE10WIN8">At least Internet Explorer 10.0 on Windows 8</string>
+      <string id="SUPPORTED_IE11WIN8">At least Internet Explorer 11.0 on Windows 8.1</string>
       <string id="SUPPORTED_IE11">At least Internet Explorer 11.0</string>
       <string id="SUPPORTED_IE7_NONVISTA">At least Internet Explorer 7.0. Not supported on Windows Vista</string>
       <string id="SUPPORTED_IE7VISTA">At least Internet Explorer 7.0 in Windows Vista</string>
@@ -3127,6 +3133,7 @@ If you disable or do not configure this policy setting, the user can specify the
       <string id="ToolbarButtons">Configure Toolbar Buttons</string>
       <string id="Toolbars">Toolbars</string>
       <string id="Tools_Menu">Tools menu: Disable Internet Options... menu option</string>
+      <string id="NoReportSiteProblems">Turn off the ability to launch report site problems using a menu option</string>
       <string id="TurnOnActiveXFiltering">Turn on ActiveX Filtering</string>
       <string id="UnderlineLinksPol">Turn off configuring underline links</string>
       <string id="UnderlineLinksPol_Explain">This policy setting specifies how you want links on webpages to be underlined.
@@ -3163,16 +3170,6 @@ If you disable or do not configure this policy setting, the user can specify wha
       <string id="UTF8URLQuery_Intranet">Encode query strings in UTF-8 only in Intranet URLs</string>
       <string id="UTF8URLQuery_Never">Never encode query strings in UTF-8</string>
       <string id="UTF8URLQuery_NonIntranet">Encode query strings in UTF-8 only in non-Intranet URLs</string>
-      <string id="TopResult0">Disable top result search</string>
-      <string id="TopResult1">Enable top result search</string>
-      <string id="TopResultPol">Prevent configuration of top-result search on Address bar</string>
-      <string id="TopResultPol_Explain">This policy setting allows you to specify whether a user can browse to the website of a top result when search is enabled on the Address bar. The possible options are:
-    • Disable top result search: When a user performs a search in the Address bar, a list of search results from the selected search provider is displayed in the main window.
-    • Enable top result search: When a user performs a search in the Address bar, the user is directed to an external top result website determined by the search provider, if available.
-
-If you enable this policy setting, you can choose where to direct the user after a search on the Address bar: a top-result website or a search-results webpage in the main window.
-
-If you disable or do not configure this policy setting, the user can select their preference for this behavior. Browsing to the top-result website is the default.</string>
       <string id="UseHomePage">Go directly to home page</string>
       <string id="UseHoverColor">Turn on the hover color option</string>
       <string id="UseHoverColor_Explain">This policy setting makes hyperlinks change color when the mouse pointer pauses on them.
@@ -3393,7 +3390,11 @@ If you disable or do not configure this policy setting, the user can bypass Smar
       <string id="Advanced_DisableEPMCompat">Do not allow ActiveX controls to run in Protected Mode when Enhanced Protected Mode is enabled</string>
       <string id="Advanced_EnableHttp1_1">Use HTTP 1.1</string>
       <string id="Advanced_ProxyHttp1_1">Use HTTP 1.1 through proxy connections</string>
-      <string id="Advanced_EnableSPDY3_0">Allow Internet Explorer to use the SPDY/3 network protocol</string>
+      <string id="Advanced_EnableSSL3Fallback">Allow fallback to SSL 3.0 (Internet Explorer)</string>
+      <string id="Advanced_FallbackNonProtected">Non-Protected Mode Sites</string>
+      <string id="Advanced_FallbackAll">All Sites</string>
+      <string id="Advanced_FallbackNone">No Sites</string>
+      <string id="Advanced_EnableHTTP2">Allow Internet Explorer to use the HTTP2 network protocol</string>
       <string id="Advanced_SetWinInetProtocols">Turn off encryption support</string>
       <string id="NoPrinting">Turn off Print Menu</string>
       <string id="Advanced_DisableFlipAhead">Turn off the flip ahead with page prediction feature</string>
@@ -3446,13 +3447,21 @@ If you enable this policy setting, Internet Explorer uses HTTP 1.1 through proxy
 If you disable this policy setting, Internet Explorer does not use HTTP 1.1 through proxy connections.
 
 If you do not configure this policy setting, users can configure Internet Explorer to use or not use HTTP 1.1 through proxy connections.</string>
-      <string id="Advanced_ExplainEnableSPDY3_0">This policy setting determines whether Internet Explorer uses the SPDY/3 network protocol. SPDY/3 works with HTTP requests to optimize the latency of network requests through compression, multiplexing and prioritization.
+      <string id="Advanced_ExplainEnableHTTP2">This policy setting determines whether Internet Explorer uses the HTTP2 network protocol. HTTP2 requests help optimize the latency of network requests through compression, multiplexing, and prioritization.
 
-If you enable this policy setting, Internet Explorer uses the SPDY/3 network protocol.
+If you enable this policy setting, Internet Explorer uses the HTTP2 network protocol.
 
-If you disable this policy setting, Internet Explorer won't use the SPDY/3 network protocol.
+If you disable this policy setting, Internet Explorer won't use the HTTP2 network protocol.
 
 If you don't configure this policy setting, users can turn this behavior on or off, using Internet Explorer Advanced Internet Options settings.  The default is on.</string>
+      <string id="Advanced_ExplainEnableSSL3Fallback">This policy setting allows you to block an insecure fallback to SSL 3.0. When this policy is enabled, Internet Explorer will attempt to connect to sites using SSL 3.0 or below when TLS 1.0 or greater fails.
+
+We recommend that you do not allow insecure fallback in order to prevent a man-in-the-middle attack.
+
+This policy does not affect which security protocols are enabled.
+
+If you disable this policy, system defaults will be used.
+</string>
       <string id="Advanced_ExplainSetWinInetProtocols">This policy setting allows you to turn off support for Transport Layer Security (TLS) 1.0, TLS 1.1, TLS 1.2, Secure Sockets Layer (SSL) 2.0, or SSL 3.0 in the browser. TLS and SSL are protocols that help protect communication between the browser and the target server. When the browser attempts to set up a protected communication with the target server, the browser and server negotiate which protocol and version to use. The browser and server attempt to match each other’s list of supported protocols and versions, and they select the most preferred match.
 
 If you enable this policy setting, the browser negotiates or does not negotiate an encryption tunnel by using the encryption methods that you select from the drop-down list.
@@ -3820,6 +3829,56 @@ If you disable or do not configure this policy setting, the user can use the Reo
 If you enable this policy setting, users cannot pin sites.
 
 If you disable or do not configure this policy setting, users can pin sites.</string>
+      <string id="EnterpriseModeEnable">Let users turn on and use Enterprise Mode from the Tools menu</string>
+      <string id="IE_ExplainEnterpriseModeEnable">This policy setting lets you decide whether users can turn on Enterprise Mode for websites with compatibility issues. Optionally, this policy also lets you specify where to get reports (through post messages) about the websites for which users turn on Enterprise Mode using the Tools menu.
+
+If you turn this setting on, users can see and use the Enterprise Mode option from the Tools menu. If you turn this setting on, but don't specify a report location, Enterprise Mode will still be available to your users, but you won't get any reports.
+
+If you disable or don't configure this policy setting, the menu option won't appear and users won't be able to run websites in Enterprise Mode.</string>
+      <string id="VerMgmtDisable">Turn off blocking of outdated ActiveX controls for Internet Explorer</string>
+      <string id="IE_ExplainVerMgmtDisable">This policy setting determines whether Internet Explorer blocks specific outdated ActiveX controls. Outdated ActiveX controls are never blocked in the Intranet Zone.
+
+If you enable this policy setting, Internet Explorer stops blocking outdated ActiveX controls.
+
+If you disable or don't configure this policy setting, Internet Explorer continues to block specific outdated ActiveX controls.
+
+For more information, see "Outdated ActiveX Controls" in the Internet Explorer TechNet library.</string>
+      <string id="VerMgmtAuditModeEnable">Turn on ActiveX control logging in Internet Explorer</string>
+      <string id="IE_ExplainVerMgmtAuditModeEnable">This policy setting determines whether Internet Explorer saves log information for ActiveX controls.
+
+If you enable this policy setting, Internet Explorer logs ActiveX control information (including the source URI that loaded the control and whether it was blocked) to a local file.
+
+If you disable or don't configure this policy setting, Internet Explorer won't log ActiveX control information.
+
+Note that you can turn this policy setting on or off regardless of the "Turn off blocking of outdated ActiveX controls for Internet Explorer" or "Turn off blocking of outdated ActiveX controls for Internet Explorer on specific domains" policy settings.
+
+For more information, see "Outdated ActiveX Controls" in the Internet Explorer TechNet library.</string>
+      <string id="VerMgmtDomainAllowlist">Turn off blocking of outdated ActiveX controls for Internet Explorer on specific domains</string>
+      <string id="IE_ExplainVerMgmtDomainAllowlist">This policy setting allows you to manage a list of domains on which Internet Explorer will stop blocking outdated ActiveX controls. Outdated ActiveX controls are never blocked in the Intranet Zone.
+
+If you enable this policy setting, you can enter a custom list of domains for which outdated ActiveX controls won't be blocked in Internet Explorer. Each domain entry must be formatted like one of the following:
+
+1. "domain.name.TLD". For example, if you want to include *.contoso.com/*, use "contoso.com"
+2. "hostname". For example, if you want to include http://example, use "example"
+3. "file:///path/filename.htm". For example, use "file:///C:/Users/contoso/Desktop/index.htm"
+
+If you disable or don't configure this policy setting, the list is deleted and Internet Explorer continues to block specific outdated ActiveX controls on all domains in the Internet Zone.
+
+For more information, see "Outdated ActiveX Controls" in the Internet Explorer TechNet library.</string>
+      <string id="VerMgmtDisableRunThisTime">Remove "Run this time" button for outdated ActiveX controls in Internet Explorer </string>
+      <string id="IE_ExplainVerMgmtDisableRunThisTime">This policy setting allows you to stop users from seeing the "Run this time" button and from running specific outdated ActiveX controls in Internet Explorer.
+
+If you enable this policy setting, users won't see the "Run this time" button on the warning message that appears when Internet Explorer blocks an outdated ActiveX control.
+
+If you disable or don't configure this policy setting, users will see the "Run this time" button on the warning message that appears when Internet Explorer blocks an outdated ActiveX control. Clicking this button lets the user run the outdated ActiveX control once.
+
+For more information, see "Outdated ActiveX Controls" in the Internet Explorer TechNet library.</string>
+      <string id="EnterpriseModeSiteList">Use the Enterprise Mode IE website list</string>
+      <string id="IE_ExplainEnterpriseModeSiteList">This policy setting lets you specify where to find the list of websites you want opened using Enterprise Mode IE, instead of Standard mode, because of compatibility issues. Users can't edit this list.
+
+If you enable this policy setting, Internet Explorer downloads the website list from your location (HKCU or HKLM\Software\policies\Microsoft\Internet Explorer\Main\EnterpriseMode), opening all listed websites using Enterprise Mode IE.
+
+If you disable or don't configure this policy setting, Internet Explorer opens all websites using Standards mode.</string>
       <string id="CategoryGeneralPage">General Page</string>
       <string id="CategoryBrowsingHistory">Browsing History</string>
       <string id="DefaultDomainCacheLimitInMB">Set default storage limits for websites</string>
@@ -3927,8 +3986,51 @@ If you enable this policy setting, phone number detection is turned off. Users w
 If you disable this policy setting, phone number detection is turned on. Users won't be able to modify this setting.
 
 If you don't configure this policy setting, users can turn this behavior on or off, using Internet Explorer settings. The default is on.</string>
+      <string id="SiteDiscoveryEnableXML">Turn on Site Discovery XML output</string>
+      <string id="SiteDiscoveryEnableWMI">Turn on Site Discovery WMI output</string>
+      <string id="SiteDiscoveryDomainAllowList">Limit Site Discovery output by Domain</string>
+      <string id="SiteDiscoveryZoneAllowList">Limit Site Discovery output by Zone</string>
+      <string id="IE_Explain_SiteDiscoveryEnableXML">This policy setting allows you to manage the XML output functionality of the Internet Explorer Site discovery Toolkit(SDTK). When enabled the feature will write data collected to an XML file at a location specified when setting this policy. When disabled, no data will be written to the XML file. Enabling or disabling this setting will not impact other output methods available for the SDTK.</string>
+      <string id="IE_Explain_SiteDiscoveryEnableWMI">This policy setting allows you to manage the WMI output functionality of the Internet Explorer Site discovery Toolkit(SDTK). When enabled the feature will write data collected to a WMI class which can then be aggregated using a client management solution(SCCM) or other means. When disabled, no data will be written to the WMI class. Enabling or disabling this setting will not impact other output methods available for the SDTK.</string>
+      <string id="IE_Explain_SiteDiscoveryDomainAllowList">This policy setting allows you to control which Domains are included in the discovery functionality of the Internet Explorer Site discovery Toolkit(SDTK). When enabled the feature will collect data from sites that are part of the domains configured in the policy. When disabled, or not configured, all domains will be included in site discovery. This policy can be used in conjunction with other policies controlling sites included in Site Discovery.
+
+To configure the domain(s) included in data collection for the IE Site Discovery Toolkit, Add one domain per line to the text box. For example:
+
+microsoft.sharepoint.com
+outlook.com
+onedrive.com
+timecard.contoso.com
+LOBApp.contoso.com</string>
+      <string id="IE_Explain_SiteDiscoveryZoneAllowList">This policy setting allows you to control which site zones are included in the discovery functionality of the Internet Explorer Site discovery Toolkit(SDTK). When enabled the feature will collect data from sites that are part of the zones configured in the policy. When disabled or not configured all Zones will be included in site discovery. This policy can be used in conjunction with other policies controlling sites included in Site Discovery.
+
+To configure zone(s) included in site discovery, a binary number is formed based on the selected zones. The decimal representation of this number is used to represent this number in policy. For example:
+
+• 2 - Intranet site zone only
+  Binary Representation - 00010
+	• 0 - Restricted Sites Zone
+	• 0 - Internet Zone
+	• 0 - Trusted Sites Zone
+	• 1 - Local Intranet Zone
+	• 0 - Local Machine Zone
+• 6 - Intranet and Trusted site zones only
+  Binary Representation - 00110
+	• 0 - Restricted Sites Zone
+	• 0 - Internet Zone
+	• 1 - Trusted Sites Zone
+	• 1 - Local Intranet Zone
+	• 0 - Local Machine Zone
+• 22 - Trusted, Intranet, and Restricted site zones only 
+  Binary Representation - 10110
+	• 1 - Restricted Sites Zone
+	• 0 - Internet Zone
+	• 1 - Trusted Sites Zone
+	• 1 - Local Intranet Zone
+	• 0 - Local Machine Zone</string>
     </stringTable>
     <presentationTable>
+      <presentation id="VerMgmtDomainAllowlist_1">
+        <listBox refId="DomainList">Domain allow list</listBox>
+      </presentation>
       <presentation id="AddonManagement_AddOnList_1">
         <listBox refId="AddOnList">Add-on List</listBox>
       </presentation>
@@ -3979,6 +4081,16 @@ If you don't configure this policy setting, users can turn this behavior on or o
       </presentation>
       <presentation id="Disable_Managing_Safety_Filter_IE9">
         <dropdownList refId="IE9SafetyFilterOptions">Select SmartScreen Filter mode</dropdownList>
+      </presentation>
+      <presentation id="EnterpriseModeEnable_1">
+        <textBox refId="EnterReportBackPrompt">
+          <label>Type the location (URL) of where to receive reports about the websites for which users turn on and use Enterprise Mode</label>
+        </textBox>
+      </presentation>
+      <presentation id="EnterpriseModeSiteList_1">
+        <textBox refId="EnterSiteListPrompt">
+          <label>Type the location (URL) of your Enterprise Mode IE website list</label>
+        </textBox>
       </presentation>
       <presentation id="Flash">
         <checkBox refId="Flash">Shockwave Flash</checkBox>
@@ -4468,9 +4580,6 @@ If you don't configure this policy setting, users can turn this behavior on or o
         <checkBox refId="Btn_Paste">Show Paste button</checkBox>
         <checkBox refId="Btn_Encoding">Show Encoding button</checkBox>
       </presentation>
-      <presentation id="TopResultPol">
-        <dropdownList refId="TopResult" noSort="true" defaultItem="0">When searching from the Address bar:</dropdownList>
-      </presentation>
       <presentation id="UnderlineLinksPol">
         <dropdownList refId="UnderlineLinks" noSort="true" defaultItem="0">Underline links</dropdownList>
       </presentation>
@@ -4495,6 +4604,9 @@ If you don't configure this policy setting, users can turn this behavior on or o
       <presentation id="Advanced_SetWinInetProtocols">
         <!-- defaultItem is zero based index into the item enumeration defined in inetres.admx. We want this to point at 'Use SSL 3.0 and TLS 1.0', the current default for IE -->
         <dropdownList refId="Advanced_WinInetProtocolOptions" noSort="true" defaultItem="6">Secure Protocol combinations</dropdownList>
+      </presentation>
+      <presentation id="Advanced_EnableSSL3Fallback">
+        <dropdownList refId="Advanced_EnableSSL3FallbackOptions" noSort="true" defaultItem="0">Allow insecure fallback for:</dropdownList>
       </presentation>
       <presentation id="NewTabAction_1">
         <dropdownList refId="NewTabActionOptions" noSort="true" defaultItem="2">New tab behavior</dropdownList>
@@ -4554,6 +4666,17 @@ If you don't configure this policy setting, users can turn this behavior on or o
       </presentation>
       <presentation id="DefaultLinksView_1">
         <dropdownList refId="DefaultViewOptions" noSort="true" defaultItem="0">Default browser launch behavior for links</dropdownList>
+      </presentation>
+      <presentation id="SiteDiscoveryEnableXML">
+        <textBox refId="SiteDiscoveryXMLPath">
+          <label>Output path</label>
+        </textBox>
+      </presentation>
+      <presentation id="SiteDiscoveryZoneAllowList">
+        <decimalTextBox refId="SiteDiscoveryZoneAllowList" defaultValue="31">Zone mask</decimalTextBox>
+      </presentation>
+      <presentation id="SiteDiscoveryDomainAllowList">
+        <multiTextBox refId="SiteDiscoveryDomainAllowList">Domain list</multiTextBox>
       </presentation>
     </presentationTable>
   </resources>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="LanmanWorkstation" namespace="Microsoft.Policies.LanmanWorkstation" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="Cat_LanmanWorkstation" displayName="$(string.Cat_LanmanWorkstation)">
+      <parentCategory ref="windows:Network" />
+    </category>
+  </categories>
+  <policies>
+    <policy
+        class="Machine"
+        displayName="$(string.Pol_CipherSuiteOrder_Name)"
+        explainText="$(string.Pol_CipherSuiteOrder_Help)"
+        key="Software\Policies\Microsoft\Windows\LanmanWorkstation"
+        name="Pol_CipherSuiteOrder"
+        presentation="$(presentation.Pol_CipherSuiteOrder)"
+        >
+      <parentCategory ref="Cat_LanmanWorkstation"/>
+      <!-- ABRACADABRA_THRESHOLD - this value needs to be updated once the Threshold version is defined to indicate that the policy only applies to Threshold and later versions of Windows -->
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <elements>
+        <multiText
+            id="MultiText_CipherSuiteOrder"
+            valueName="CipherSuiteOrder"
+            />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

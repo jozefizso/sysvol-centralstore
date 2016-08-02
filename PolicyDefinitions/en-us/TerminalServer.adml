@@ -6,13 +6,13 @@
   <resources>
     <stringTable>
       <string id="TS_SUPPORTED_Windows8_or_ARM">At least Windows 8 or Windows RT</string>
-      <string id="TS_SUPPORTED_Windows8_Server">At least Windows Server 2012 R2</string>
-      <string id="TS_SUPPORTED_Windows8_Enterprise_AND_Server"> At least Windows 8 Enterprise or Windows Server 2012 R2</string>
+      <string id="TS_SUPPORTED_Windows8_Server">At least Windows Server Technical Preview 2</string>
+      <string id="TS_SUPPORTED_Windows8_Enterprise_AND_Server"> At least Windows 8 Enterprise or Windows Server Technical Preview 2</string>
       <string id="TS_SUPPORTED_ONLY_Windows7_OR_SERVER2K8R2">Windows 7 or Windows Server 2008 R2 (and their subsequent Service Packs) only</string>
       <string id="TS_SUPPORTED_ONLY_LEGACY">Windows Server 2008 R2, Windows Server 2008, Windows Server 2003, Windows 7, Windows Vista, and Windows XP</string>
       <string id="TS_SUPPORTED_Windows7_Server">At least Windows Server 2008 R2</string>
       <string id="TS_SUPPORTED_Windows7">At least Windows 7</string>
-      <string id="TS_SUPPORTED_Windows8_Server_With_RDSH"> At least Windows Server 2012 R2 with RDSH role installed</string>
+      <string id="TS_SUPPORTED_Windows8_Server_With_RDSH"> At least Windows Server Technical Preview 2 with RDSH role installed</string>
       <string id="TS_SUPPORTED_Windows7_OR_SERVER2K8R2_SP1">At least Windows 7 with Service Pack 1 or Windows Server 2008 R2 with Service Pack 1</string>
       <string id="TS_SUPPORTED_Vista_SP1">At least Windows Vista with Service Pack 1</string>
       <string id="TS_SUPPORTED_Win2k">At least Windows 2000 Terminal Services</string>
@@ -45,7 +45,7 @@
       <string id="TS_AUDIOMAP_EXPLAIN">This policy setting allows you to specify whether users can redirect the remote computer's audio and video output in a Remote Desktop Services session.
 Users can specify where to play the remote computer's audio output by configuring the remote audio settings on the Local Resources tab in Remote Desktop Connection (RDC). Users can choose to play the remote audio on the remote computer or on the local computer. Users can also choose to not play the audio. Video playback can be configured by using the videoplayback setting in a Remote Desktop Protocol (.rdp) file. By default, video playback is enabled.
 
-By default, audio and video playback redirection is not allowed when connecting to a computer running Windows Server 2008 R2, Windows Server 2008, or Windows Server 2003. Audio and video playback redirection is allowed by default when connecting to a computer running Windows 8, Windows Server 2012 R2, Windows 7, Windows Vista, or Windows XP Professional.
+By default, audio and video playback redirection is not allowed when connecting to a computer running Windows Server 2008 R2, Windows Server 2008, or Windows Server 2003. Audio and video playback redirection is allowed by default when connecting to a computer running Windows 8, Windows Server Technical Preview 2, Windows 7, Windows Vista, or Windows XP Professional.
 
 If you enable this policy setting, audio and video playback redirection is allowed.
 
@@ -160,8 +160,8 @@ If you do not configure this policy setting, Clipboard redirection is not specif
 
         Note:
         1.	Setting the color depth to 24 bits is only supported on Windows Server 2003 and Windows XP Professional.
-        2.	The value specified in this policy setting is not applied to connections from client computers that are using at least Remote Desktop Protocol 8.0 (computers running at least Windows 8 or Windows Server 2012 R2). The 32-bit color depth format is always used for these connections.
-        3.	For connections from client computers that are using Remote Desktop Protocol 7.1 or earlier versions that are connecting to computers running at least Windows 8 or Windows Server 2012 R2, the minimum of the following values is used as the color depth format:
+        2.	The value specified in this policy setting is not applied to connections from client computers that are using at least Remote Desktop Protocol 8.0 (computers running at least Windows 8 or Windows Server Technical Preview 2). The 32-bit color depth format is always used for these connections.
+        3.	For connections from client computers that are using Remote Desktop Protocol 7.1 or earlier versions that are connecting to computers running at least Windows 8 or Windows Server Technical Preview 2, the minimum of the following values is used as the color depth format:
         a.	Value specified by this policy setting
         b.	Maximum color depth supported by the client
         c.	Value requested by the client
@@ -181,15 +181,16 @@ If you disable this policy setting, Remote Desktop Services always allows COM po
 If you do not configure this policy setting, COM port redirection is not specified at the Group Policy level. 
 
 </string>
-      <string id="TS_DEVMAP_EXPLAIN">This policy setting allows you to control the redirection of supported Plug and Play devices, such as Windows Portable Devices, to the remote computer in a Remote Desktop Services session.
+      <string id="TS_DEVMAP_EXPLAIN">This policy setting lets you control the redirection of supported Plug and Play and RemoteFX USB devices, such as Windows Portable Devices, to the remote computer in a Remote Desktop Services session. 
 
-By default, Remote Desktop Services allows redirection of supported Plug and Play devices. Users can use the More option on the Local Resources tab of Remote Desktop Connection to choose the supported Plug and Play devices to redirect to the remote computer.
+By default, Remote Desktop Services does not allow redirection of supported Plug and Play and RemoteFX USB devices.
 
-If you enable this policy setting, users cannot redirect their supported Plug and Play devices to the remote computer.
+If you disable this policy setting, users can redirect their supported Plug and Play devices to the remote computer. Users can use the More option on the Local Resources tab of Remote Desktop Connection to choose the supported Plug and Play devices to redirect to the remote computer.
 
-If you disable or do not configure this policy setting, users can redirect their supported Plug and Play devices to the remote computer.
+If you enable this policy setting, users cannot redirect their supported Plug and Play devices to the remote computer.If you do not configure this policy setting, users can redirect their supported Plug and Play devices to the remote computer only if it is running Windows Server 2012 R2 and earlier versions.
 
 Note: You can disable redirection of specific types of supported Plug and Play devices by using Computer Configuration\Administrative Templates\System\Device Installation\Device Installation Restrictions policy settings.
+
 </string>
       <string id="TS_MAXMONITOR_EXPLAIN">This policy setting allows you to limit the number of monitors that a user can use to display a Remote Desktop Services session. Limiting the number of monitors to display a Remote Desktop Services session can improve connection performance, particularly over slow links, and reduce server load.
 
@@ -251,7 +252,7 @@ If the status is set to Not Configured, the default behavior applies.</string>
       <string id="TS_SECURITY">Security</string>
       <string id="TS_SECURITY_Help">Controls security settings on an RD Session Host server</string>
       <string id="TS_ENCRYPTION_CLIENT_COMPATIBLE">Client Compatible</string>
-      <string id="TS_ENCRYPTION_EXPLAIN">This policy setting specifies whether to require the use of a specific encryption level to secure communications between client computerss and RD Session Host servers during Remote Desktop Protocol (RDP) connections.
+      <string id="TS_ENCRYPTION_EXPLAIN">Specifies whether to require the use of a specific encryption level to secure communications between client computers and RD Session Host servers during Remote Desktop Protocol (RDP) connections. This policy only applies when you are using native RDP encryption. However, native RDP encryption (as opposed to SSL encryption) is not recommended. This policy does not apply to SSL encryption.
 
 If you enable this policy setting, all communications between clients and RD Session Host servers during remote connections must use the encryption method specified in this setting. By default, the encryption level is set to High. The following encryption methods are available:
 
@@ -261,7 +262,7 @@ If you enable this policy setting, all communications between clients and RD Ses
 
 * Low: The Low setting encrypts only data sent from the client to the server by using 56-bit encryption.
 
-If you disable or do not configure this setting, the encryption level to be used for remote connections to RD Session Host servers is not enforced through Group Policy. 
+If you disable or do not configure this setting, the encryption level to be used for remote connections to RD Session Host servers is not enforced through Group Policy.
 
 Important
 
@@ -544,7 +545,7 @@ Notes:
       <string id="TS_SD_Loc">Configure RD Connection Broker server name</string>
       <string id="TS_SD_Loc_Explain">This policy setting allows you to specify the RD Connection Broker server that the RD Session Host server uses to track and redirect user sessions for a load-balanced RD Session Host server farm. The specified server must be running the Remote Desktop Connection Broker service. All RD Session Host servers in a load-balanced farm should use the same RD Connection Broker server.
 
-If you enable this policy setting, you must specify the RD Connection Broker server by using its fully qualified domain name (FQDN). In Windows Server 2012 R2, for a high availability setup with multiple RD Connection Broker servers, you must provide a semi-colon separated list of the FQDNs of all the RD Connection Broker servers.
+If you enable this policy setting, you must specify the RD Connection Broker server by using its fully qualified domain name (FQDN). In Windows Server Technical Preview 2, for a high availability setup with multiple RD Connection Broker servers, you must provide a semi-colon separated list of the FQDNs of all the RD Connection Broker servers.
 
 If you disable or do not configure this policy setting, the policy setting is not specified at the Group Policy level.
 
@@ -563,20 +564,20 @@ Notes:
 
 If you enable this policy setting, all communications between clients and RD Session Host servers during remote connections must use the security method specified in this setting. The following security methods are available:
 
-* Negotiate: The Negotiate method enforces the most secure method that is supported by the client. If Transport Layer Security (TLS) version 1.0 is supported, it is used to authenticate the RD Session Host server. If TLS is not supported, native Remote Desktop Protocol (RDP) encryption is used to secure communications, but the RD Session Host server is not authenticated.
+* Negotiate: The Negotiate method enforces the most secure method that is supported by the client. If Transport Layer Security (TLS) version 1.0 is supported, it is used to authenticate the RD Session Host server. If TLS is not supported, native Remote Desktop Protocol (RDP) encryption is used to secure communications, but the RD Session Host server is not authenticated. Native RDP encryption (as opposed to SSL encryption) is not recommended.
 
-* RDP: The RDP method uses native RDP encryption to secure communications between the client and RD Session Host server. If you select this setting, the RD Session Host server is not authenticated.
+* RDP: The RDP method uses native RDP encryption to secure communications between the client and RD Session Host server. If you select this setting, the RD Session Host server is not authenticated. Native RDP encryption (as opposed to SSL encryption) is not recommended.
 
-* SSL (TLS 1.0): The SSL method requires the use of TLS 1.0 to authenticate the RD Session Host server. If TLS is not supported, the connection fails.
+* SSL (TLS 1.0): The SSL method requires the use of TLS 1.0 to authenticate the RD Session Host server. If TLS is not supported, the connection fails. This is the recommended setting for this policy.
 
 If you disable or do not configure this policy setting, the security method to be used for remote connections to RD Session Host servers is not specified at the Group Policy level.
 </string>
       <string id="TS_SECURITY_LAYER_NEGOTIATE">Negotiate</string>
       <string id="TS_SECURITY_LAYER_POLICY">Require use of specific security layer for remote (RDP) connections</string>
       <string id="TS_SECURITY_LAYER_RDP">RDP</string>
-      <string id="TS_SECURITY_LAYER_SSL">SSL (TLS 1.0)</string>
+      <string id="TS_SECURITY_LAYER_SSL">SSL</string>
       <string id="TS_Session_End_On_Limit">End session when time limits are reached</string>
-      <string id="TS_SESSION_END_ON_LIMIT_EXPLAIN">This policy setting Sspecifies whether to end a Remote Desktop Services session that has timed out instead of disconnecting it.
+      <string id="TS_SESSION_END_ON_LIMIT_EXPLAIN">This policy setting specifies whether to end a Remote Desktop Services session that has timed out instead of disconnecting it.
 
 You can use this setting to direct Remote Desktop Services to end a session (that is, the user is logged off and the session is deleted from the server) after time limits for active or idle sessions are reached. By default, Remote Desktop Services disconnects sessions that reach their time limits.
 
@@ -813,7 +814,7 @@ Note:  This policy setting is ignored if the "Prevent Roaming Profile changes fr
       <string id="TS_CERTIFICATE_TEMPLATE_POLICY">Server authentication certificate template</string>
       <string id="TS_CERTIFICATE_TEMPLATE_EXPLAIN">This policy setting allows you to specify the name of the certificate template that determines which certificate is automatically selected to authenticate an RD Session Host server.
 
-A certificate is needed to authenticate an RD Session Host server when SSL (TLS 1.0) is used to secure communication between a client and an RD Session Host server during RDP connections.
+A certificate is needed to authenticate an RD Session Host server when TLS 1.0, 1.1 or 1.2 is used to secure communication between a client and an RD Session Host server during RDP connections.
 
 If you enable this policy setting, you need to specify a certificate template name. Only certificates created by using the specified certificate template will be considered when a certificate to authenticate the RD Session Host server is automatically selected. Automatic certificate selection only occurs when a specific certificate has not been selected.
 
@@ -1019,9 +1020,9 @@ By default, Remote Desktop Connection sessions that use RemoteFX are optimized f
       <string id="TS_RemoteDesktopVirtualGraphics_ScreenCaptureRate_Highest">Highest (best quality)</string>
       <string id="TS_RemoteDesktopVirtualGraphics_ScreenCaptureRate_Medium">Medium (default)</string>
       <string id="TS_RemoteDesktopVirtualGraphics_ScreenCaptureRate_Lowest">Lowest</string>
-      <string id="TS_RemoteDesktopVirtualGraphics_ScreeenImageQuality_Highest">Highest (best quality)</string>
-      <string id="TS_RemoteDesktopVirtualGraphics_ScreeenImageQuality_Medium">Medium (default)</string>
-      <string id="TS_RemoteDesktopVirtualGraphics_ScreeenImageQuality_Lowest">Lowest</string>
+      <string id="TS_RemoteDesktopVirtualGraphics_ScreenImageQuality_Highest">Highest (best quality)</string>
+      <string id="TS_RemoteDesktopVirtualGraphics_ScreenImageQuality_Medium">Medium (default)</string>
+      <string id="TS_RemoteDesktopVirtualGraphics_ScreenImageQuality_Lowest">Lowest</string>
 
       <string id="TS_SERVER_LEGACY_RFX">Enable RemoteFX encoding for RemoteFX clients designed for Windows Server 2008 R2 SP1</string>
       <string id="TS_SERVER_LEGACY_RFX_EXPLAIN">
@@ -1047,7 +1048,7 @@ Note: RemoteApp programs that are installed through RemoteApp and Desktop Connec
 
 If you enable this policy setting, you must specify if you would like RDP to use UDP.
 
-You can select one of the following options: "Use both UDP and TCP (default)", "Use only TCP" or "Use either UDP or TCP" 
+You can select one of the following options: "Use both UDP and TCP", "Use only TCP" or "Use either UDP or TCP (default)" 
 
 If you select "Use either UDP or TCP" and the UDP connection is successful, most of the RDP traffic will use UDP.
 
@@ -1253,7 +1254,7 @@ If you disable or do not configure this policy setting, the Start screen is show
       </presentation>
       <presentation id="TS_RemoteDesktopVirtualGraphics">
         <dropdownList refId="TS_RemoteDesktopVirtualGraphics_ScreenCaptureRate" noSort="true" defaultItem="1">Screen capture rate (frames per second):</dropdownList>
-        <dropdownList refId="TS_RemoteDesktopVirtualGraphics_ScreeenImageQuality" noSort="true" defaultItem="1">Screen Image Quality:</dropdownList>
+        <dropdownList refId="TS_RemoteDesktopVirtualGraphics_ScreenImageQuality" noSort="true" defaultItem="1">Screen Image Quality:</dropdownList>
       </presentation>
       <presentation id="TS_RADC_DefaultConnection">
         <textBox refId="TS_RADC_DefaultConnectionURL">

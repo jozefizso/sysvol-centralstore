@@ -52,6 +52,23 @@
           <range ref="products:MicrosoftWindows" minVersionIndex="3" maxVersionIndex="8"/>  
         </or>  
       </definition> 
+
+      <!--At least Windows XP Professional Service Pack 1 or At least Windows 2000 Service Pack 3 through Windows 8.1 or Windows Server 2012 R2 with most current service pack-->
+      <definition name="WU_SUPPORTED_Win2kSP3_Or_XPSP1_Through_Win81_or_Server2012R2" displayName="$(string.WU_SUPPORTED_Win2kSP3_Or_XPSP1_Through_Win81_or_Server2012R2)">
+        <or>
+          <range ref="products:MicrosoftWindows2000" minVersionIndex="3"/>
+          <range ref="products:MicrosoftWindowsXP" minVersionIndex="2"/>
+          <range ref="products:MicrosoftWindows" minVersionIndex="4" maxVersionIndex="12"/>
+        </or>
+      </definition>
+
+      <!--At least Windows Vista through Windows 8.1 or Windows Server 2012 R2 with most current service pack-->
+      <definition name="WU_SUPPORTED_WindowsVista_Through_Win81_or_Server2012R2" displayName="$(string.WU_SUPPORTED_WindowsVista_Through_Win81_or_Server2012R2)">
+        <or>
+          <range ref="products:MicrosoftWindows" minVersionIndex="4" maxVersionIndex="12"/>
+        </or>
+      </definition>
+      
     </definitions>
   </supportedOn>
 
@@ -103,7 +120,7 @@
     </policy>
     <policy name="RemoveWindowsUpdate" class="User" displayName="$(string.RemoveWindowsUpdate)" explainText="$(string.RemoveWindowsUpdate_Help)" presentation="$(presentation.RemoveWindowsUpdate)" key="Software\Microsoft\Windows\CurrentVersion\Policies\WindowsUpdate" valueName="DisableWindowsUpdateAccess">
       <parentCategory ref="WindowsUpdateCat" />
-      <supportedOn ref="windows:SUPPORTED_Win2kSP3_Or_XPSP1" />
+      <supportedOn ref="WU_SUPPORTED_Win2kSP3_Or_XPSP1_Through_Win81_or_Server2012R2" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
@@ -361,7 +378,7 @@
     </policy>
     <policy name="ElevateNonAdmins_Title" class="Machine" displayName="$(string.ElevateNonAdmins_Title)" explainText="$(string.ElevateNonAdmins_Help)" key="Software\Policies\Microsoft\Windows\WindowsUpdate" valueName="ElevateNonAdmins">
       <parentCategory ref="WindowsUpdateCat" />
-      <supportedOn ref="windows:SUPPORTED_Win2kSP3_Or_XPSP1" />
+      <supportedOn ref="WU_SUPPORTED_Win2kSP3_Or_XPSP1_Through_Win81_or_Server2012R2" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
@@ -371,7 +388,7 @@
     </policy>
     <policy name="ImmediateInstall_Title" class="Machine" displayName="$(string.ImmediateInstall_Title)" explainText="$(string.ImmediateInstall_Help)" key="Software\Policies\Microsoft\Windows\WindowsUpdate\AU" valueName="AutoInstallMinorUpdates">
       <parentCategory ref="WindowsUpdateCat" />
-      <supportedOn ref="windows:SUPPORTED_Win2kSP3_Or_XPSP1" />
+      <supportedOn ref="WU_SUPPORTED_Win2kSP3_Or_XPSP1_Through_Win81_or_Server2012R2" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
@@ -381,7 +398,7 @@
     </policy>
     <policy name="IncludeRecommendedUpdates_Title" class="Machine" displayName="$(string.IncludeRecommendedUpdates_Title)" explainText="$(string.IncludeRecommendedUpdates_Help)" key="Software\Policies\Microsoft\Windows\WindowsUpdate\AU" valueName="IncludeRecommendedUpdates">
       <parentCategory ref="WindowsUpdateCat" />
-      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <supportedOn ref="WU_SUPPORTED_WindowsVista_Through_Win81_or_Server2012R2" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
@@ -515,5 +532,20 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DeferUpgrade"
+        class="Machine"
+        displayName="$(string.DeferUpgrade_Title)"
+        explainText="$(string.DeferUpgrade_Help)"
+        key="Software\Policies\Microsoft\Windows\WindowsUpdate"
+        valueName="DeferUpgrade">
+        <parentCategory ref="WindowsUpdateCat" />
+        <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+        <enabledValue>
+            <decimal value="1" />
+        </enabledValue>
+        <disabledValue>
+            <decimal value="0" />
+        </disabledValue>
+    </policy>  
   </policies>
 </policyDefinitions>
