@@ -12,7 +12,7 @@
       <string id="ClassicShell">Turn on Classic Shell</string>
       <string id="ClassicShell_Help">This setting allows an administrator to revert specific Windows Shell behavior to classic Shell behavior.
 
-If you enable this setting, users cannot configure their system to open items by single-clicking (such as in Mouse in Control Panel). As a result, the user interface looks and operates like the interface for Windows NT 4.0, and users cannot restore the new features. 
+If you enable this setting, users cannot configure their system to open items by single-clicking (such as in Mouse in Control Panel). As a result, the user interface looks and operates like the interface for Windows NT 4.0, and users cannot restore the new features.
 Enabling this policy will also turn off the preview pane and set the folder options for File Explorer to Use classic folders view and disable the users ability to change these options.
 
 If you disable or not configure this policy, the default File Explorer behavior is applied to the user.
@@ -170,7 +170,7 @@ To see an example of the standard Open dialog box, start Wordpad and, on the Fil
 
 Note: In Windows Vista, this policy  setting applies only to applications that are using the Windows XP common dialog box style. This policy setting does not apply to the new Windows Vista common dialog box style. It is a requirement for third-party applications with Windows 2000 or later certification to adhere to this setting.</string>
       <string id="NoFolderOptions">Do not allow Folder Options to be opened from the Options button on the View tab of the ribbon</string>
-      <string id="NoFolderOptions_Help">This policy setting allows you to prevent users from accessing Folder Options through the View tab on the ribbon in File Explorer. 
+      <string id="NoFolderOptions_Help">This policy setting allows you to prevent users from accessing Folder Options through the View tab on the ribbon in File Explorer.
 
 Folder Options allows users to change the way files and folders open, what appears in the navigation pane, and other advanced view settings.
 
@@ -295,9 +295,9 @@ The valid items you may display in the Places Bar are:
 
 2) Shortcuts to remote folders -- (\\server\share)
 
-3) FTP folders 
+3) FTP folders
 
-4) web folders 
+4) web folders
 
 5) Common Shell folders.
 
@@ -354,7 +354,7 @@ If you disable or do not configure this policy setting, File Explorer shows snip
       <string id="CheckSameSourceAndTargetForFRAndDFS_ExplainText">This policy setting allows you to prevent data loss when you change the target location for Folder Redirection, and the new and old targets point to the same network share, but have different network paths.
 
 If you enable this policy setting, Folder Redirection creates a temporary file in the old location in order to verify that new and old locations point to the same network share. If both new and old locations point to the same share, the target path is updated and files are not copied or deleted.  The temporary file is deleted.
- 
+
 If you disable or do not configure this policy setting, Folder Redirection does not create a temporary file and functions as if both new and old locations point to different shares when their network paths are different.
 
 Note: If the paths point to different network shares, this policy setting is not required.  If the paths point to the same network share, any data contained in the redirected folders is deleted if this policy setting is not enabled.</string>
@@ -387,7 +387,7 @@ This disables access to user-defined properties, and properties stored in NTFS s
       </string>
       <string id="NoStrCmpLogical_DisplayName">Turn off numerical sorting in File Explorer</string>
       <string id="NoStrCmpLogical_ExplainText">
-This policy setting allows you to have file names sorted literally (as in Windows 2000 and earlier) rather than in numerical order. 
+This policy setting allows you to have file names sorted literally (as in Windows 2000 and earlier) rather than in numerical order.
 If you enable this policy setting, File Explorer will sort file names by each digit in a file name (for example, 111 &lt; 22 &lt; 3).
 If you disable or do not configure this policy setting, File Explorer will sort file names by increasing number value (for example, 3 &lt; 22 &lt; 111).
       </string>
@@ -444,34 +444,29 @@ If you enable this policy setting, administrators can specify a path where all d
 If you disable or do not configure this policy setting, no changes are made to the location of the default Library definition files.
       </string>
       <string id="EnableSmartScreen">Configure Windows SmartScreen</string>
-      <string id="SmartScreen_Off">Turn off SmartScreen</string>
-      <string id="SmartScreen_Prompt">Give user a warning before running downloaded unknown software</string>
-      <string id="SmartScreen_RequireAdmin">Require approval from an administrator before running downloaded unknown software</string>
       <string id="EnableSmartScreen_Help">This policy setting allows you to manage the behavior of Windows SmartScreen. Windows SmartScreen helps keep PCs safer by warning users before running unrecognized programs downloaded from the Internet. Some information is sent to Microsoft about files and programs run on PCs with this feature enabled.
 
 If you enable this policy setting, Windows SmartScreen behavior may be controlled by setting one of the following options:
 
-• Require approval from an administrator before running downloaded unknown software
 • Give user a warning before running downloaded unknown software
 • Turn off SmartScreen
 
 If you disable or do not configure this policy setting, Windows SmartScreen behavior is managed by administrators on the PC by using Windows SmartScreen Settings in Security and Maintenance.
 
 Options:
-• Require approval from an administrator before running downloaded unknown software
 • Give user a warning before running downloaded unknown software
 • Turn off SmartScreen
 
 </string>
       <string id="ShowLockOption">Show lock in the user tile menu</string>
-      <string id="ShowLockOption_Help">Shows or hides lock from the user tile menu. 
+      <string id="ShowLockOption_Help">Shows or hides lock from the user tile menu.
 If you enable this policy setting, the lock option will be shown in the User Tile menu.
 
 If you disable this policy setting, the lock option will never be shown in the User Tile menu.
 
 If you do not configure this policy setting, users will be able to choose whether they want lock to show through the Power Options Control Panel.</string>
       <string id="ShowSleepOption">Show sleep in the power options menu</string>
-      <string id="ShowSleepOption_Help">Shows or hides sleep from the power options menu. 
+      <string id="ShowSleepOption_Help">Shows or hides sleep from the power options menu.
 
 If you enable this policy setting, the sleep option will be shown in the Power Options menu (as long as it is supported by the machine's hardware).
 
@@ -479,7 +474,7 @@ If you disable this policy setting, the sleep option will never be shown in the 
 
 If you do not configure this policy setting, users will be able to choose whether they want sleep to show through the Power Options Control Panel.</string>
       <string id="ShowHibernateOption">Show hibernate in the power options menu</string>
-      <string id="ShowHibernateOption_Help">Shows or hides hibernate from the power options menu. 
+      <string id="ShowHibernateOption_Help">Shows or hides hibernate from the power options menu.
 
 If you enable this policy setting, the hibernate option will be shown in the Power Options menu (as long as it is supported by the machine's hardware).
 
@@ -505,16 +500,16 @@ If you disable or do not configure this policy setting, file shortcut icons that
 
 Note: Allowing the use of remote paths in file shortcut icons can expose users’ computers to security risks.</string>
       <string id="DefaultAssociationsConfiguration">Set a default associations configuration file</string>
-      <string id="DefaultAssociationsConfiguration_Help">This policy specifies the path to a file (e.g. either stored locally or on a network location) that contains file type and protocol default application associations. This file can be created using the DISM tool. 
+      <string id="DefaultAssociationsConfiguration_Help">This policy specifies the path to a file (e.g. either stored locally or on a network location) that contains file type and protocol default application associations. This file can be created using the DISM tool.
 
 For example:
-Dism.exe /Online /Export-DefaultAppAssociations:C:\AppAssoc.txt 
+Dism.exe /Online /Export-DefaultAppAssociations:C:\AppAssoc.txt
 
 For more information, refer to the DISM documentation on TechNet.
 
-If this group policy is enabled and the client machine is domain-joined, the file will be processed and default associations will be applied at logon time. 
+If this group policy is enabled and the client machine is domain-joined, the file will be processed and default associations will be applied at logon time.
 
-If the group policy is not configured, disabled, or the client machine is not domain-joined, no default associations will be applied at logon time. 
+If the group policy is not configured, disabled, or the client machine is not domain-joined, no default associations will be applied at logon time.
 
 If the policy is enabled, disabled, or not configured, users will still be able to override default file type and protocol associations.</string>
     </stringTable>
@@ -550,7 +545,7 @@ If the policy is enabled, disabled, or not configured, users will still be able 
         </textBox>
         <textBox refId="OpenSearch4">
           <label>Site URL 5</label>
-        </textBox>      
+        </textBox>
         <textBox refId="OpenSearchLabel4">
           <label>Site Name 5</label>
         </textBox>
@@ -571,7 +566,7 @@ If the policy is enabled, disabled, or not configured, users will still be able 
         </textBox>
         <textBox refId="Library4">
           <label>Location 5</label>
-        </textBox>      
+        </textBox>
       </presentation>
       <presentation id="NoDrives">
         <dropdownList refId="NoDrivesDropdown" noSort="true" defaultItem="5">Pick one of the following combinations</dropdownList>
@@ -610,14 +605,11 @@ If the policy is enabled, disabled, or not configured, users will still be able 
           <label>Default Libraries definition location</label>
         </textBox>
       </presentation>
-      <presentation id="EnableSmartScreen">
-        <dropdownList refId="EnableSmartScreenDropdown" noSort="true" defaultItem="0">Pick one of the following settings</dropdownList>
-      </presentation>
       <presentation id="DefaultAssociationsConfiguration">
         <textBox refId="DefaultAssociationsConfiguration_TextBox">
           <label>Default Associations Configuration File</label>
 	      <defaultValue>c:\windows\system32\defaultassociations.xml</defaultValue>
-        </textBox>	    
+        </textBox>
       </presentation>
       <presentation id="ExplorerRibbonStartsMinimized">
         <dropdownList refId="ExplorerRibbonStartsMinimizedDropdown" noSort="true" defaultItem="0">Pick one of the following settings</dropdownList>

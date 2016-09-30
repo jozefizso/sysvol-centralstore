@@ -125,7 +125,7 @@ Automatic: Device will attempt to authenticate using its certificate. If the DC 
 
 Force: Device will always authenticate using its certificate. If a DC cannot be found which support computer account authentication using certificates then authentication will fail.
 
-If you disable this policy setting, Disable will be used.
+If you disable this policy setting, certificates will never be used.
 If you do not configure this policy setting, Automatic will be used.
 </string>
       <string id="DevicePKInitBehavior_Automatic">Automatic</string>

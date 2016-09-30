@@ -269,7 +269,13 @@ If you disable or do not configure this policy setting, users will get search su
  
 If you enable or don't configure this setting, Cortana will be allowed on the device. If you disable this setting, Cortana will be turned off. 
  
-When Cortana is off, users will still be able to use search to find things on the device and on the Internet.</string>
+When Cortana is off, users will still be able to use search to find things on the device.</string>
+      <string id="AllowCortanaAboveLock">Allow Cortana above lock screen</string>
+      <string id="ExplainAllowCortanaAboveLock">This policy setting determines whether or not the user can interact with Cortana using speech while the system is locked.
+
+If you enable or don’t configure this setting, the user can interact with Cortana using speech while the system is locked.
+
+If you disable this setting, the system will need to be unlocked for the user to interact with Cortana using speech.</string>
       <string id="AllowSearchToUseLocation">Allow search and Cortana to use location</string>
       <string id="ExplainAllowSearchToUseLocation">This policy setting specifies whether search and Cortana can provide location aware search and Cortana results.
  

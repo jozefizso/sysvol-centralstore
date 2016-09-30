@@ -9,11 +9,17 @@
       <string id="VirtualizationBasedSecurity">Turn On Virtualization Based Security</string>
       <string id="VirtualizationBasedSecurityHelp">Specifies whether Virtualization Based Security is enabled.
 
-Virtualization Based Security uses the Windows Hypervisor to provide support for security services.  Virtualization Based Security requires Secure Boot, and can optionally be enabled with the use of DMA Protections.  DMA protections require hardware support and will only be enabled on correctly configured devices.
+Virtualization Based Security uses the Windows Hypervisor to provide support for security services. Virtualization Based Security requires Secure Boot, and can optionally be enabled with the use of DMA Protections. DMA protections require hardware support and will only be enabled on correctly configured devices.
 
 Virtualization Based Protection of Code Integrity
 
-This setting enables virtualization based protection of Kernel Mode Code Integrity. When this is enabled kernel mode memory protections are enforced and the Code Integrity validation path is protected by the virtualization based security feature.
+This setting enables virtualization based protection of Kernel Mode Code Integrity. When this is enabled, kernel mode memory protections are enforced and the Code Integrity validation path is protected by the Virtualization Based Security feature.
+
+The "Disabled" option turns off Virtualization Based Protection of Code Integrity remotely if it was previously turned on with the "Enabled without lock" option.
+ 
+The "Enabled with UEFI lock" option ensures that Virtualization Based Protection of Code Integrity cannot be disabled remotely. In order to disable the feature, you must set the Group Policy to "Disabled" as well as remove the security functionality from each computer, with a physically present user, in order to clear configuration persisted in UEFI.
+ 
+The "Enabled without lock" option allows Virtualization Based Protection of Code Integrity to be disabled remotely by using Group Policy. 
 
 Warning: All drivers on the system must be compatible with this feature or the system may crash. Ensure that this policy setting is only deployed to computers which are known to be compatible. 
 
@@ -50,8 +56,8 @@ If using a signed and protected policy then disabling this policy setting doesn'
     </stringTable>
     <presentationTable>
       <presentation id="VirtualizationBasedSecurity">
-        <dropdownList refId="RequirePlatformSecurityFeaturesDrop" defaultItem="0">Select Platform Security Level:</dropdownList>
-        <checkBox refId="HypervisorEnforcedCodeIntegrityCheck" defaultChecked="false">Enable Virtualization Based Protection of Code Integrity</checkBox>
+        <dropdownList refId="RequirePlatformSecurityFeaturesDrop" defaultItem="1">Select Platform Security Level:</dropdownList>
+        <dropdownList refId="HypervisorEnforcedCodeIntegrityDrop" defaultItem="0">Virtualization Based Protection of Code Integrity:</dropdownList>
         <dropdownList refId="CredentialIsolationDrop" defaultItem="0">Credential Guard Configuration:</dropdownList>
       </presentation>
       <presentation id="ConfigCIPolicy">

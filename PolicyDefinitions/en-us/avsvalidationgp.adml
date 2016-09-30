@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
-  <displayName>AVS Validation Group Policy</displayName>
-  <description>AVS Validation Group Policy</description>
+  <displayName>Licensing Group Policy</displayName>
+  <description>Licensing Group Policy</description>
   <resources>
     <stringTable>
         <string id="NoAcquireGT">Turn off KMS Client Online AVS Validation</string>
@@ -12,6 +12,14 @@
         -   Not Configured (default -- data will be automatically sent to Microsoft)
         -   Disabled (data will be automatically sent to Microsoft)
         -   Enabled (data will not be sent to Microsoft)
+        </string>
+        <string id="AllowWindowsEntitlementReactivation">Control Device Reactivation for Retail devices</string>
+        <string id="AllowWindowsEntitlementReactivation_Help"> 
+            This policy setting controls whether OS Reactivation is blocked on a device. 
+            Policy Options: 
+                -   Not Configured (default -- Windows registration and reactivation is allowed)
+                -   Disabled (Windows registration and reactivation is not allowed)
+                -   Enabled (Windows registration is allowed)
         </string>
       <string id="SoftwareProtectionPlatform">Software Protection Platform</string>
    </stringTable>

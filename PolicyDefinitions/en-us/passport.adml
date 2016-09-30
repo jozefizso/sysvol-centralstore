@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--  (c) 2006 Microsoft Corporation  -->
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
-  <displayName>Microsoft Passport for Work</displayName>
-  <description>Configuration for Microsoft Passport for Work</description>
+  <displayName>Windows Hello for Business</displayName>
+  <description>Configuration for Windows Hello for Business</description>
   <resources>
     <stringTable>
-        <string id="MSPassportForWorkCategory">Microsoft Passport for Work</string>
+        <string id="MSPassportForWorkCategory">Windows Hello for Business</string>
         <string id="MSPassportForWorkPINComplexityCategory">PIN Complexity</string>
-        <string id="MSPassportForWorkRemoteCategory">Remote Passport</string>
-        <string id="MSPassport_UsePassportForWork">Use Microsoft Passport for Work</string>
+        <string id="MSPassportForWorkRemoteCategory">Phone Sign-in</string>
+        <string id="MSPassport_UsePassportForWork">Use Windows Hello for Business</string>
         <!-- DropdownList Button strings -->
-        <string id="MSPassport_UsePassportForWorkExplain">Microsoft Passport for Work is an alternative method for signing into Windows using your Active Directory or Azure Active Directory account that can replace passwords, Smart Cards, and Virtual Smart Cards.
+        <string id="MSPassport_UsePassportForWorkExplain">Windows Hello for Business is an alternative method for signing into Windows using your Active Directory or Azure Active Directory account that can replace passwords, Smart Cards, and Virtual Smart Cards.
 
-If you do not configure this policy setting, users can provision Microsoft Passport for Work which encrypts their domain password.
+If you enable this policy, the device provisions Windows Hello for Business using keys or certificates for all users.
 
-If you enable this policy, the device provisions Microsoft Passport for Work using keys or certificates for all users.
+If you disable this policy setting, the device does not provision Windows Hello for Business for any user.
 
-If you disable this policy setting, the device does not provision Microsoft Passport for Work for any user.
+If you do not configure this policy setting, users can provision Windows Hello for Business as a convenience credential that encrypts their domain password.
         </string>
         <string id="MSPassport_RequireSecurityDevice">Use a hardware security device</string>
         <string id="MSPassport_RequireSecurityDeviceExplain">A Trusted Platform Module (TPM) provides additional security benefits over software because data stored within it cannot be used on other devices.
 
-If you enable this policy setting, only devices with a usable TPM may provision Microsoft Passport for Work.
+If you enable this policy setting, only devices with a usable TPM may provision Windows Hello for Business.
 
-If you disable or do not configure this policy setting, the TPM is still preferred, but all devices may provision Microsoft Passport for Work using software if the TPM is non-functional or unavailable.
+If you disable or do not configure this policy setting, the TPM is still preferred, but all devices may provision Windows Hello for Business using software if the TPM is non-functional or unavailable.
         </string>
         <string id="MSPassport_MinimumPINLength">Minimum PIN length</string>
         <string id="MSPassport_MinimumPINLengthExplain">Minimum PIN length configures the minimum number of characters required for the PIN.  The lowest number you can configure for this policy setting is 4.  The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest.
@@ -44,32 +44,32 @@ If you disable or do not configure this policy setting, the PIN length must be l
 NOTE: If the above specified conditions for the maximum PIN length are not met, default values will be used for both the maximum and minimum PIN lengths.
         </string>
         <string id="MSPassport_UppercaseLetters">Require uppercase letters</string>
-        <string id="MSPassport_UppercaseLettersExplain">Use this policy setting to configure the use of uppercase letters in the Microsoft Passport for PIN.
+        <string id="MSPassport_UppercaseLettersExplain">Use this policy setting to configure the use of uppercase letters in the PIN.
 
-If you enable this policy setting, Microsoft Passport for Work requires users to include at least one uppercase letter in their PIN.
+If you enable this policy setting, Windows Hello for Business requires users to include at least one uppercase letter in their PIN.
 
-If you disable or do not configure this policy setting, Microsoft Passport for Work does not allow users to use uppercase letters in their PIN.
+If you disable or do not configure this policy setting, Windows Hello for Business does not allow users to use uppercase letters in their PIN.
         </string>
         <string id="MSPassport_LowercaseLetters">Require lowercase letters</string>
-        <string id="MSPassport_LowercaseLettersExplain">Use this policy setting to configure the use of lowercase letters in the Microsoft Passport for PIN.
+        <string id="MSPassport_LowercaseLettersExplain">Use this policy setting to configure the use of lowercase letters in the PIN.
 
-If you enable this policy setting, Microsoft Passport for Work requires users to include at least one lowercase letter in their PIN.
+If you enable this policy setting, Windows Hello for Business requires users to include at least one lowercase letter in their PIN.
 
-If you disable or do not configure this policy setting, Microsoft Passport for Work does not allow users to use lowercase letters in their PIN.
+If you disable or do not configure this policy setting, Windows Hello for Business does not allow users to use lowercase letters in their PIN.
         </string>
         <string id="MSPassport_SpecialCharacters">Require special characters</string>
-        <string id="MSPassport_SpecialCharactersExplain"><![CDATA[Use this policy setting to configure the use of special characters in the Microsoft Passport for PIN.  Allowable special characters are: ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~ .
+        <string id="MSPassport_SpecialCharactersExplain"><![CDATA[Use this policy setting to configure the use of special characters in the PIN.  Allowable special characters are: ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~ .
 
-If you enable this policy setting, Microsoft Passport for Work requires users to include at least one special character in their PIN.
+If you enable this policy setting, Windows Hello for Business requires users to include at least one special character in their PIN.
 
-If you disable or do not configure this policy setting, Microsoft Passport for Work does not allow users to use special characters in their PIN.]]>
+If you disable or do not configure this policy setting, Windows Hello for Business does not allow users to use special characters in their PIN.]]>
         </string>
         <string id="MSPassport_Digits">Require digits</string>
-        <string id="MSPassport_DigitsExplain">Use this policy setting to configure the use of digits in the Microsoft Passport for PIN.
+        <string id="MSPassport_DigitsExplain">Use this policy setting to configure the use of digits in the PIN.
 
-If you enable or do not configure this policy setting, Microsoft Passport for Work requires users to include at least one uppercase letter in their PIN.
+If you enable or do not configure this policy setting, Windows Hello for Business requires users to include at least one digit in their PIN.
 
-If you disable this policy setting, Microsoft Passport for Work does not allow users to use digits in their PIN.
+If you disable this policy setting, Windows Hello for Business does not allow users to use digits in their PIN.
         </string>
         <string id="MSPassport_PINHistory">History</string>
         <string id="MSPassport_PINHistoryExplain">This setting specifies the number of past PINs that can be associated to a user account that can’t be reused. This policy enables administrators to enhance security by ensuring that old PINs are not reused continually. PIN history is not preserved through PIN reset.
@@ -84,20 +84,20 @@ Default: 0.
 Default: 0.
         </string>
         <string id="MSPassport_UseBiometrics">Use biometrics</string>
-        <string id="MSPassport_UseBiometricsExplain">Microsoft Passport for Work enables users to use biometric gestures, such as face and fingerprints, as an alternative to the PIN gesture. However users must still configure a PIN to use in case of failures.
+        <string id="MSPassport_UseBiometricsExplain">Windows Hello for Business enables users to use biometric gestures, such as face and fingerprints, as an alternative to the PIN gesture. However users must still configure a PIN to use in case of failures.
 
-If you enable or do not configure this policy setting, Microsoft Passport for Work allows the use biometric gestures.
+If you enable or do not configure this policy setting, Windows Hello for Business allows the use biometric gestures.
 
-If you disable this policy setting, Microsoft Passport for Work prevents the use of biometric gestures.
+If you disable this policy setting, Windows Hello for Business prevents the use of biometric gestures.
 
 NOTE: Disabling this policy prevents the user of biometric gestures on the device for all account types.
         </string>
-        <string id="MSPassport_UseRemote">Use Remote Passport</string>
-        <string id="MSPassport_UseRemoteExplain">Use this policy setting to configure use of Remote Passport. Remote Passport provides the ability for a portable, registered device to be usable as a companion device for desktop authentication. Remote Passport requires that the desktop be Azure AD joined and that the companion device has a Passport for Work PIN.
+        <string id="MSPassport_UseRemote">Use phone sign-in</string>
+        <string id="MSPassport_UseRemoteExplain">Use this policy setting to configure use of phone sign-in. Phone sign-in provides the ability for a phone to be usable as a companion device for desktop authentication. Phone sign-in requires that both the PC and the phone are registered with the same Azure AD tenant. Additionally, the phone must be enrolled in Windows Hello for Business.
 
-If you enable this policy setting, Remote Passport will be enabled and a portable, registered device can be used as a companion device for desktop authentication.
+If you enable this policy setting, phone sign-in will be enabled, allowing the use of a phone as a companion device for desktop authentication.
 
-If you disable or do not configure this policy setting, Remote Passport will be disabled and a portable, registered device cannot be used as a companion device for desktop authentication.
+If you disable or do not configure this policy setting, phone sign-in will be disabled, preventing the use of a phone as a companion device for desktop authentication.
         </string>
     </stringTable>
     <presentationTable>

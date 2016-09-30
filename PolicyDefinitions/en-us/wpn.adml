@@ -92,6 +92,16 @@
 
         If you do not configure this policy setting, voice and video calls will be allowed during Quiet Hours by default.  Adminstrators and users will be able to modify this setting.
       </string>
+      <string id="NoNotificationMirroring">Turn off notification mirroring</string>
+      <string id="NoNotificationMirroringExplain">
+          This policy setting turns off notification mirroring.
+
+          If you enable this policy setting, notifications from applications and system will not be mirrored to your other devices.
+
+          If you disable or do not configure this policy setting, notifications will be mirrored, and can be turned off by the administrator or user.
+
+          No reboots or service restarts are required for this policy setting to take effect.
+      </string>
     </stringTable>
     <presentationTable>
       <presentation id="QuietHoursBeginTimePicker">

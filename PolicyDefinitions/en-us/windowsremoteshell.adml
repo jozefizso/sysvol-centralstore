@@ -8,9 +8,9 @@
       <string id="AllowRemoteShellAccess">Allow Remote Shell Access</string>
       <string id="AllowRemoteShellAccess_Help">This policy setting configures access to remote shells.
 
-If you enable this policy setting and set it to False, new remote shell connections are rejected by the server.
+If you enable or do not configure this policy setting, new remote shell connections are accepted by the server.
 
-If you disable or do not configure this policy setting, new remote shell connections are allowed.</string>
+If you set this policy to ‘disabled’, new remote shell connections are rejected by the server.</string>
       <string id="IdleTimeout">Specify idle Timeout</string>
       <string id="IdleTimeout_Help">This policy setting configures the maximum time in milliseconds remote shell will stay open without any user activity until it is automatically deleted.
 

@@ -150,7 +150,7 @@
     </policy>
     <policy name="DevicePKInitEnabled" class="Machine" displayName="$(string.DevicePKInitEnabled)" explainText="$(string.DevicePKInitEnabled_explain)" key="Software\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos\Parameters" presentation="$(presentation.DevicePKInitBehavior)" valueName="DevicePKInitEnabled">
       <parentCategory ref="kerberos" />
-      <supportedOn ref="windows:SUPPORTED_Windows_6_4" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>

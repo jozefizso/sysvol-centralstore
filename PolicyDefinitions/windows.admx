@@ -133,45 +133,24 @@
         </or>
       </definition>
 
-      <!--At least Windows Threshold -->
-      <definition name="SUPPORTED_Windows_6_4" displayName="$(string.SUPPORTED_Windows_6_4)">
+      <!--At least Windows 10 -->
+      <definition name="SUPPORTED_Windows_10_0" displayName="$(string.SUPPORTED_Windows_10_0)">
           <or>
               <range ref="products:MicrosoftWindows" minVersionIndex="13"/>
           </or>
       </definition>
 
       <!--At least Windows Threshold no ARM-->
-      <definition name="SUPPORTED_Windows_6_4_NOARM" displayName="$(string.SUPPORTED_Windows_6_4_NOARM)">
+      <definition name="SUPPORTED_Windows_10_0_NOARM" displayName="$(string.SUPPORTED_Windows_10_0_NOARM)">
           <or>
               <range ref="products:MicrosoftWindows" minVersionIndex="13" maxVersionIndex="14"/>
           </or>
       </definition>
 
       <!--At least Windows Threshold no SERVER-->
-      <definition name="SUPPORTED_Windows_6_4_NOSERVER" displayName="$(string.SUPPORTED_Windows_6_4_NOSERVER)">
-          <or>
-              <range ref="products:MicrosoftWindows" minVersionIndex="14" maxVersionIndex="15"/>
-          </or>
-      </definition>
-
-      <!--At least Windows 10 -->
-      <definition name="SUPPORTED_Windows_10_0" displayName="$(string.SUPPORTED_Windows_10_0)">
-          <or>
-              <range ref="products:MicrosoftWindows" minVersionIndex="16"/>
-          </or>
-      </definition>
-
-      <!--At least Windows Threshold no ARM-->
-      <definition name="SUPPORTED_Windows_10_0_NOARM" displayName="$(string.SUPPORTED_Windows_10_0_NOARM)">
-          <or>
-              <range ref="products:MicrosoftWindows" minVersionIndex="13" maxVersionIndex="17"/>
-          </or>
-      </definition>
-
-      <!--At least Windows Threshold no SERVER-->
       <definition name="SUPPORTED_Windows_10_0_NOSERVER" displayName="$(string.SUPPORTED_Windows_10_0_NOSERVER)">
           <or>
-              <range ref="products:MicrosoftWindows" minVersionIndex="14" maxVersionIndex="18"/>
+              <range ref="products:MicrosoftWindows" minVersionIndex="14" maxVersionIndex="15"/>
           </or>
       </definition>
 
@@ -411,6 +390,13 @@
       <definition name="SUPPORTED_Windows81To2k" displayName="$(string.SUPPORTED_Windows81To2k)">
         <or>
           <range ref="products:MicrosoftWindows" minVersionIndex="1" maxVersionIndex="12"/>
+        </or>
+      </definition>
+
+      <!--At least Windows 7 through Windows 8.1 or Windows Server 2012 R2-->
+      <definition name="SUPPORTED_Windows81To7" displayName="$(string.SUPPORTED_Windows81To7)">
+        <or>
+          <range ref="products:MicrosoftWindows" minVersionIndex="6" maxVersionIndex="12"/>
         </or>
       </definition>
 

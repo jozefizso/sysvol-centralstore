@@ -5,7 +5,7 @@
   <description>enter description here</description>
   <resources>
     <stringTable>
-      <string id="TS_SUPPORTED_Windows10">At least Windows 10 or Windows Server 2016 Technical Preview 4</string>
+      <string id="TS_SUPPORTED_Windows10">At least Windows 10 or Windows Server 2016</string>
       <string id="TS_SUPPORTED_Windows8_or_ARM">At least Windows 8 or Windows RT</string>
       <string id="TS_SUPPORTED_Windows8_Server">At least Windows Server 2012</string>
       <string id="TS_SUPPORTED_Windows8_Enterprise_AND_Server"> At least Windows 8 Enterprise or Windows Server 2012</string>
@@ -1117,6 +1117,18 @@ If you enable this policy setting, user sign-in is blocked for up to 6 minutes t
 
 If you disable or do not configure this policy setting, the Start screen is shown and apps are registered in the background.</string>
 
+      <string id="TS_DX_USE_FULL_HWGPU">Use the hardware default graphics adapter for all Remote Desktop Services sessions</string>
+      <string id="TS_DX_USE_FULL_HWGPU_EXPLAIN">This policy setting enables system administrators to change the graphics rendering for all Remote Desktop Services sessions.
+
+If you enable this policy setting, all Remote Desktop Services sessions use the hardware graphics renderer instead of the Microsoft Basic Render Driver as the default adapter.
+
+If you disable this policy setting, all Remote Desktop Services sessions use the Microsoft Basic Render Driver as the default adapter.
+
+If you do not configure this policy setting, Remote Desktop Services sessions on the RD Session Host server use the Microsoft Basic Render Driver as the default adapter. In all other cases, Remote Desktop Services sessions use the hardware graphics renderer by default.
+
+NOTE: The policy setting affects only the default graphics processing unit (GPU) on a computer with more than one GPU installed. All additional GPUs are considered secondary adapters and used as hardware renderers. The GPU configuration of the local session is not affected by this policy setting.
+</string>
+      
     </stringTable>
     <presentationTable>
       <presentation id="TS_COLORDEPTH">

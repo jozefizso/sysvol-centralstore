@@ -22,7 +22,7 @@ If you disable or do not configure this policy setting, or if the required files
           <label>Alternate source file path</label>
         </textBox>
         <checkBox refId="CheckBox_NeverUseWU">Never attempt to download payload from Windows Update</checkBox>
-        <checkBox refId="CheckBox_SidestepWSUS">Contact Windows Update directly to download repair content instead of Windows Server Update Services (WSUS)</checkBox>
+        <checkBox refId="CheckBox_SidestepWSUS">Download repair content and optional features directly from Windows Update instead of Windows Server Update Services (WSUS)</checkBox>
       </presentation>
     </presentationTable>
   </resources>

@@ -58,22 +58,36 @@
         If you enable this policy setting, Endpoint Protection does not automatically take action on the detected threats, but prompts users to choose from the actions available for each threat.
 
         If you disable or do not configure this policy setting, Endpoint Protection automatically takes action on all detected threats after a nonconfigurable delay of approximately five seconds.
-    </string>
+    </string>      
     <string id="ProxyBypass">Define addresses to bypass proxy server</string>
     <string id="ProxyBypass_Explain">This policy, if defined, will prevent antimalware from using the configured proxy server when communicating with the specified IP addresses. The address value should be entered as a valid URL.
 
     If you enable this setting, the proxy server will be bypassed for the specified addresses.
 
     If you disable or do not configure this setting, the proxy server will not be bypassed for the specified addresses.</string>
+    <string id="ProxyPacUrl">Define proxy auto-config (.pac) for connecting to the network</string>
+    <string id="ProxyPacUrl_Explain">This policy setting defines the URL of a proxy .pac file that should be used when the client attempts to connect the network for definition updates and MAPS reporting. If the proxy auto-config fails or if there is no proxy auto-config specified, the client will fall back to the alternative options (in order):
+      1. Proxy server (if specified)
+      2. Proxy .pac URL (if specified)
+      3. None
+      4. Internet Explorer proxy settings
+      5. Autodetect
+
+      If you enable this setting, the proxy setting will be set to use the specified proxy .pac according to the order specified above.
+
+      If you disable or do not configure this setting, the proxy will skip over this fallback step according to the order specified above.</string>
     <string id="ProxyServer">Define proxy server for connecting to the network</string>
-    <string id="ProxyServer_Explain">This policy setting allows you to configure the named proxy that should be used when the client attempts to connect to the network for definition updates and MAPS reporting. If the named proxy fails or if there is no proxy specified, the following settings will be used (in order):
-    1. Internet Explorer proxy settings
-    2. Autodetect
-    3. None
+    <string id="ProxyServer_Explain">This policy setting allows you to configure the named proxy that should be used when the client attempts to connect to the network for definition updates and MAPS reporting. If the named proxy fails or if there is no proxy specified, the client will fall back to the alternative options (in order):
+      1. Proxy server (if specified)
+      2. Proxy .pac URL (if specified)
+      3. None
+      4. Internet Explorer proxy settings
+      5. Autodetect
 
-    If you enable this setting, the proxy will be set to the specified URL.
+      If you enable this setting, the proxy will be set to the specified URL according to the order specified above. The URL should be proceeded with either http:// or https://.
 
-    If you disable or do not configure this setting, the proxy will be set according to the order specified above.</string>
+      If you disable or do not configure this setting, the proxy will skip over this fallback step according to the order specified above.
+    </string>
     <string id="RandomizeScheduleTaskTimes">Randomize scheduled task times</string>
     <string id="RandomizeScheduleTaskTimes_Explain">This policy setting allows you to enable or disable randomization of the scheduled scan start time and the scheduled definition update start time. This setting is used to distribute the resource impact of scanning. For example, it could be used in guest virtual machines sharing a host, to prevent multiple guest virtual machines from undertaking a disk-intensive operation at the same time.
 
@@ -104,20 +118,6 @@
     If you enable or do not configure this setting, definition retirement will be enabled.
 
     If you disable this setting, definition retirement will be disabled.</string>
-    <string id="Nis_Consumers_IPS_ThrottleDetectionEventsRate">Define the rate of detection events for logging</string>
-    <string id="Nis_Consumers_IPS_ThrottleDetectionEventsRate_Explain">This policy setting limits the rate at which detection events for network protection against exploits of known vulnerabilities will be logged. Logging will be limited to not more often than one event per the defined interval. The interval value is defined in minutes. The default interval is 60 minutes.
-
-    If you enable this setting, detection events will not be logged if there is more than one similar report (by definition GUID) in the specified number of minutes.
-
-    If you disable or do not configure this setting, detection events will be logged at the default rate.</string>
-    <string id="Nis_Consumers_IPS_Exclusions_Ip_Ranges_Ip_Range">IP address range Exclusions</string>
-    <string id="Nis_Consumers_IPS_Exclusions_Ip_Ranges_Ip_Range_Explain">This policy, if defined, will prevent network protection against exploits of known vulnerabilities from inspecting the specified IP addresses. IP addresses should be added under the Options for this setting. Each entry must be listed as a name value pair, where the name should be a string representation of an IP address range. As an example, a range might be defined as:  157.1.45.123-60.1.1.1. The value is not used and it is recommended that this be set to 0.</string>
-    <string id="Nis_Consumers_IPS_Exclusions_Ports_Port_Number">Port number  Exclusions</string>
-    <string id="Nis_Consumers_IPS_Exclusions_Ports_Port_Number_Explain">This policy setting defines a list of TCP port numbers from which network traffic inspection will be disabled. Port numbers should be added under the Options for this setting. Each entry must be listed as a name value pair, where the name should be a string representation of a TCP port number. As an example, a range might be defined as:  8080. The value is not used and it is recommended that this be set to 0.</string>
-    <string id="Nis_Consumers_IPS_Exclusions_Processes_executable_Path_and_Name">Process Exclusions for outbound traffic</string>
-    <string id="Nis_Consumers_IPS_Exclusions_Processes_executable_Path_and_Name_Explain">This policy setting defines processes from which outbound network traffic will not be inspected.  Process names should be added under the Options for this setting. Each entry must be listed as a name value pair, where the name should be a string representation of a process path and name. As an example, a process might be defined as:  "C:\Windows\System32\App.exe" . The value is not used and it is recommended that this be set to 0.</string>
-    <string id="Nis_Consumers_IPS_Exclusions_Threat_Ids_Threat_Id">Threat ID Exclusions</string>
-    <string id="Nis_Consumers_IPS_Exclusions_Threat_Ids_Threat_Id_Explain">This policy setting defines threats which will be excluded from detection during network traffic inspection. Threats should be added under the Options for this setting. Each entry must be listed as a name value pair, where the name should be a string representation of a Threat ID. As an example, a Threat ID might be defined as:  2925110632. The value is not used and it is recommended that this be set to 0.</string>
     <string id="Nis_Consumers_IPS_sku_differentiation_Signature_Set_Guid">Specify additional definition sets for network traffic inspection</string>
     <string id="Nis_Consumers_IPS_sku_differentiation_Signature_Set_Guid_Explain">This policy setting defines additional definition sets to enable for network traffic inspection. Definition set GUIDs should be added under the Options for this setting. Each entry must be listed as a name value pair, where the name should be a string representation of a definition set GUID. As an example, the definition set GUID to enable test definitions is defined as: “{b54b6ac9-a737-498e-9120-6616ad3bf590}”. The value is not used and it is recommended that this be set to 0.</string>
     <string id="Quarantine_LocalSettingOverridePurgeItemsAfterDelay">Configure local setting override for the removal of items from Quarantine folder</string>
@@ -138,18 +138,6 @@
     If you enable or do not configure this setting, behavior monitoring will be enabled.
 
     If you disable this setting, behavior monitoring will be disabled.</string>
-    <string id="RealtimeProtection_DisableInformationProtectionControl">Turn on Information Protection Control</string>
-    <string id="RealtimeProtection_DisableInformationProtectionControl_Explain">This policy setting allows you to configure Information Protection Control (IPC).
-
-    If you enable this setting, IPC will be enabled.
-
-    If you disable or do not configure this setting, IPC will be disabled.</string>
-    <string id="RealtimeProtection_DisableIntrusionPreventionSystem">Turn on network protection against exploits of known vulnerabilities</string>
-    <string id="RealtimeProtection_DisableIntrusionPreventionSystem_Explain">This policy setting allows you to configure network protection against exploits of known vulnerabilities.
-
-    If you enable or do not configure this setting, the network protection will be enabled.
-
-    If you disable this setting, the network protection will be disabled.</string>
     <string id="RealtimeProtection_DisableIOAVProtection">Scan all downloaded files and attachments</string>
     <string id="RealtimeProtection_DisableIOAVProtection_Explain">This policy setting allows you to configure scanning for all downloaded files and attachments.
 
@@ -205,12 +193,6 @@
     If you disable or do not configure this setting, Group Policy will take priority over the local preference setting.</string>
     <string id="RealtimeProtection_LocalSettingOverrideDisableOnAccessProtection">Configure local setting override for monitoring file and program activity on your computer</string>
     <string id="RealtimeProtection_LocalSettingOverrideDisableOnAccessProtection_Explain">This policy setting configures a local override for the configuration of monitoring for file and program activity on your computer. This setting can only be set by Group Policy.
-
-    If you enable this setting, the local preference setting will take priority over Group Policy.
-
-    If you disable or do not configure this setting, Group Policy will take priority over the local preference setting.</string>
-    <string id="RealtimeProtection_LocalSettingOverrideDisableIntrusionPreventionSystem">Configure local setting override to turn off Intrusion Prevention System</string>
-    <string id="RealtimeProtection_LocalSettingOverrideDisableIntrusionPreventionSystem_Explain">This policy setting configures a local override for the configuration of network protection against exploits of known vulnerabilities. This setting can only be set by Group Policy.
 
     If you enable this setting, the local preference setting will take priority over Group Policy.
 
@@ -633,6 +615,16 @@
     If you enable this setting, a check for new definitions will occur after service startup.
 
     If you disable this setting or do not configure this setting, a check for new definitions will not occur after service startup.</string>
+    <string id="DisableBlockAtFirstSeen">Configure the 'Block at First Sight' feature</string>
+    <string id="DisableBlockAtFirstSeen_Explain">This feature ensures the device checks in real time with the Microsoft Active Protection Service (MAPS) before allowing certain content to be run or accessed. If this feature is disabled, the check will not occur, which will lower the protection state of the device.
+	Enabled – The Block at First Sight setting is turned on.
+	Disabled – The Block at First Sight setting is turned off.
+	
+	This feature requires these Group Policy settings to be set as follows:
+	MAPS -&gt; The “Join Microsoft MAPS” must be enabled or the “Block at First Sight” feature will not function.
+	MAPS -&gt; The “Send file samples when further analysis is required” should be set to 1 (Send safe samples) or 3 (Send all samples). Setting to 0 (Always Prompt) will lower the protection state of the device.  Setting to 2 (Never send) means the “Block at First Sight” feature will not function.
+	Real-time Protection -&gt; The “Scan all downloaded files and attachments” policy must be enabled or the “Block at First Sight” feature will not function.
+	Real-time Protection -&gt; Do not enable the “Turn off real-time protection” policy or the “Block at First Sight” feature will not function.</string>
     <string id="Spynet_LocalSettingOverrideSpynetReporting">Configure local setting override for reporting to Microsoft MAPS</string>
     <string id="Spynet_LocalSettingOverrideSpynetReporting_Explain">This policy setting configures a local override for the configuration to join Microsoft MAPS. This setting can only be set by Group Policy.
 
@@ -647,7 +639,7 @@
         (0x0) Always prompt
         (0x1) Send safe samples automatically
         (0x2) Never send
-        (0x2) Send all samples automatically
+        (0x3) Send all samples automatically
     </string>
 
     <string id="SubmitSamplesConsent_Always_Prompt">Always prompt</string>
@@ -671,7 +663,9 @@
 
     If you enable this setting, you will join Microsoft MAPS with the membership specified.
 
-    If you disable or do not configure this setting, you will not join Microsoft MAPS.</string>
+    If you disable or do not configure this setting, you will not join Microsoft MAPS.
+  
+    In Windows 10, Basic membership is no longer available, so setting the value to 1 or 2 enrolls the device into Advanced membership.</string>
     <string id="SpynetReporting_Disabled">Disabled</string>
     <string id="SpynetReporting_Basic">Basic MAPS</string>
     <string id="SpynetReporting_Advanced">Advanced MAPS</string>
@@ -706,16 +700,12 @@
 
       If you enable this setting AM UI won't show reboot notifications.
     </string>
-    <string id="UX_Configuration_Notification_Suppress">Display notifications to clients when they need to perform actions</string>
-    <string id="UX_Configuration_Notification_Suppress_Explain">This policy setting allows you to configure whether or not to display notifications to clients when they need to perform the following actions:
-    Run a full scan
-    Download the latest virus and spyware definitions 
-    Download Standalone System Sweeper
+    <string id="UX_Configuration_Notification_Suppress">Suppress all notifications</string>
+    <string id="UX_Configuration_Notification_Suppress_Explain">Use this policy setting to specify if you want Windows Defender notifications to display on clients.
+      If you disable or do not configure this setting, Windows Defender notifications will display on clients.
 
-
-    If you enable or do not configure this setting, notifications will be displayed to clients when they need to perform the specified actions.
-
-    If you disable this setting, notifications will not be displayed to clients when they need to perform the specified actions.</string>
+      If you enable this setting, Windows Defender notifications will not display on clients.
+    </string>
     <string id="UX_Configuration_CustomDefaultActionToastString">Display additional text to clients when they need to perform an action</string>
     <string id="UX_Configuration_CustomDefaultActionToastString_Explain">This policy setting allows you to configure whether or not to display additional text to clients when they need to perform an action. The text displayed is a custom administrator-defined string. For example, the phone number to call the company help desk. The client interface will only display a maximum of 1024 characters. Longer strings will be truncated before display.
 
@@ -728,6 +718,11 @@
     <textBox refId="ProxyBypass">
         <label>Define addresses to bypass proxy server</label>
     </textBox>
+    </presentation>
+    <presentation id="ProxyPacUrl">
+      <textBox refId="ProxyPacUrl">
+        <label>Define proxy auto-config (.pac) for connecting to the network</label>
+      </textBox>
     </presentation>
     <presentation id="ProxyServer">
     <textBox refId="ProxyServer">
@@ -742,21 +737,6 @@
     </presentation>
     <presentation id="Exclusions_Processes">
     <listBox refId="Exclusions_ProcessesList">Process Exclusions</listBox>
-    </presentation>
-    <presentation id="Nis_Consumers_IPS_ThrottleDetectionEventsRate">
-    <decimalTextBox refId="Nis_Consumers_IPS_ThrottleDetectionEventsRate" defaultValue="60">Define the rate of detection events for logging</decimalTextBox>
-    </presentation>
-    <presentation id="Nis_Consumers_IPS_Exclusions_Ip_Ranges_Ip_Range">
-    <listBox refId="Nis_Consumers_IPS_Exclusions_Ip_Ranges_Ip_RangeList">IP address range Exclusions</listBox>
-    </presentation>
-    <presentation id="Nis_Consumers_IPS_Exclusions_Ports_Port_Number">
-    <listBox refId="Nis_Consumers_IPS_Exclusions_Ports_Port_NumberList">Port number  Exclusions</listBox>
-    </presentation>
-    <presentation id="Nis_Consumers_IPS_Exclusions_Processes_executable_Path_and_Name">
-    <listBox refId="Nis_Consumers_IPS_Exclusions_Processes_executable_Path_and_NameList">Process Exclusions for outbound traffic</listBox>
-    </presentation>
-    <presentation id="Nis_Consumers_IPS_Exclusions_Threat_Ids_Threat_Id">
-    <listBox refId="Nis_Consumers_IPS_Exclusions_Threat_Ids_Threat_IdList">Threat ID Exclusions</listBox>
     </presentation>
     <presentation id="Nis_Consumers_IPS_sku_differentiation_Signature_Set_Guid">
     <listBox refId="Nis_Consumers_IPS_sku_differentiation_Signature_Set_GuidList">Specify additional definition sets for network traffic inspection</listBox>

@@ -149,6 +149,12 @@ If you disable or do not configure this policy setting, connected users will be 
 If you enable this policy setting, Logon UI will enumerate all local users on domain-joined computers.
 
 If you disable or do not configure this policy setting, the Logon UI will not enumerate local users on domain-joined computers.</string>
+      <string id="BlockUserFromShowingAccountDetailsOnSignin">Block user from showing account details on sign-in</string>
+      <string id="BlockUserFromShowingAccountDetailsOnSignin_Help">This policy prevents the user from showing account details (email address or user name) on the sign-in screen.
+
+If you enable this policy setting, the user cannot choose to show account details on the sign-in screen.
+
+If you disable or do not configure this policy setting, the user may choose to show account details on the sign-in screen.</string>
       <string id="DisableLockScreenAppNotifications">Turn off app notifications on the lock screen</string>
       <string id="DisableLockScreenAppNotifications_Help">This policy setting allows you to prevent app notifications from appearing on the lock screen.
 
