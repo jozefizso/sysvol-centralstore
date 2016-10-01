@@ -834,27 +834,61 @@
     </string>
     <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess">Configure Controlled folder access</string>
     <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Explain">
-    Enable or disable controlled folder access for untrusted applications. 
+    Enable or disable controlled folder access for untrusted applications. You can choose to block, audit, or allow attempts by untrusted apps to:
+    - Modify or delete files in protected folders, such as the Documents folder
+    - Write to disk sectors
+
+    You can also choose to only block or audit writes to disk sectors while still allowing the modification or deletion of files in protected folders.
+
+    Windows Defender Antivirus automatically determines which applications can be trusted. You can add additional trusted applications in the Configure allowed applications GP setting.
+    Default system folders are automatically protected, but you can add folders in the Configure protected folders GP setting.
 
     Block:
-    Untrusted applications cannot modify or delete files in protected folders, such as the Documents folder.
+    The following will be blocked:
+    - Attempts by untrusted apps to modify or delete files in protected folders
+    - Attempts by untrusted apps to write to disk sectors
+    The Windows event log will record these blocks under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1123.
+
 
     Disabled:
-    All applications can modify or delete files in protected folders, such as the Documents folder.
+    The following will not be blocked and will be allowed to run:
+    - Attempts by untrusted apps to modify or delete files in protected folders
+    - Attempts by untrusted apps to write to disk sectors
+    These attempts will not be recorded in the Windows event log.
+
 
     Audit Mode:
-    Applications that would normally be considered ""untrusted"" if the setting was Enabled will still be able to modify or delete files in protected folders. However, each event will be recorded in the Windows event log.
+    The following will not be blocked and will be allowed to run:
+    - Attempts by untrusted apps to modify or delete files in protected folders
+    - Attempts by untrusted apps to write to disk sectors
+    The Windows event log will record these attempts under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1124.
+
+
+    Block disk modification only:
+    The following will be blocked:
+    - Attempts by untrusted apps to write to disk sectors
+    The Windows event log will record these attempts under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1123.
+
+    The following will not be blocked and will be allowed to run:
+    - Attempts by untrusted apps to modify or delete files in protected folders
+    These attempts will not be recorded in the Windows event log.
+
+
+    Audit disk modification only:
+    The following will not be blocked and will be allowed to run:
+    - Attempts by untrusted apps to write to disk sectors
+    - Attempts by untrusted apps to modify or delete files in protected folders
+    Only attempts to write to protected disk sectors will be recorded in the Windows event log (under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1124).
+    Attempts to modify or delete files in protected folders will not be recorded.
 
     Not configured:
     Same as Disabled.
-
-    Windows Defender Antivirus automatically determines which applications can be trusted. You can add additional trusted applications in the configure allowed applications GP setting.
-
-    Default system folders are automatically guarded, but you can add folders in the configure protected folders GP setting.
     </string>
     <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Disable">Disable (Default)</string>
     <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Block">Block</string>
     <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Audit">Audit Mode</string>
+    <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_BlockDiskModifications">Block disk modification only</string>
+    <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_AuditDiskModifications">Audit disk modification only</string>
     <string id="ExploitGuard_ControlledFolderAccess_AllowedApplications">Configure allowed applications</string>
     <string id="ExploitGuard_ControlledFolderAccess_AllowedApplications_Explain">
     Add additional applications that should be considered "trusted" by controlled folder access.

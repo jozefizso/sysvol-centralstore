@@ -49,6 +49,11 @@
           <range ref="products:MicrosoftEdge" minVersionIndex="1" maxVersionIndex="1"/>
         </or>
       </definition>
+      <definition name="SUPPORTED_INTERNET_BROWSER_RS4" displayName="$(string.SUPPORTED_INTERNET_BROWSER_RS4_DisplayName)">
+        <or>
+          <range ref="products:MicrosoftEdge" minVersionIndex="1" maxVersionIndex="1"/>
+        </or>
+      </definition>
     </definitions>
   </supportedOn>
   <categories>
@@ -86,6 +91,21 @@
       </enabledValue>
       <disabledValue>
         <string>no</string>
+      </disabledValue>
+    </policy>
+    <policy name="AllowConfigurationUpdateForBooksLibrary"
+        class="Both"
+        displayName="$(string.AllowConfigurationUpdateForBooksLibrary)"
+        explainText="$(string.AllowConfigurationUpdateForBooksLibrary_Explain)"
+        key="Software\Policies\Microsoft\MicrosoftEdge\BooksLibrary"
+        valueName="AllowConfigurationUpdateForBooksLibrary">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS4" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
       </disabledValue>
     </policy>
     <policy name="AllowDeveloperTools"
@@ -319,6 +339,21 @@
         <text id="ConfiguredFavoritesPrompt" valueName="ConfiguredFavorites"/>
       </elements>
     </policy>
+    <policy name="EnableExtendedBooksTelemetry"
+            class="Both"
+            displayName="$(string.EnableExtendedBooksTelemetry)"
+            explainText="$(string.EnableExtendedBooksTelemetry_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\BooksLibrary"
+            valueName="EnableExtendedBooksTelemetry">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS4" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="EnterpriseModeSiteList"
             class="Both"
             displayName="$(string.EnterpriseModeSiteList)"
@@ -523,6 +558,21 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="UseSharedFolderForBooks"
+            class="Both"
+            displayName="$(string.UseSharedFolderForBooks)"
+            explainText="$(string.UseSharedFolderForBooks_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\BooksLibrary"
+            valueName="UseSharedFolderForBooks">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS4" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="AllowFlashClickToRun"
             class="Both"
             displayName="$(string.AllowFlashClickToRun)"
@@ -582,6 +632,29 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="PreventTabPreloading"
+            class="Both"
+            displayName="$(string.PreventTabPreloading)"
+            explainText="$(string.PreventTabPreloading_Explain)"
+            presentation="$(presentation.PreventTabPreloading)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\TabPreloader">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS4" />
+      <elements>
+        <enum id="PreventTabPreloadingDropdown" valueName="PreventTabPreloading" required="true">
+          <item displayName="$(string.PreventTabPreloadingDropdown_PreventTabPreloading)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.PreventTabPreloadingDropdown_AllowTabPreloading)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
   </policies>
 </policyDefinitions>

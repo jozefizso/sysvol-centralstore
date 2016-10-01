@@ -19,6 +19,13 @@ If you enable this policy, the device provisions Windows Hello for Business usin
 If you disable this policy setting, the device does not provision Windows Hello for Business for any user.
 
 If you do not configure this policy setting, users can provision Windows Hello for Business as a convenience credential that encrypts their domain password.
+
+Select "Do not start Windows Hello provisioning after sign-in" when you use a third-party solution to provision Windows Hello for Business.
+
+If you select "Do not start Windows Hello provisioning after sign-in", Windows Hello for Business does not automatically start provisioning after the user has signed in.
+
+If you do not select "Do not start Windows Hello provisioning after sign-in", Windows Hello for Business automatically starts provisioning after the user has signed in.
+
         </string>
         <string id="MSPassport_RequireSecurityDevice">Use a hardware security device</string>
         <string id="MSPassport_RequireSecurityDeviceExplain">A Trusted Platform Module (TPM) provides additional security benefits over software because data protected by it cannot be used on other devices.
@@ -191,6 +198,9 @@ Windows requires a reboot after you apply this setting to a computer.
       <presentation id="MSPassport_ExcludeSecurityDevicesControl">
         <text>Do not use the following security devices:</text>
         <checkBox refId="MSPassport_ExcludeTPM12DataType" defaultChecked="false">TPM 1.2</checkBox>
+      </presentation>
+      <presentation id="MSPassport_UsePassportForWorkControl">
+        <checkBox refId="MSPassport_DisablePostLogonProvisioning" defaultChecked="false">Do not start Windows Hello provisioning after sign-in</checkBox>
       </presentation>
       <presentation id="MSPassport_UseDeviceUnlock_Control">
         <textBox refId="MSPassport_UseDeviceUnlock_GroupA">

@@ -22,5 +22,15 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="AllowLinguisticDataCollection" class="Machine" displayName="$(string.TextInput_AllowLinguisticDataCollection)" explainText="$(string.TextInput_AllowLinguisticDataCollection_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\TextInput" valueName="AllowLinguisticDataCollection">
+      <parentCategory ref="TextInput" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS4" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

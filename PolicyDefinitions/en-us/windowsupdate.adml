@@ -332,7 +332,7 @@ When selecting a Preview Build:
 
 Preview Build enrollment requires a telemetry level setting of 2 or higher and your domain registered on insider.windows.com. For additional information on Preview Builds, see: https://aka.ms/wipforbiz
 
-When Selecting Current Branch or Current Branch for Business:
+When Selecting Semi-Annual Channel (Targeted) or Semi-Annual Channel:
     - You can defer receiving Feature Updates for up to 365 days.
     - To prevent Feature Updates from being received on their scheduled time, you can temporarily pause them. The pause will remain in effect for 35 days from the start time provided.
     - To resume receiving Feature Updates which are paused, clear the start date field.
@@ -355,7 +355,9 @@ Note: If the "Allow Telemetry" policy is set to 0, this policy will have no effe
       <string id="ExcludeWUDriversInQualityUpdate_Title">Do not include drivers with Windows Updates</string>
       <string id="ExcludeWUDriversInQualityUpdate_Help">Enable this policy to not include drivers with Windows quality updates.
 
-If you disable or do not configure this policy, Windows Update will include updates that have a Driver classification.</string>
+If you disable or do not configure this policy, Windows Update will include updates that have a Driver classification.
+
+Note: For devices running Windows 10, version 1607 or Windows Server 2016, this policy only takes effect if you enable telemetry (that is, if the “Allow Telemetry” policy is not 0). For devices running Windows 10, version 1703 (or later) or Windows Server, version 1709 (or later), telemetry does not have to be enabled for this policy to take effect.</string>
       <string id="ActiveHours_Title">Turn off auto-restart for updates during active hours</string>
       <string id="ActiveHours_Help">If you enable this policy, the PC will not automatically restart after updates during active hours. The PC will attempt to restart outside of active hours.
 

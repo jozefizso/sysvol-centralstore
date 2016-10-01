@@ -75,6 +75,16 @@ If you disable or don't configure this setting, non-enterprise sites can open ou
 
         If you disable or don't configure this setting,  Application Guard deletes all user data within the Application Guard container.
         </string>
+        <string id="AppHVSI_AllowVirtualGPU_DisplayName">Allow hardware-accelerated rendering for Windows Defender Application Guard</string>
+        <string id="AppHVSI_AllowVirtualGPU_Explain">This policy setting determines whether Windows Defender Application Guard renders graphics using hardware or software acceleration.
+
+If you enable this setting, Windows Defender Application Guard uses Hyper-V to access supported, high-security rendering graphics hardware (GPUs). These GPUs improve rendering performance and battery life while using Windows Defender Application Guard, particularly for video playback and other graphics-intensive use cases. If you enable this setting without connecting any high-security rendering graphics hardware, Windows Defender Application Guard will automatically revert to software-based (CPU) rendering.
+
+Note:
+Be aware that enabling this setting with potentially compromised graphics devices or drivers might pose a risk to the host device.
+
+If you disable or don’t configure this setting, Windows Defender Application Guard uses software-based (CPU) rendering and won’t load any third-party graphics drivers or interact with any connected graphics hardware.
+        </string>
         <string id="AppHVSI_AuditApplicationGuard_DisplayName">Allow auditing events in Windows Defender Application Guard</string>
         <string id="AppHVSI_AuditApplicationGuard_Explain">This policy setting allows you to decide whether auditing events can be collected from Windows Defender Application Guard (Application Guard).
 
@@ -84,6 +94,14 @@ If you disable or don't configure this setting, non-enterprise sites can open ou
              Collected logs are available for review on Microsoft Edge, outside of Application Guard.
 
         If you disable or don't configure this setting,  audit event logs aren't collected for Application Guard.</string>
+
+        <string id="AppHVSI_SaveFilesToHost_DisplayName">Allow files to download and save to the host operating system from Windows Defender Application Guard</string>
+        <string id="AppHVSI_SaveFilesToHost_Explain">This policy setting determines whether to save downloaded files to the host operating system from the Windows Defender Application Guard container.
+
+        If you enable this setting, people can save downloaded files from the Windows Defender Application Guard container to the host operating system.
+
+        If you disable or don't configure this setting, people can't save downloaded files from the Windows Defender Application Guard container to the host operating system.
+        </string>
     </stringTable>
     <presentationTable>
       <presentation id="AppHVSIClipboardSettings_Presentation">

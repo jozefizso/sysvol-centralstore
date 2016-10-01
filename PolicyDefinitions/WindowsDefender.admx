@@ -1198,6 +1198,16 @@
                     <decimal value="2" />
                 </value>
             </item>
+            <item displayName="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_BlockDiskModifications)">
+                <value>
+                    <decimal value="3" />
+                </value>
+            </item>
+            <item displayName="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_AuditDiskModifications)">
+                <value>
+                    <decimal value="4" />
+                </value>
+            </item>
            </enum>
            </elements>
            </policy>

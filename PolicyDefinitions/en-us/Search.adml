@@ -281,8 +281,12 @@ If you disable this setting, the system will need to be unlocked for the user to
  
 If this is enabled, search and Cortana can access location information.</string>
       <string id="AllowCloudSearch">Allow Cloud Search</string>
+      <string id="AllowCortanaInAADPathOOBE">Allow Cortana Page in OOBE on an AAD account</string>
       <string id="ExplainAllowCloudSearch">Allow search and Cortana to search cloud sources like OneDrive and SharePoint</string>
+      <string id="ExplainCortanaAAD">Allow the cortana opt-in page during windows setup out of the box experience</string>
       <string id="AllowCloudSearchDisabled">Disable Cloud Search</string>
+      <string id="AllowCortanainAADDisabled">Disable Cortana Page in AAD</string>
+      <string id="AllowCortanainAADEnabled">Enable Cortana Page in AAD</string>
       <string id="AllowCloudSearchEnabled">Enable Cloud Search</string>
       <string id="AllowCloudSearchControlledByUser">User Selected</string>
     </stringTable>
@@ -370,6 +374,9 @@ If this is enabled, search and Cortana can access location information.</string>
       </presentation>
       <presentation id="AllowCloudSearch">
         <dropdownList refId="AllowCloudSearch_Dropdown" noSort="true" defaultItem="2">Cloud Search Setting</dropdownList>
+      </presentation>
+      <presentation id="AllowCortanaAAD">
+        <dropdownList refId="AllowCortanaAAD_Dropdown" noSort="true" defaultItem="0">Cortana in AAD Setting</dropdownList>
       </presentation>
     </presentationTable>
   </resources>

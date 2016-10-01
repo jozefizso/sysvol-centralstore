@@ -118,6 +118,23 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <!-- AllowVirtualGPU -->
+    <policy name="AppHVSI_AllowVirtualGPU"
+            class="Machine"
+            displayName="$(string.AppHVSI_AllowVirtualGPU_DisplayName)"
+            explainText="$(string.AppHVSI_AllowVirtualGPU_Explain)"
+            key="SOFTWARE\Policies\Microsoft\AppHVSI"
+            valueName="AllowVirtualGPU"
+            >
+      <parentCategory ref="AppHVSICat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <!-- Auditing Settings -->
     <policy name="AppHVSI_AuditApplicationGuardConfig"
             class="Machine"
@@ -135,5 +152,24 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+
+    <!-- SaveFilestoHost -->
+    <policy name="AppHVSI_SaveFilesToHost"
+            class="Machine"
+            displayName="$(string.AppHVSI_SaveFilesToHost_DisplayName)"
+            explainText="$(string.AppHVSI_SaveFilesToHost_Explain)"
+            key="SOFTWARE\Policies\Microsoft\AppHVSI"
+            valueName="SaveFilesToHost"
+            >
+      <parentCategory ref="AppHVSICat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
   </policies>
 </policyDefinitions>

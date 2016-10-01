@@ -525,5 +525,13 @@
       <parentCategory ref="windows:StartMenu" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2" />
     </policy>
+    <policy name="HideRecentlyAddedApps" class="Machine" displayName="$(string.HideRecentlyAddedApps)" explainText="$(string.HideRecentlyAddedApps_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="HideRecentlyAddedApps">
+      <parentCategory ref="windows:StartMenu" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS4" />
+    </policy>
+    <policy name="DisableContextMenusInStart" class="Both" displayName="$(string.DisableContextMenusInStart)" explainText="$(string.DisableContextMenusInStart_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="DisableContextMenusInStart">
+      <parentCategory ref="windows:StartMenu" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS4" />
+    </policy>
   </policies>
 </policyDefinitions>

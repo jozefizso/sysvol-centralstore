@@ -44,7 +44,7 @@ If you enable it, a screen saver runs, provided the following two conditions hol
 
 Also, see the "Prevent changing Screen Saver" setting.</string>
       <string id="CPL_Personalization_SetScreenSaver">Force specific screen saver</string>
-      <string id="CPL_Personalization_SetScreenSaver_Help">Note: This setting is obsolete and will not be available in the future. Use "Force a specific default lock screen and logon image" instead.
+      <string id="CPL_Personalization_SetScreenSaver_Help">Note: This setting is obsolete and will not be available in the future. Use "Force a specific default lock screen and logon image" and "Prevent changing lock screen and logon image" instead.
 
 Specifies the screen saver for the user's desktop.
 

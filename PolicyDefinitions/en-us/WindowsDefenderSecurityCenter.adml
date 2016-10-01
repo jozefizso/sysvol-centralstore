@@ -11,6 +11,8 @@
     <string id="FamilyOptions">Family options</string>
     <string id="Notifications">Notifications</string>
     <string id="EnterpriseCustomization">Enterprise Customization</string>
+    <string id="AccountProtection">Account protection</string>
+    <string id="DeviceSecurity">Device security</string>
     <string id="VirusThreatProtection_UILockdown">Hide the Virus and threat protection area</string>
     <string id="VirusThreatProtection_UILockdown_Explain">
         Hide the Virus and threat protection area in the Windows Defender Security Center.
@@ -20,6 +22,19 @@
 
         Disabled:
         The Virus and threat protection area will be shown.
+
+        Not configured:
+        Same as Disabled.
+    </string>
+    <string id="VirusThreatProtection_HideRansomwareRecovery">Hide the Ransomware data recovery area</string>
+    <string id="VirusThreatProtection_HideRansomwareRecovery_Explain">
+        Hide the Ransomware data recovery area in the Windows Defender Security Center.
+
+        Enabled:
+        The Ransomware data recovery area will be hidden.
+
+        Disabled:
+        The Ransomware data recovery area will be shown.
 
         Not configured:
         Same as Disabled.
@@ -207,6 +222,58 @@
 
         Disabled:
         A contact website URL will not be shown in either the Windows Defender Security Center or any notifications it creates.
+
+        Not configured:
+        Same as Disabled.
+    </string>
+    <string id="AccountProtection_UILockdown">Hide the Account protection area</string>
+    <string id="AccountProtection_UILockdown_Explain">
+        Hide the Account protection area in the Windows Defender Security Center.
+
+        Enabled:
+        The Account protection area will be hidden.
+
+        Disabled:
+        The Account protection area will be shown.
+
+        Not configured:
+        Same as Disabled.
+    </string>
+    <string id="DeviceSecurity_UILockdown">Hide the Device security area</string>
+    <string id="DeviceSecurity_UILockdown_Explain">
+        Hide the Device security area in the Windows Defender Security Center.
+
+        Enabled:
+        The Device security area will be hidden.
+
+        Disabled:
+        The Device security area will be shown.
+
+        Not configured:
+        Same as Disabled.
+    </string>
+    <string id="DeviceSecurity_HideTPMTroubleshooting">Hide the Security processor (TPM) troubleshooter page</string>
+    <string id="DeviceSecurity_HideTPMTroubleshooting_Explain">
+        Hide the Security processor (TPM) troubleshooting area in the Windows Defender Security Center.
+
+        Enabled:
+        The Security processor (TPM) troubleshooting area will be hidden.
+
+        Disabled:
+        The Security processor (TPM) troubleshooting area will be shown.
+
+        Not configured:
+        Same as Disabled.
+    </string>
+    <string id="DeviceSecurity_HideSecureBoot">Hide the Secure boot area</string>
+    <string id="DeviceSecurity_HideSecureBoot_Explain">
+        Hide the Secure boot area in the Windows Defender Security Center.
+
+        Enabled:
+        The Secure boot area will be hidden.
+
+        Disabled:
+        The Secure boot area will be shown.
 
         Not configured:
         Same as Disabled.

@@ -13,6 +13,8 @@
       <string id="SUPPORTED_INTERNET_BROWSER_WIN10V1703_DisplayName">Microsoft Edge on Windows 10, Version 1703 or later</string>
       <string id="SUPPORTED_INTERNET_BROWSER_WIN10RS3RELEASE_DisplayName">Microsoft Edge on Windows 10, Version 1709 or later</string>
       <string id="SUPPORTED_INTERNET_BROWSER_RS3_DisplayName">Microsoft Edge on Windows 10, Version 1708 or later</string>
+      <!-- Bug 13574024 is tracking the proper string for the RS4 version -->
+      <string id="SUPPORTED_INTERNET_BROWSER_RS4_DisplayName">Microsoft Edge on Windows 10, Version 1802 or later</string>
       <string id="InternetBrowser_DisplayName">Microsoft Edge</string>
       <string id="InternetBrowser_ExplainCat">Microsoft Edge Category</string>
 
@@ -153,6 +155,24 @@ If you disable or don't configure this setting, employees will see the favorites
 If you enable this setting, Microsoft Edge shows the Books Library, regardless of the device's country or region.
  
 If you disable or don't configure this setting, Microsoft Edge shows the Books Library only in countries or regions where it's supported.</string>
+      <string id="EnableExtendedBooksTelemetry">Allow extended telemetry for the Books tab</string>
+      <string id="EnableExtendedBooksTelemetry_Explain">This policy setting lets you decide how much data to send to Microsoft about the book you're reading from the Books tab in Microsoft Edge.
+
+If you enable this setting, Microsoft Edge sends additional telemetry data, on top of the basic telemetry data, from the Books tab.
+
+If you disable or don't configure this setting, Microsoft Edge only sends basic telemetry data, depending on your device configuration.</string>
+      <string id="UseSharedFolderForBooks">Allow a shared Books folder</string>
+      <string id="UseSharedFolderForBooks_Explain">This policy setting lets you decide whether Microsoft Edge stores books from the Books tab to a default, shared folder for Windows.
+
+If you enable this setting, Microsoft Edge automatically downloads book files to a common, shared folder and prevents students and teachers from removing the book from the Books tab. For this to work properly, your students and teachers must be signed in using a school account.
+
+If you disable or don't configure this setting, Microsoft Edge downloads book files to a per-user folder for each student or teacher.</string>
+      <string id="AllowConfigurationUpdateForBooksLibrary">Allow configuration updates for the Books Library</string>
+      <string id="AllowConfigurationUpdateForBooksLibrary_Explain">This policy setting lets you decide whether Microsoft Edge can automatically update the configuration data for the Books Library.
+
+If you enable (default) or don't configure this setting, Microsoft Edge automatically updates the configuration data for the Books Library.
+
+If you disable this setting, Microsoft Edge won't automatically download updated configuration data for the Books Library.</string>
       <string id="Cookies">Configure cookies</string>
       <string id="Cookies_Explain">This setting lets you configure how to work with cookies.
 
@@ -300,6 +320,14 @@ If you enable or don’t configure this setting, Microsoft Edge periodically dow
 
 If you disable this setting, the Microsoft Compatibility List isn’t used during browser navigation.</string>
 
+      <string id="PreventTabPreloading">Prevent Microsoft Edge from starting and loading the Start and New Tab page at Windows startup and each time Microsoft Edge is closed</string>
+      <string id="PreventTabPreloading_Explain">This policy setting lets you decide whether Microsoft Edge can load the Start and New Tab page during Windows sign in and each time Microsoft Edge is closed. By default this setting is to allow preloading.
+
+If you prevent preloading, Microsoft Edge won’t load the Start or New Tab page during Windows sign in and each time Microsoft Edge is closed.
+
+If you allow preloading, disable, or don’t configure this policy setting, Microsoft Edge loads the Start and New Tab page during Windows sign in and each time Microsoft Edge is closed; minimizing the amount of time required to start up Microsoft Edge and to start a new tab.</string>
+      <string id="PreventTabPreloadingDropdown_PreventTabPreloading">Prevent tab preloading</string>
+      <string id="PreventTabPreloadingDropdown_AllowTabPreloading">Allow tab preloading</string>
     </stringTable>
 
     <!-- Presentation -->
@@ -345,6 +373,9 @@ URL can be specified as
       </presentation>
       <presentation id="Cookies">
         <dropdownList refId="CookiesListBox" noSort="true" defaultItem="2">Configure Cookies </dropdownList>
+      </presentation>
+      <presentation id="PreventTabPreloading">
+        <dropdownList refId="PreventTabPreloadingDropdown" defaultItem="0">Configure tab preloading</dropdownList>
       </presentation>
     </presentationTable>
   </resources>

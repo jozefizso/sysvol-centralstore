@@ -139,6 +139,7 @@ If you do not configure this policy setting, client drive redirection and Clipbo
       <string id="TS_CLIENT_HELP">Controls Remote Desktop Connection client settings</string>
       <string id="TS_CLIENT_LPT">Do not allow LPT port redirection</string>
       <string id="TS_CLIENT_PNP">Do not allow supported Plug and Play device redirection</string>
+      <string id="TS_CAMERA_REDIRECTION">Do not allow video capture redirection</string>
       <string id="TS_CLIENT_PRINTER">Do not allow client printer redirection</string>
       <string id="TS_CLIPBOARDMAP_EXPLAIN">This policy setting specifies whether to prevent the sharing of Clipboard contents (Clipboard redirection) between a remote computer and a client computer during a Remote Desktop Services session.
 
@@ -190,6 +191,15 @@ If you disable this policy setting, users can redirect their supported Plug and 
 If you enable this policy setting, users cannot redirect their supported Plug and Play devices to the remote computer.If you do not configure this policy setting, users can redirect their supported Plug and Play devices to the remote computer only if it is running Windows Server 2012 R2 and earlier versions.
 
 Note: You can disable redirection of specific types of supported Plug and Play devices by using Computer Configuration\Administrative Templates\System\Device Installation\Device Installation Restrictions policy settings.
+
+</string>
+      <string id="TS_CAMERA_REDIRECTION_EXPLAIN">This policy setting lets you control the redirection of video capture devices to the remote computer in a Remote Desktop Services session. 
+
+By default, Remote Desktop Services allows redirection of video capture devices.
+
+If you enable this policy setting, users cannot redirect their video capture devices to the remote computer. 
+
+If you disable or do not configure this policy setting, users can redirect their video capture devices to the remote computer. Users can use the More option on the Local Resources tab of Remote Desktop Connection to choose the video capture devices to redirect to the remote computer.
 
 </string>
       <string id="TS_MAXMONITOR_EXPLAIN">This policy setting allows you to limit the number of monitors that a user can use to display a Remote Desktop Services session. Limiting the number of monitors to display a Remote Desktop Services session can improve connection performance, particularly over slow links, and reduce server load.
@@ -1118,7 +1128,7 @@ If you enable this policy setting, user sign-in is blocked for up to 6 minutes t
 
 If you disable or do not configure this policy setting, the Start screen is shown and apps are registered in the background.</string>
 
-      <string id="TS_DX_USE_FULL_HWGPU">Use the hardware default graphics adapter for all Remote Desktop Services sessions</string>
+      <string id="TS_DX_USE_FULL_HWGPU">Use hardware graphics adapters for all Remote Desktop Services sessions</string>
       <string id="TS_DX_USE_FULL_HWGPU_EXPLAIN">This policy setting enables system administrators to change the graphics rendering for all Remote Desktop Services sessions.
 
 If you enable this policy setting, all Remote Desktop Services sessions use the hardware graphics renderer instead of the Microsoft Basic Render Driver as the default adapter.
@@ -1127,7 +1137,7 @@ If you disable this policy setting, all Remote Desktop Services sessions use the
 
 If you do not configure this policy setting, Remote Desktop Services sessions on the RD Session Host server use the Microsoft Basic Render Driver as the default adapter. In all other cases, Remote Desktop Services sessions use the hardware graphics renderer by default.
 
-NOTE: The policy setting affects only the default graphics processing unit (GPU) on a computer with more than one GPU installed. All additional GPUs are considered secondary adapters and used as hardware renderers. The GPU configuration of the local session is not affected by this policy setting.
+NOTE: The policy setting enables load-balancing of graphics processing units (GPU) on a computer with more than one GPU installed. The GPU configuration of the local session is not affected by this policy setting.
 </string>
       
     </stringTable>
