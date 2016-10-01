@@ -77,7 +77,9 @@ If you enable this policy setting, you can specify one of three SafeSearch setti
 
     -Off: Don't filter adult content from search results.
 
-If you disable or don't configure this policy setting, users can specify the SafeSearch setting.</string>
+If you disable or don't configure this policy setting, users can specify the SafeSearch setting.
+
+Windows 10 users should use Search/DoNotUseWebResults</string>
       <string id="SharePrivacyAllAndLocation">User info and location</string>
       <string id="SharePrivacyAll">User info only</string>
       <string id="SharePrivacyAnonymous">Anonymous info</string>

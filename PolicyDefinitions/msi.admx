@@ -320,7 +320,7 @@
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
-      <disabledValue>explainText="$(string.DisableSharedComponent_Help)" 
+      <disabledValue>
         <decimal value="0" />
       </disabledValue>
     </policy>

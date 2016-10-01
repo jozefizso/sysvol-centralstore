@@ -14,9 +14,6 @@
     <category name="MSPassportForWorkPINComplexityCategory" displayName="$(string.MSPassportForWorkPINComplexityCategory)">
         <parentCategory ref="windows:System" />
     </category>
-    <category name="MSPassportForWorkRemoteCategory" displayName="$(string.MSPassportForWorkRemoteCategory)">
-        <parentCategory ref="MSPassportForWorkCategory" />
-    </category>
   </categories>
   <policies>
     <!-- Enable Passport Policy -->
@@ -85,18 +82,6 @@
         <disabledValue>
           <decimal value="0" />
         </disabledValue>
-    </policy>
-    <!-- Remote policies -->
-    <!-- Use remote passport -->
-    <policy name="MSPassport_UseRemote" class="Machine" displayName="$(string.MSPassport_UseRemote)" explainText="$(string.MSPassport_UseRemoteExplain)" key="SOFTWARE\Policies\Microsoft\PassportForWork\Remote" valueName="Enabled">
-      <parentCategory ref="MSPassportForWorkRemoteCategory" />
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
     </policy>
     <!-- Pin Complexity Policy -->
     <!--  Minimum PIN Length -->
@@ -227,6 +212,17 @@
         </disabledValue>
     </policy>
     <policy name="MSPassport_AllowAllUserAccessToSmartCardNode" class="Machine" displayName="$(string.MSPassport_AllowAllUserAccessToSmartCardNode)" explainText="$(string.MSPassport_AllowAllUserAccessToSmartCardNodeExplain)" key="SOFTWARE\Policies\Microsoft\PassportForWork" valueName="AllowAllUserAccessToSmartCardNode">
+        <parentCategory ref="MSPassportForWorkCategory" />
+        <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
+        <enabledValue>
+          <decimal value="1" />
+        </enabledValue>
+        <disabledValue>
+          <decimal value="0" />
+        </disabledValue>
+    </policy>
+    <!-- Certificate propagation policy -->
+    <policy name="MSPassport_UseHelloCertificatesAsSmartCardCertificates" class="Machine" displayName="$(string.MSPassport_UseHelloCertificatesAsSmartCardCertificates)" explainText="$(string.MSPassport_UseHelloCertificatesAsSmartCardCertificatesExplain)" key="SOFTWARE\Policies\Microsoft\PassportForWork" valueName="UseHelloCertificatesAsSmartCardCertificates">
         <parentCategory ref="MSPassportForWorkCategory" />
         <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
         <enabledValue>

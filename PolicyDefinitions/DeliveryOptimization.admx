@@ -399,6 +399,23 @@
     </policy>
     <policy
         class="Machine"
+        displayName="$(string.CacheHost)"
+        explainText="$(string.CacheHost_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="CacheHost"
+        presentation="$(presentation.CacheHost)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <text
+            id="CacheHost"
+            valueName="DOCacheHost"
+            />
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
         displayName="$(string.GroupIdSource)"
         explainText="$(string.GroupIdSource_Help)"
         key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
@@ -408,12 +425,36 @@
       <parentCategory ref="DeliveryOptimizationCat"/>
       <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
-        <decimal
+        <enum
             id="GroupIdSource"
-            maxValue="100"
-            minValue="0"
             valueName="DOGroupIdSource"
-            />
+            >
+          <item displayName="$(string.GroupIdSource_Unset)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.GroupIdSource_AD)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.GroupIdSource_SID)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.GroupIdSource_DHCP)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+          <item displayName="$(string.GroupIdSource_DNS)">
+            <value>
+              <decimal value="4"/>
+            </value>
+          </item>
+        </enum>
       </elements>
     </policy>
     <policy
@@ -484,6 +525,7 @@
     </policy>
     <policy
         class="Machine"
+        clientExtension="{CFF649BD-601D-4361-AD3D-0FC365DB4DB7}"
         displayName="$(string.SetHoursToLimitBackgroundDownloadBandwidth)"
         explainText="$(string.SetHoursToLimitBackgroundDownloadBandwidth_Help)"
         key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
@@ -761,6 +803,7 @@
     </policy>
     <policy
         class="Machine"
+        clientExtension="{CFF649BD-601D-4361-AD3D-0FC365DB4DB7}"
         displayName="$(string.SetHoursToLimitForegroundDownloadBandwidth)"
         explainText="$(string.SetHoursToLimitForegroundDownloadBandwidth_Help)"
         key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"

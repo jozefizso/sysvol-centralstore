@@ -37,6 +37,9 @@
         <category name="DeviceSecurity" displayName="$(string.DeviceSecurity)">
             <parentCategory ref="WindowsDefenderSecurityCenter" />
         </category>
+        <category name="Systray" displayName="$(string.Systray)">
+            <parentCategory ref="WindowsDefenderSecurityCenter" />
+        </category>
     </categories>
     <policies>
         <policy name="VirusThreatProtection_UILockdown" class="Machine" displayName="$(string.VirusThreatProtection_UILockdown)" explainText="$(string.VirusThreatProtection_UILockdown_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Virus and threat protection" valueName="UILockdown">
@@ -210,6 +213,36 @@
         <policy name="DeviceSecurity_HideSecureBoot" class="Machine" displayName="$(string.DeviceSecurity_HideSecureBoot)" explainText="$(string.DeviceSecurity_HideSecureBoot_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Device security" valueName="HideSecureBoot">
             <parentCategory ref="DeviceSecurity" />
             <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS4" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy name="DeviceSecurity_DisableClearTpmButton" class="Machine" displayName="$(string.DeviceSecurity_DisableClearTpmButton)" explainText="$(string.DeviceSecurity_DisableClearTpmButton_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Device security" valueName="DisableClearTpmButton">
+            <parentCategory ref="DeviceSecurity" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS5" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy name="DeviceSecurity_DisableTpmFirmwareUpdateWarning" class="Machine" displayName="$(string.DeviceSecurity_DisableTpmFirmwareUpdateWarning)" explainText="$(string.DeviceSecurity_DisableTpmFirmwareUpdateWarning_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Device security" valueName="DisableTpmFirmwareUpdateWarning">
+            <parentCategory ref="DeviceSecurity" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS5" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy name="Systray_HideSystray" class="Machine" displayName="$(string.Systray_HideSystray)" explainText="$(string.Systray_HideSystray_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Systray" valueName="HideSystray">
+            <parentCategory ref="Systray" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS5" />
             <enabledValue>
                 <decimal value="1" />
             </enabledValue>

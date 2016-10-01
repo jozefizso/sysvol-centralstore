@@ -154,5 +154,34 @@
         </enum>
       </elements>
     </policy>
+    <policy name="DisableDeviceDelete" class="Machine" displayName="$(string.DisableDeviceDelete)" explainText="$(string.DisableDeviceDelete_Explain)" key="Software\Policies\Microsoft\Windows\DataCollection" valueName="DisableDeviceDelete">
+      <parentCategory ref="windows:DataCollectionAndPreviewBuilds" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS5" />
+      <!-- "Enabled" here means Device Delete UX is disabled. -->
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableDiagnosticDataViewer" class="Machine" displayName="$(string.DisableDiagnosticDataViewer)" explainText="$(string.DisableDiagnosticDataViewer_Explain)" key="Software\Policies\Microsoft\Windows\DataCollection" valueName="DisableDiagnosticDataViewer">
+      <parentCategory ref="windows:DataCollectionAndPreviewBuilds" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS5" />
+      <!-- "Enabled" here means DDV is disabled. -->
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ConfigureMicrosoft365UploadEndpoint" class="Machine" displayName="$(string.ConfigureMicrosoft365UploadEndpoint)" explainText="$(string.ConfigureMicrosoft365UploadEndpoint_Explain)" presentation="$(presentation.ConfigureMicrosoft365UploadEndpoint)" key="Software\Policies\Microsoft\Windows\DataCollection">
+      <parentCategory ref="windows:DataCollectionAndPreviewBuilds" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS5" />
+      <elements>
+        <text id="ConfigureMicrosoft365UploadEndpointValue" valueName="ConfigureMicrosoft365UploadEndpoint" required="true"/>
+      </elements>
+    </policy>
   </policies>
 </policyDefinitions>

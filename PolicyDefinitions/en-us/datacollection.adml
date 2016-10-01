@@ -40,6 +40,7 @@ If you disable or do not configure this policy setting, then Microsoft will not 
       <string id="DisableEnterpriseAuthProxy_1">Enable Authenticated Proxy usage</string>
       <string id="DisableEnterpriseAuthProxy_2">Disable Authenticated Proxy usage</string>
       <string id="DisableEnterpriseAuthProxy_Explain">This policy setting blocks the Connected User Experience and Telemetry service from automatically using an authenticated proxy to send data back to Microsoft on Windows 10. If you disable or do not configure this policy setting, the Connected User Experience and Telemetry service will automatically use an authenticated proxy to send data back to Microsoft. Enabling this policy will block the Connected User Experience and Telemetry service from automatically using an authenticated proxy.</string>
+
       <string id="LimitEnhancedDiagnosticDataWindowsAnalytics">Limit Enhanced diagnostic data to the minimum required by Windows Analytics</string>
       <string id="LimitEnhancedDiagnosticDataWindowsAnalytics_1">Enable Windows Analytics collection</string>
       <string id="LimitEnhancedDiagnosticDataWindowsAnalytics_2">Disable Windows Analytics collection</string>
@@ -80,9 +81,30 @@ Set the Allow Telemetry policy setting to prevent people from sending diagnostic
       <string id="ConfigureTelemetryOptInChangeNotification_1">Disable telemetry change notifications</string>
       <string id="ConfigureTelemetryOptInChangeNotification_2">Enable telemetry change notifications</string>
       <string id="ConfigureTelemetryOptInChangeNotification_Explain">
-          This policy setting determines whether a device shows notifications about telemetry levels to people on first logon or when changes occur in Settings. 
+          This policy setting controls whether a device shows notifications about telemetry levels to people on first logon or when changes occur in Settings. 
           If you set this policy setting to "Disable telemetry change notifications", telemetry level notifications stop appearing.
           If you set this policy setting to "Enable telemetry change notifications" or don't configure this policy setting, telemetry notifications appear at first logon and when changes occur in Settings.
+      </string>
+
+      <string id="DisableDeviceDelete">Disable deleting diagnostic data </string>
+      <string id="DisableDeviceDelete_Explain">
+          This policy setting controls whether the Delete diagnostic data button is enabled in Diagnostic &amp; Feedback Settings page.
+          If you enable this policy setting, the Delete diagnostic data button will be disabled in Settings page, preventing the deletion of diagnostic data collected by Microsoft from the device. 
+          If you disable or don't configure this policy setting, the Delete diagnostic data button will be enabled in Settings page, which allows people to erase all diagnostic data collected by Microsoft from that device.
+      </string>
+
+      <string id="DisableDiagnosticDataViewer">Disable diagnostic data viewer. </string>
+      <string id="DisableDiagnosticDataViewer_Explain">
+          This policy setting controls whether users can enable and launch the Diagnostic Data Viewer from the Diagnostic &amp; Feedback Settings page.
+          If you enable this policy setting, the Diagnostic Data Viewer will not be enabled in Settings page, and it will prevent the viewer from showing diagnostic data collected by Microsoft from the device.  
+          If you disable or don't configure this policy setting, the Diagnostic Data Viewer will be enabled in Settings page.
+      </string>
+
+      <string id="ConfigureMicrosoft365UploadEndpoint">Configure Microsoft 365 Update Readiness upload endpoint</string>
+      <string id="ConfigureMicrosoft365UploadEndpoint_Explain">
+          This policy sets the upload endpoint for this device’s diagnostic data as part of the Microsoft 365 Update Readiness program.
+          If your organization is participating in the program and has been instructed to configure a custom upload endpoint, then use this setting to define that endpoint.
+          The value for this setting will be provided by Microsoft as part of the onboarding process for the program. 
       </string>
     </stringTable>
     <presentationTable>
@@ -110,6 +132,11 @@ Set the Allow Telemetry policy setting to prevent people from sending diagnostic
       </presentation>
       <presentation id="ConfigureTelemetryOptInChangeNotification">
         <dropdownList refId="ConfigureTelemetryOptInChangeNotification" noSort="true" defaultItem="0"></dropdownList>
+      </presentation>
+      <presentation id="ConfigureMicrosoft365UploadEndpoint">
+        <textBox refId="ConfigureMicrosoft365UploadEndpointValue">
+          <label>Microsoft 365 Update Readiness Custom Upload Endpoint:</label>
+        </textBox>
       </presentation>
     </presentationTable>
   </resources>
