@@ -67,6 +67,9 @@ This parameter controls whether or not the the DC will respond to time sync requ
         UtilizeSslTimeData
 This parameter controls whether W32time will use time data computed from SSL traffic on the machine as an additional input for correcting the local clock.  Default: 1 (enabled) Boolean
 
+        ClockAdjustmentAuditLimit
+This parameter specifies the smallest local clock adjustments that may be logged to the W32time service event log on the target machine. Default: 800 Parts per million (PPM).
+
         RODC parameters:
 
         ChainEntryTimeout
@@ -161,6 +164,7 @@ If you disable or do not configure this policy setting, your computer cannot ser
         <decimalTextBox refId="W32TIME_ClockHoldoverPeriod" defaultValue="7800">ClockHoldoverPeriod</decimalTextBox>
         <decimalTextBox refId="W32TIME_RequireSecureTimeSyncRequests" defaultValue="0">RequireSecureTimeSyncRequests</decimalTextBox>
         <decimalTextBox refId="W32TIME_UtilizeSslTimeData" defaultValue="1">UtilizeSslTimeData</decimalTextBox>
+        <decimalTextBox refId="W32TIME_ClockAdjustmentAuditLimit" defaultValue="800">ClockAdjustmentAuditLimit</decimalTextBox>
         <decimalTextBox refId="W32TIME_ChainEntryTimeout" defaultValue="16">ChainEntryTimeout</decimalTextBox>
         <decimalTextBox refId="W32TIME_ChainMaxEntries" defaultValue="128">ChainMaxEntries</decimalTextBox>
         <decimalTextBox refId="W32TIME_ChainMaxHostEntries" defaultValue="4">ChainMaxHostEntries</decimalTextBox>
