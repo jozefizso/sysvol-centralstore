@@ -73,5 +73,23 @@
         <text id="CommercialIdValue" valueName="CommercialId" required="true"/>
       </elements>
     </policy>
+    <policy name="DisableEnterpriseAuthProxy" class="Machine" displayName="$(string.DisableEnterpriseAuthProxy)" explainText="$(string.DisableEnterpriseAuthProxy_Explain)" presentation="$(presentation.DisableEnterpriseAuthProxy)" key="Software\Policies\Microsoft\Windows\DataCollection" valueName="DisableEnterpriseAuthProxy">
+      <parentCategory ref="windows:DataCollectionAndPreviewBuilds" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <elements>
+        <enum id="DisableEnterpriseAuthProxy" valueName="DisableEnterpriseAuthProxy" required="true">
+          <item displayName="$(string.DisableEnterpriseAuthProxy_1)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.DisableEnterpriseAuthProxy_2)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
   </policies>
 </policyDefinitions>

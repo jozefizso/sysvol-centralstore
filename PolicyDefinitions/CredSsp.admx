@@ -238,5 +238,15 @@
         </enum>
       </elements>
     </policy>
+    <policy name="AllowProtectedCreds" class="Machine" displayName="$(string.AllowProtectedCreds)" explainText="$(string.AllowProtectedCreds_Explain)" presentation="$(presentation.AllowProtectedCreds)" key="Software\Policies\Microsoft\Windows\CredentialsDelegation" valueName="AllowProtectedCreds">
+      <parentCategory ref="CredentialsDelegation" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

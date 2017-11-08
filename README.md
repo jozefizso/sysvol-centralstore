@@ -28,5 +28,5 @@ Copy all files from the `PolicyDefinitions` folder in this repository to the **P
 ## Administrative Templates
 
 * Windows Server 2012 R2
-* Windows 10 Version 1607
+* Windows 10 Version 1703
 * Microsoft Office 2013

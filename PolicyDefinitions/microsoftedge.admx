@@ -31,6 +31,12 @@
           <range ref="products:MicrosoftEdge" minVersionIndex="1" maxVersionIndex="1"/>
         </or>
       </definition>
+      <!--Only on Windows 10, Version 1703 or later -->
+      <definition name="SUPPORTED_INTERNET_BROWSER_WIN10V1703" displayName="$(string.SUPPORTED_INTERNET_BROWSER_WIN10V1703_DisplayName)">
+        <or>
+          <range ref="products:MicrosoftEdge" minVersionIndex="1" maxVersionIndex="1"/>
+        </or>
+      </definition>
     </definitions>
   </supportedOn>
   <categories>
@@ -40,6 +46,21 @@
   </categories>
   <!-- NOTE: Please try to keep this list sorted by the Policy name="" field -->
   <policies>
+    <policy name="AllowAddressBarDropdown"
+        class="Both"
+        displayName="$(string.AllowAddressBarDropdown)"
+        explainText="$(string.AllowAddressBarDropdown_Explain)"
+        key="Software\Policies\Microsoft\MicrosoftEdge\ServiceUI"
+        valueName="ShowOneBox">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1703" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="AllowAutofill"
             class="Both"
             displayName="$(string.AllowAutofill)"
@@ -146,6 +167,21 @@
         <string>no</string>
       </disabledValue>
     </policy>
+    <policy name="AllowSearchEngineCustomization"
+           class="Both"
+           displayName="$(string.AllowSearchEngineCustomization)"
+           explainText="$(string.AllowSearchEngineCustomization_Explain)"
+           key="Software\Policies\Microsoft\MicrosoftEdge\Protected - It is a violation of Windows Policy to modify. See aka.ms/browserpolicy"
+           valueName="AllowSearchEngineCustomization">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1703" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="AllowSearchSuggestionsinAddressBar"
             class="Both"
             displayName="$(string.AllowSearchSuggestionsinAddressBar)"
@@ -219,6 +255,30 @@
         </enum>
       </elements>
     </policy>
+    <policy name="SetDefaultSearchEngine"
+            class="Both"
+            displayName="$(string.SetDefaultSearchEngine)"
+            explainText="$(string.SetDefaultSearchEngine_Explain)"
+            presentation="$(presentation.SetDefaultSearchEngine_Presentation)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\OpenSearch">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1703" />
+      <elements>
+        <text id="SetDefaultSearchEngine_Prompt" valueName="SetDefaultSearchEngine" required="true" />
+      </elements>
+    </policy>
+    <policy name="ConfigureAdditionalSearchEngines"
+            class="Both"
+            displayName="$(string.ConfigureAdditionalSearchEngines)"
+            explainText="$(string.ConfigureAdditionalSearchEngines_Explain)"
+            presentation="$(presentation.ConfigureAdditionalSearchEngines_Presentation)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\OpenSearch">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1703" />
+      <elements>
+        <text id="ConfigureAdditionalSearchEngines_Prompt" valueName="ConfigureAdditionalSearchEngines" required="true" />
+      </elements>
+    </policy>
     <policy name="EnterpriseModeSiteList"
             class="Both"
             displayName="$(string.EnterpriseModeSiteList)"
@@ -259,6 +319,21 @@
       <elements>
         <text id="HomePagesPrompt" valueName="ProvisionedHomePages" required="true" />
       </elements>
+    </policy>
+    <policy name="DisableLockdownOfStartPages"
+        class="Both"
+        displayName="$(string.DisableLockdownOfStartPages)"
+        explainText="$(string.DisableLockdownOfStartPages_Explain)"
+        key="Software\Policies\Microsoft\MicrosoftEdge\Internet Settings"
+        valueName="DisableLockdownOfStartPages">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1703" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
     </policy>
     <policy name="PreventSmartScreenPromptOverride"
             class="Both"
@@ -338,6 +413,111 @@
             explainText="$(string.PreventAccessToAboutFlagsInMicrosoftEdge_Explain)"
             key="Software\Policies\Microsoft\MicrosoftEdge\Main"
             valueName="PreventAccessToAboutFlagsInMicrosoftEdge">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1607" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="PreventLiveTileDataCollection"
+        class="Both"
+        displayName="$(string.PreventLiveTileDataCollection)"
+        explainText="$(string.PreventLiveTileDataCollection_Explain)"
+        key="Software\Policies\Microsoft\MicrosoftEdge\Main"
+        valueName="PreventLiveTileDataCollection">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1703" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="PreventFirstRunPage"
+        class="Both"
+        displayName="$(string.PreventFirstRunPage)"
+        explainText="$(string.PreventFirstRunPage_Explain)"
+        key="Software\Policies\Microsoft\MicrosoftEdge\Main"
+        valueName="PreventFirstRunPage">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1703" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SyncFavoritesBetweenIEAndMicrosoftEdge"
+            class="Both"
+            displayName="$(string.SyncFavoritesBetweenIEAndMicrosoftEdge)"
+            explainText="$(string.SyncFavoritesBetweenIEAndMicrosoftEdge_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Main"
+            valueName="SyncFavoritesBetweenIEAndMicrosoftEdge">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1703" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowFlashClickToRun"
+            class="Both"
+            displayName="$(string.AllowFlashClickToRun)"
+            explainText="$(string.AllowFlashClickToRun_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Security"
+            valueName="FlashClickToRunMode">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1703" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowClearingBrowsingDataOnExit"
+        class="Both"
+        displayName="$(string.AllowClearingBrowsingDataOnExit)"
+        explainText="$(string.AllowClearingBrowsingDataOnExit_Explain)"
+        key="Software\Policies\Microsoft\MicrosoftEdge\Privacy"
+        valueName="ClearBrowsingHistoryOnExit">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1703" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowFlash"
+            class="Both"
+            displayName="$(string.AllowFlash)"
+            explainText="$(string.AllowFlash_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Addons"
+            valueName="FlashPlayerEnabled">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>      
+    <policy name="AllowCVList"
+            class="Both"
+            displayName="$(string.AllowCVList)"
+            explainText="$(string.AllowCVList_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\BrowserEmulation"
+            valueName="MSCompatibilityMode">
       <parentCategory ref="MicrosoftEdge" />
       <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1607" />
       <enabledValue>

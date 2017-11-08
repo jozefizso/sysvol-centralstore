@@ -2886,6 +2886,34 @@ If you enable this policy setting, Web sites from less privileged zones can open
 If you disable this policy setting, the possibly harmful navigations are prevented. The Internet Explorer security feature will be on in this zone as set by Protection from Zone Elevation feature control.
 
 If you do not configure this policy setting, a warning is issued to the user that potentially risky navigation is about to occur.</string>
+      <string id="IZ_PolicyAllowVBScript">Allow VBScript to run in Internet Explorer</string>
+      <string id="IZ_PolicyAllowVBScript_ExplainDefaultDisable">This policy setting allows you to manage whether VBScript can be run on pages from the specified zone in Internet Explorer.
+
+If you selected Enable in the drop-down box, VBScript can run without user intervention.
+
+If you selected Prompt in the drop-down box, users are asked to choose whether to allow VBScript to run.
+
+If you selected Disable in the drop-down box, VBScript is prevented from running.
+
+If you do not configure or disable this policy setting, VBScript is prevented from running.</string>
+      <string id="IZ_PolicyAllowVBScript_ExplainDefaultEnable">This policy setting allows you to manage whether VBScript can be run on pages from the specified zone in Internet Explorer.
+
+If you selected Enable in the drop-down box, VBScript can run without user intervention.
+
+If you selected Prompt in the drop-down box, users are asked to choose whether to allow VBScript to run.
+
+If you selected Disable in the drop-down box, VBScript is prevented from running.
+
+If you do not configure or disable this policy setting, VBScript will run without user intervention.</string>
+      <string id="IZ_PolicyAllowVBScript_ExplainDefaultPrompt">This policy setting allows you to manage whether VBScript can be run on pages from the specified zone in Internet Explorer.
+
+If you selected Enable in the drop-down box, VBScript can run without user intervention.
+
+If you selected Prompt in the drop-down box, users are asked to choose whether to allow VBScript to run.
+
+If you selected Disable in the drop-down box, VBScript is prevented from running.
+
+If you do not configure or disable this policy setting, users are asked to choose whether to allow VBScript to run.</string>
       <string id="IZ_ProxyByPass">Intranet Sites: Include all sites that bypass the proxy server</string>
       <string id="IZ_RestrictedSitesZone">Restricted Sites Zone</string>
       <string id="IZ_RestrictedSitesZoneLockdown">Locked-Down Restricted Sites Zone</string>
@@ -3095,6 +3123,14 @@ If you enable this policy setting, smooth scrolling is turned off. The user cann
 If you disable this policy setting, smooth scrolling is turned on. The user cannot turn off smooth scrolling.
 
 If you do not configure this policy setting, the user can turn smooth scrolling on or off.</string>
+      <string id="HideNewEdgeButton">Hide the button (next to the New Tab button) that opens Microsoft Edge</string>
+      <string id="HideNewEdgeButton_Explain">This policy setting allows you to manage if users can see the button (next to the New Tab button) that opens Microsoft Edge.
+
+If you enable this policy setting, the button to open Microsoft Edge from Internet Explorer will be hidden.
+
+If you disable this policy setting, the button to open Microsoft Edge from Internet Explorer will be shown.
+
+If you do not configure this policy setting, the button to open Microsoft Edge from Internet Explorer can be configured by the user.</string>
       <string id="SpecificSearchProvider">Restrict search providers to a specific list</string>
       <string id="SQM_DisableCEIP">Prevent participation in the Customer Experience Improvement Program</string>
       <string id="SUPPORTED_IE4ONLY">Only Internet Explorer 4.0</string>
@@ -3528,6 +3564,13 @@ For at least Internet Explorer 11:
 If you disable this policy setting, Internet Explorer only sends the Do Not Track header if inPrivate Browsing mode is used.
 
 If you don't configure the policy setting, users can select the Always send Do Not Track header option, in Internet Explorer settings. By selecting this option, Internet Explorer sends a DNT:1 header with all HTTP and HTTPS requests; unless the user grants a site-specific exception. Internet Explorer sends a DNT:0 header to any sites granted an exception. By default, this option is turned on.</string>
+      <string id="Content_ExplainShowContentAdvisor">This policy setting shows the Content Advisor setting on the Content tab of the Internet Options dialog box.
+
+If you enable this policy setting, Internet Explorer displays the Content Advisor setting on the Content tab of the Internet Options dialog box. Users can change Content Advisor settings.
+
+If you disable or do not configure this policy setting, Internet Explorer does not display the Content Advisor setting on the Content tab of the Internet Options dialog box.
+
+Note: This policy is no longer supported starting with Windows 10 Version 1607.</string>
       <string id="Protocols_None">Use no secure protocols</string>
       <string id="Protocols_SSL2">Only use SSL 2.0</string>
       <string id="Protocols_SSL3">Only use SSL 3.0</string>
@@ -3565,6 +3608,7 @@ If you don't configure the policy setting, users can select the Always send Do N
       <string id="NewTab_AboutBlank">about:blank</string>
       <string id="NewTab_AboutTabs">New tab page</string>
       <string id="NewTab_Homepage">Home page</string>
+      <string id="NewTab_AboutNewsFeed">New tab page with my news feed</string>
       <string id="NewTabAction">Specify default behavior for a new tab</string>
       <string id="SecondaryHomePages">Disable changing secondary home page settings</string>
       <string id="SetCommandLabels">Customize command labels</string>
@@ -3607,9 +3651,9 @@ If you disable this policy setting, the Stop and Refresh buttons are next to the
 If you do not configure this policy setting, the Stop and Refresh buttons are next to the Address bar by default, and the user can choose to move them.</string>
       <string id="IE_ExplainNewTabAction">This policy setting allows you to specify what is displayed when the user opens a new tab.
 
-If you enable this policy setting, you can choose which page to display when the user opens a new tab: blank page (about:blank), the first home page, or the new tab page.
+If you enable this policy setting, you can choose which page to display when the user opens a new tab: blank page (about:blank), the first home page, the new tab page or the new tab page with my news feed.
 
-If you disable or do not configure this policy setting, the user can select his or her preference for this behavior. The new tab page is the default setting.</string>
+If you disable or do not configure this policy setting, the user can select his or her preference for this behavior.</string>
       <string id="IE_ExplainSecondaryHomePages">Secondary home pages are the default Web pages that Internet Explorer loads in separate tabs from the home page whenever the browser is run. This policy setting allows you to set default secondary home pages.
 
 If you enable this policy setting, you can specify which default home pages should load as secondary home pages. The user cannot set custom default secondary home pages.
@@ -4013,7 +4057,9 @@ If you enable this policy setting, automatic upgrade of Internet Explorer will b
 
 If you disable this policy setting, automatic upgrade of Internet Explorer will be turned off.
 
-If you do not configure this policy, users can turn on or turn off automatic updates from the About Internet Explorer dialog.</string>
+If you do not configure this policy, users can turn on or turn off automatic updates from the About Internet Explorer dialog.
+
+Note: This policy is deprecated starting with Windows 10 version 1703.</string>
       <string id="TurnOffFormatDetectionPhone">Turn off phone number detection</string>
       <string id="TurnOffFormatDetectionPhone_Explain">This policy setting determines whether phone numbers are recognized and turned into hyperlinks, which can be used to invoke the default phone application on the system.
 
@@ -4503,6 +4549,15 @@ For more information, see "Out-of-date ActiveX control blocking" in the Internet
       <presentation id="IZ_PolicyZoneElevationURLaction_5">
         <dropdownList refId="IZ_Partname2101" noSort="true" defaultItem="2">Web sites in less privileged Web content zones can navigate into this zone</dropdownList>
       </presentation>
+      <presentation id="IZ_PolicyAllowVBScript_1">
+        <dropdownList refId="IZ_Partname140C" noSort="true" defaultItem="0">Allow VBScript to run in Internet Explorer</dropdownList>
+      </presentation>
+      <presentation id="IZ_PolicyAllowVBScript_2">
+        <dropdownList refId="IZ_Partname140C" noSort="true" defaultItem="1">Allow VBScript to run in Internet Explorer</dropdownList>
+      </presentation>
+      <presentation id="IZ_PolicyAllowVBScript_3">
+        <dropdownList refId="IZ_Partname140C" noSort="true" defaultItem="2">Allow VBScript to run in Internet Explorer</dropdownList>
+      </presentation>
       <presentation id="IZ_Zonemaps_1">
         <listBox refId="IZ_ZonemapPrompt">Enter the zone assignments here.</listBox>
       </presentation>
@@ -4662,7 +4717,7 @@ For more information, see "Out-of-date ActiveX control blocking" in the Internet
         <dropdownList refId="Advanced_EnableSSL3FallbackOptions" noSort="true" defaultItem="0">Allow insecure fallback for:</dropdownList>
       </presentation>
       <presentation id="NewTabAction_1">
-        <dropdownList refId="NewTabActionOptions" noSort="true" defaultItem="2">New tab behavior</dropdownList>
+        <dropdownList refId="NewTabActionOptions" noSort="true" defaultItem="0">New tab behavior</dropdownList>
       </presentation>
       <presentation id="SecondaryHomePages">
         <listBox refId="SecondaryHomePagesList">Secondary home pages</listBox>

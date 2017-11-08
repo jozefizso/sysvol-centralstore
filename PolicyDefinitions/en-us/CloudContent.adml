@@ -24,6 +24,18 @@ Note: This policy is only available for Enterprise SKUs</string>
 If you enable this policy setting, Windows spotlight on lock screen, Windows tips, Microsoft consumer features and other related features will be turned off. You should enable this policy setting if your goal is to minimize network traffic from target devices.
 
 If you disable or do not configure this policy setting, Windows spotlight features are allowed and may be controlled individually using their corresponding policy settings.</string>
+      <string id="DisableWindowsSpotlightOnActionCenter">Turn off the Windows Spotlight on Action Center</string>
+      <string id="DisableWindowsSpotlightOnActionCenter_Help">If you enable this policy, Windows Spotlight notifications will no longer be shown on Action Center.
+
+If you disable or do not configure this policy, Microsoft may display notifications in Action Center that will suggest apps or features to help users be more productive on Windows.</string>
+      <string id="DisableTailoredExperiencesWithDiagnosticData">Do not use diagnostic data for tailored experiences</string>
+      <string id="DisableTailoredExperiencesWithDiagnosticData_Help">This policy setting lets you prevent Windows from using diagnostic data to provide tailored experiences to the user.
+
+If you enable this policy setting, Windows will not use diagnostic data from this device (this data may include browser, app and feature usage, depending on the "Diagnostic and usage data" setting value) to customize content shown on lock screen, Windows tips, Microsoft consumer features and other related features. If these features are enabled, users will still see recommendations, tips and offers, but they may be less relevant.
+
+If you disable or do not configure this policy setting, Microsoft will use diagnostic data to provide personalized recommendations, tips and offers to tailor Windows for the user's needs, and make it work better for them.
+
+Note: this setting does not control Cortana tailored experiences, since there are separate policies to configure it.</string>
       <string id="DisableWindowsConsumerFeatures">Turn off Microsoft consumer experiences</string>
       <string id="DisableWindowsConsumerFeatures_Help">This policy setting turns off experiences that help consumers make the most of their devices and Microsoft account.
 
@@ -42,7 +54,15 @@ If you disable or do not configure this policy setting, users may see contextual
 Note: If you disable or do not configure this policy setting, but enable the "Computer Configuration\Administrative Templates\Windows Components\Data Collection and Preview Builds\Allow Telemetry" policy setting with a level of "Basic" or below, users may see a limited set of tips.
 Also, this setting only applies to Enterprise and Education SKUs.</string>
       <string id="DisableThirdPartySuggestions">Do not suggest third-party content in Windows spotlight</string>
-      <string id="DisableThirdPartySuggestions_Help">If you enable this policy, Windows spotlight on lock screen, Windows tips, Microsoft consumer features and other related features will no longer suggest apps and content from third-party software publishers. Users may still see suggestions and tips to make them more productive with Microsoft features and apps.</string>
+      <string id="DisableThirdPartySuggestions_Help">If you enable this policy, Windows spotlight features like lock screen spotlight, suggested apps in Start menu or Windows tips will no longer suggest apps and content from third-party software publishers. Users may still see suggestions and tips to make them more productive with Microsoft features and apps.
+
+If you disable or do not configure this policy, Windows spotlight features may suggest apps and content from third-party software publishers in addition to Microsoft apps and content.</string>
+      <string id="DisableWindowsSpotlightWindowsWelcomeExperience">Turn off the Windows Welcome Experience</string>
+      <string id="DisableWindowsSpotlightWindowsWelcomeExperience_Help">This policy setting lets you turn off the Windows Spotlight Windows Welcome experience. This feature helps onboard users to Windows, for instance launching Microsoft Edge with a web page highlighting new features.
+
+If you enable this policy, the Windows Welcome Experience will no longer display when there are updates and changes to Windows and its apps.
+
+If you disable or do not configure this policy, the Windows Welcome Experience will be launched to help onboard users to Windows telling them about what's new, changed, and suggested.</string>
     </stringTable>
     <presentationTable>
       <presentation id="ConfigureWindowsSpotlight">

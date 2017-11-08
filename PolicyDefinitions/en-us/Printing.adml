@@ -57,7 +57,12 @@ Notes:
 
           In order to view available Web Services printers on your network, ensure that network discovery is turned on. To turn on network discovery, click "Start", click "Control Panel", and then click "Network and Internet". On the "Network and Internet" page, click "Network and Sharing Center". On the Network and Sharing Center page, click "Change advanced sharing settings". On the Advanced sharing settings page, click the arrow next to "Domain" arrow, click "turn on network discovery", and then click "Save changes".
 
-          If you would like to not display printers of a certain type, enable this policy and set the number of printers to display to 0.</string>
+          If you would like to not display printers of a certain type, enable this policy and set the number of printers to display to 0.
+
+          In Windows 10 and later, only TCP/IP printers can be shown in the wizard. If you enable this policy setting, only TCP/IP printer limits are applicable. On Windows 10 only, if you disable or do not configure this policy setting, the default limit is applied.
+          
+          In Windows 8 and later, Bluetooth printers are not shown so its limit does not apply to those versions of Windows.
+      </string>
       <string id="DomainPrinters">Add Printer wizard - Network scan page (Managed network)</string>
       <string id="DownlevelBrowse">Browse the network to find printers</string>
       <string id="DownlevelBrowse_Help">Allows users to use the Add Printer Wizard to search the network for shared printers.
@@ -139,7 +144,11 @@ Web Services printers: 50
 Bluetooth printers: 10
 Shared printers: 50
 
-If you would like to not display printers of a certain type, enable this policy and set the number of printers to display to 0.</string>
+If you would like to not display printers of a certain type, enable this policy and set the number of printers to display to 0.
+
+In Windows 10 and later, only TCP/IP printers can be shown in the wizard. If you enable this policy setting, only TCP/IP printer limits are applicable. On Windows 10 only, if you disable or do not configure this policy setting, the default limit is applied.
+          
+In Windows 8 and later, Bluetooth printers are not shown so its limit does not apply to those versions of Windows.</string>
       <string id="NonDomainPrinters">Add Printer wizard - Network scan page (Unmanaged network)</string>
       <string id="PackagePointAndPrintOnly">Only use Package Point and print</string>
       <string id="PackagePointAndPrintOnly_Help">This policy restricts clients computers to use package point and print only.

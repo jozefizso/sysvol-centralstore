@@ -1157,6 +1157,16 @@
         <decimal value="1" />
       </disabledValue>
     </policy>
+    <policy name="Content_ShowContentAdvisor" class="Both" displayName="$(string.Content_ShowContentAdvisor)" explainText="$(string.Content_ExplainShowContentAdvisor)" key="Software\Policies\Microsoft\Internet Explorer\Main" valueName="ShowContentAdvisor">
+      <parentCategory ref="InternetCPL_Content" />
+      <supportedOn ref="SUPPORTED_IE10" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="AutoComplete" class="User" displayName="$(string.AutoComplete)" explainText="$(string.AutoComplete_Explain)" key="SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Explorer\AutoComplete" valueName="Append Completion">
       <parentCategory ref="AutoCompleteCat" />
       <supportedOn ref="SUPPORTED_IE7" />
@@ -1235,6 +1245,16 @@
       </enabledValue>
       <disabledValue>
         <decimal value="1" />
+      </disabledValue>
+    </policy>
+    <policy name="HideNewEdgeButton" class="User" displayName="$(string.HideNewEdgeButton)" explainText="$(string.HideNewEdgeButton_Explain)" key="Software\Policies\Microsoft\Internet Explorer\Main" valueName="HideNewEdgeButton">
+      <parentCategory ref="Browsing" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
       </disabledValue>
     </policy>
     <policy name="UnderlineLinksPol" class="User" displayName="$(string.UnderlineLinksPol)" explainText="$(string.UnderlineLinksPol_Explain)" presentation="$(presentation.UnderlineLinksPol)" key="Software\Policies\Microsoft\Internet Explorer\Main">
@@ -2972,19 +2992,24 @@
       <supportedOn ref="SUPPORTED_IE8" />
       <elements>
         <enum id="NewTabActionOptions" valueName="NewTabPageShow" required="true">
+          <item displayName="$(string.NewTab_AboutNewsFeed)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
           <item displayName="$(string.NewTab_AboutBlank)">
             <value>
               <decimal value="0" />
             </value>
           </item>
-          <item displayName="$(string.NewTab_Homepage)">
-            <value>
-              <decimal value="1" />
-            </value>
-          </item>
           <item displayName="$(string.NewTab_AboutTabs)">
             <value>
               <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.NewTab_Homepage)">
+            <value>
+              <decimal value="1" />
             </value>
           </item>
         </enum>
@@ -5026,6 +5051,29 @@
         </enum>
       </elements>
     </policy>
+    <policy name="IZ_PolicyAllowVBScript_1" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultEnable)" presentation="$(presentation.IZ_PolicyAllowVBScript_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+      <parentCategory ref="IZ_InternetZone" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <elements>
+        <enum id="IZ_Partname140C" valueName="140C" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy name="IZ_Policy_AddressStatusBar_2" class="Both" displayName="$(string.IZ_Policy_AddressStatusBar)" explainText="$(string.IZ_Policy_AddressStatusBar_Explain)" presentation="$(presentation.IZ_Policy_AddressStatusBar_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\3">
       <parentCategory ref="IZ_InternetZoneLockdown" />
       <supportedOn ref="SUPPORTED_IE7" />
@@ -6081,6 +6129,29 @@
       <supportedOn ref="SUPPORTED_IE6SP2" />
       <elements>
         <enum id="IZ_Partname2101" valueName="2101" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyAllowVBScript_2" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultPrompt)" presentation="$(presentation.IZ_PolicyAllowVBScript_3)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\3">
+      <parentCategory ref="IZ_InternetZoneLockdown" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <elements>
+        <enum id="IZ_Partname140C" valueName="140C" required="true">
           <item displayName="$(string.IZ_ItemnameEnable)">
             <value>
               <decimal value="0" />
@@ -7195,6 +7266,29 @@
         </enum>
       </elements>
     </policy>
+    <policy name="IZ_PolicyAllowVBScript_3" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultEnable)" presentation="$(presentation.IZ_PolicyAllowVBScript_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\1">
+      <parentCategory ref="IZ_IntranetZone" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <elements>
+        <enum id="IZ_Partname140C" valueName="140C" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy name="IZ_Policy_AddressStatusBar_4" class="Both" displayName="$(string.IZ_Policy_AddressStatusBar)" explainText="$(string.IZ_Policy_AddressStatusBar_Explain)" presentation="$(presentation.IZ_Policy_AddressStatusBar_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\1">
       <parentCategory ref="IZ_IntranetZoneLockdown" />
       <supportedOn ref="SUPPORTED_IE7" />
@@ -8250,6 +8344,29 @@
       <supportedOn ref="SUPPORTED_IE6SP2" />
       <elements>
         <enum id="IZ_Partname2101" valueName="2101" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyAllowVBScript_4" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultPrompt)" presentation="$(presentation.IZ_PolicyAllowVBScript_3)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\1">
+      <parentCategory ref="IZ_IntranetZoneLockdown" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <elements>
+        <enum id="IZ_Partname140C" valueName="140C" required="true">
           <item displayName="$(string.IZ_ItemnameEnable)">
             <value>
               <decimal value="0" />
@@ -9364,6 +9481,29 @@
         </enum>
       </elements>
     </policy>
+    <policy name="IZ_PolicyAllowVBScript_9" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultEnable)" presentation="$(presentation.IZ_PolicyAllowVBScript_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\0">
+      <parentCategory ref="IZ_LocalMachineZone" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <elements>
+        <enum id="IZ_Partname140C" valueName="140C" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy name="IZ_Policy_AddressStatusBar_10" class="Both" displayName="$(string.IZ_Policy_AddressStatusBar)" explainText="$(string.IZ_Policy_AddressStatusBar_Explain)" presentation="$(presentation.IZ_Policy_AddressStatusBar_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\0">
       <parentCategory ref="IZ_LocalMachineZoneLockdown" />
       <supportedOn ref="SUPPORTED_IE7" />
@@ -10419,6 +10559,29 @@
       <supportedOn ref="SUPPORTED_IE6SP2" />
       <elements>
         <enum id="IZ_Partname2101" valueName="2101" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyAllowVBScript_10" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultPrompt)" presentation="$(presentation.IZ_PolicyAllowVBScript_3)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\0">
+      <parentCategory ref="IZ_LocalMachineZoneLockdown" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <elements>
+        <enum id="IZ_Partname140C" valueName="140C" required="true">
           <item displayName="$(string.IZ_ItemnameEnable)">
             <value>
               <decimal value="0" />
@@ -11533,6 +11696,29 @@
         </enum>
       </elements>
     </policy>
+    <policy name="IZ_PolicyAllowVBScript_7" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultEnable)" presentation="$(presentation.IZ_PolicyAllowVBScript_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\4">
+      <parentCategory ref="IZ_RestrictedSitesZone" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <elements>
+        <enum id="IZ_Partname140C" valueName="140C" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy name="IZ_Policy_AddressStatusBar_8" class="Both" displayName="$(string.IZ_Policy_AddressStatusBar)" explainText="$(string.IZ_Policy_AddressStatusBar_Explain)" presentation="$(presentation.IZ_Policy_AddressStatusBar_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\4">
       <parentCategory ref="IZ_RestrictedSitesZoneLockdown" />
       <supportedOn ref="SUPPORTED_IE7" />
@@ -12588,6 +12774,29 @@
       <supportedOn ref="SUPPORTED_IE6SP2" />
       <elements>
         <enum id="IZ_Partname2101" valueName="2101" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyAllowVBScript_8" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultPrompt)" presentation="$(presentation.IZ_PolicyAllowVBScript_3)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\4">
+      <parentCategory ref="IZ_RestrictedSitesZoneLockdown" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <elements>
+        <enum id="IZ_Partname140C" valueName="140C" required="true">
           <item displayName="$(string.IZ_ItemnameEnable)">
             <value>
               <decimal value="0" />
@@ -33007,6 +33216,29 @@
         </enum>
       </elements>
     </policy>
+    <policy name="IZ_PolicyAllowVBScript_5" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultEnable)" presentation="$(presentation.IZ_PolicyAllowVBScript_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2">
+      <parentCategory ref="IZ_TrustedSitesZone" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <elements>
+        <enum id="IZ_Partname140C" valueName="140C" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy name="IZ_Policy_AddressStatusBar_6" class="Both" displayName="$(string.IZ_Policy_AddressStatusBar)" explainText="$(string.IZ_Policy_AddressStatusBar_Explain)" presentation="$(presentation.IZ_Policy_AddressStatusBar_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\2">
       <parentCategory ref="IZ_TrustedSitesZoneLockdown" />
       <supportedOn ref="SUPPORTED_IE7" />
@@ -34062,6 +34294,29 @@
       <supportedOn ref="SUPPORTED_IE6SP2" />
       <elements>
         <enum id="IZ_Partname2101" valueName="2101" required="true">
+          <item displayName="$(string.IZ_ItemnameEnable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnameDisable)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.IZ_ItemnamePrompt)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="IZ_PolicyAllowVBScript_6" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultPrompt)" presentation="$(presentation.IZ_PolicyAllowVBScript_3)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\2">
+      <parentCategory ref="IZ_TrustedSitesZoneLockdown" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <elements>
+        <enum id="IZ_Partname140C" valueName="140C" required="true">
           <item displayName="$(string.IZ_ItemnameEnable)">
             <value>
               <decimal value="0" />

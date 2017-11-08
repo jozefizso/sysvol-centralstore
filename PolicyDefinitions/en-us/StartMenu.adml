@@ -6,6 +6,7 @@
   <resources>
     <stringTable>
       <string id="SUPPORTED_Win7UntilThreshold">At least Windows Server 2008 R2 or Windows 7. Not supported on Windows 10 or later</string>
+      <string id="SUPPORTED_Win7AndRedstone2">Windows 7 and Windows 10</string>
       <string id="ClearRecentProgForNewUserInStartMenu">Clear the recent programs list for new users</string>
       <string id="ClearRecentProgForNewUserInStartMenu_Help">If you enable this policy setting, the recent programs list in the start menu will be blank for each new user.
 
@@ -220,12 +221,22 @@ If you disable or do not configure this policy setting, the system tracks the pr
 Also, see these related policy settings: "Remove frequent programs liist from the Start Menu" and "Turn off personalized menus".
 
 This policy  setting does not prevent users from pinning programs to the Start Menu or Taskbar. See the "Remove pinned programs list from the Start Menu" and "Do not allow pinning programs to the Taskbar" policy settings.</string>
+
       <string id="NoMoreProgramsList">Remove All Programs list from the Start menu</string>
-      <string id="NoMoreProgramsList_Help">This policy setting allows you to remove the All Programs list from the Start menu.
+      <string id="NoMoreProgramsList_Help">If you enable this setting, the Start Menu will either collapse or remove the all apps list from the Start menu.
 
-If you enable this policy setting, the "All Programs" item is removed from the simple Start menu.  The Start Screen will show the All Apps view, but it will only contain items that are pinned to start.
+Selecting "Collapse" will not display the app list next to the pinned tiles in Start. An "All apps" button will be displayed on Start to open the all apps list. This is equivalent to setting the "Show app list in Start" in Settings to Off.
 
-If you disable or do not configure this policy setting, the "All Programs" item remains on the simple Start menu.</string>
+Selecting "Collapse and disable setting" will do the same as the collapse option and disable the "Show app list in Start menu" in Settings, so users cannot turn it to On.
+
+Selecting "Remove and disable setting" will remove the all apps list from Start and disable the "Show app list in Start menu" in Settings, so users cannot turn it to On. Select this option for compatibility with earlier versions of Windows.
+
+If you disable or do not configure this setting, the all apps list will be visible by default, and the user can change "Show app list in Start" in Settings.</string>
+      <string id="APPLIST_NONE">None</string>
+      <string id="APPLIST_COLLAPSE">Collapse</string>
+      <string id="APPLIST_COLLAPSESETTING">Collapse and disable setting</string>
+      <string id="APPLIST_REMOVESETTING">Remove and disable setting</string>    
+
       <string id="NoNetAndDialupConnect">Remove Network Connections from Start Menu</string>
       <string id="NoNetAndDialupConnect_Help">This policy setting allows you to remove Network Connections from the Start Menu.
 
@@ -513,6 +524,18 @@ If you do not configure this policy setting, then users will be able to turn the
 If you enable this policy setting, the Start Menu does not show a link to the Downloads folder.
 
 If you disable or do not configure this policy setting, the Downloads link is available from the Start Menu.</string>
+      <string id="NoStartMenuExplorerPlace">Remove File Explorer link from Start Menu Places bar</string>
+      <string id="NoStartMenuExplorerPlace_Help">This policy setting allows you to remove the File Explorer link from the Start Menu Places bar.
+
+If you enable this policy setting, File Explorer will not appear in the Start Menu Places list.
+
+If you disable or do not configure this policy setting, File Explorer can be displayed in the Start Menu Places list.</string>
+      <string id="NoStartMenuSettingsPlace">Remove Settings link from Start Menu Places bar</string>
+      <string id="NoStartMenuSettingsPlace_Help">This policy setting allows you to remove the Settings link from the Start Menu Places bar.
+
+If you enable this policy setting, Settings will not appear in the Start Menu Places list.
+
+If you disable or do not configure this policy setting, Settings can be displayed in the Start Menu Places list.</string>
       <string id="NoStartMenuRecordedTV">Remove Recorded TV link from Start Menu</string>
       <string id="NoStartMenuRecordedTV_Help">This policy setting allows you to remove the Recorded TV link from the Start Menu.
 
@@ -575,6 +598,9 @@ If you disable or don’t configure this policy setting, Windows will automatica
       <string id="ForceLauncherSize_Expanded">Full screen Start</string>
     </stringTable>
     <presentationTable>
+      <presentation id="NoMoreProgramsList">
+        <dropdownList refId="NoMoreProgramsListDropdown" noSort="true" defaultItem="0">Choose one of the following actions</dropdownList>
+      </presentation>
       <presentation id="PowerButtonAction">
         <dropdownList refId="PowerButtonActionDropdown" noSort="true" defaultItem="0">Choose one of the following actions</dropdownList>
       </presentation>

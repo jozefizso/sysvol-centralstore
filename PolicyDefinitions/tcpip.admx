@@ -191,7 +191,7 @@
     </policy>
     <policy name="Windows_Scaling_Heuristics_State" class="Machine" displayName="$(string.Windows_Scaling_Heuristics_State)" explainText="$(string.Windows_Scaling_Heuristics_Help)" key="System\CurrentControlSet\Services\Tcpip\Parameters" valueName="EnableWsd">
       <parentCategory ref="Parameters" />
-      <supportedOn ref="windows:SUPPORTED_WindowsVistaSP1" />
+      <supportedOn ref="windows:SUPPORTED_Windows7ToVistaAndWindows10" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>

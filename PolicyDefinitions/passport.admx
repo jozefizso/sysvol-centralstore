@@ -10,8 +10,9 @@
     <category name="MSPassportForWorkCategory" displayName="$(string.MSPassportForWorkCategory)">
         <parentCategory ref="windows:WindowsComponents" />
     </category>
+    <!-- PIN Complexity moving to the System Node --> 
     <category name="MSPassortForWorkPINComplexityCategory" displayName="$(string.MSPassportForWorkPINComplexityCategory)">
-        <parentCategory ref="MSPassportForWorkCategory" />
+        <parentCategory ref="windows:System" />
     </category>
     <category name="MSPassortForWorkRemoteCategory" displayName="$(string.MSPassportForWorkRemoteCategory)">
         <parentCategory ref="MSPassportForWorkCategory" />
@@ -19,7 +20,7 @@
   </categories>
   <policies>
     <!-- Enable Passport Policy -->
-    <policy name="MSPassport_UsePassportForWork" class="Machine" displayName="$(string.MSPassport_UsePassportForWork)" explainText="$(string.MSPassport_UsePassportForWorkExplain)" key="SOFTWARE\Policies\Microsoft\PassportForWork" valueName="Enabled">
+    <policy name="MSPassport_UsePassportForWork" class="Both" displayName="$(string.MSPassport_UsePassportForWork)" explainText="$(string.MSPassport_UsePassportForWorkExplain)" key="SOFTWARE\Policies\Microsoft\PassportForWork" valueName="Enabled">
         <parentCategory ref="MSPassportForWorkCategory" />
         <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
         <enabledValue>
@@ -30,7 +31,9 @@
         </disabledValue>
     </policy>
     <!-- Require hardware policy -->
-    <policy name="MSPassport_RequireSecurityDevice" class="Machine" displayName="$(string.MSPassport_RequireSecurityDevice)" explainText="$(string.MSPassport_RequireSecurityDeviceExplain)" key="SOFTWARE\Policies\Microsoft\PassportForWork" valueName="RequireSecurityDevice">
+    <!-- RS2 Added exclusion list to require hardware -->
+    <policy name="MSPassport_RequireSecurityDevice" class="Machine" displayName="$(string.MSPassport_RequireSecurityDevice)" presentation=
+    "$(presentation.MSPassport_ExcludeSecurityDevicesControl)" explainText="$(string.MSPassport_RequireSecurityDeviceExplain)" key="SOFTWARE\Policies\Microsoft\PassportForWork" valueName="RequireSecurityDevice">
         <parentCategory ref="MSPassportForWorkCategory" />
         <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
         <enabledValue>
@@ -39,6 +42,16 @@
         <disabledValue>
           <decimal value="0" />
         </disabledValue>
+        <elements>
+          <boolean id="MSPassport_ExcludeTPM12DataType" key="SOFTWARE\Policies\Microsoft\PassportForWork\ExcludeSecurityDevices" valueName="TPM12">
+            <trueValue>
+              <decimal value="1" />
+            </trueValue>
+            <falseValue>
+              <decimal value="0" />
+            </falseValue>
+          </boolean>
+        </elements>
     </policy>
     <!-- use biometrics -->
     <policy name="MSPassport_UseBiometrics" class="Machine" displayName="$(string.MSPassport_UseBiometrics)" explainText="$(string.MSPassport_UseBiometricsExplain)" key="SOFTWARE\Microsoft\Windows\CurrentVersion\WinBio\Credential Provider" valueName="Domain Accounts">
@@ -139,6 +152,17 @@
       <elements>
         <decimal id="MSPassport_PINExpirationDataType" valueName="Expiration" minValue="0" maxValue="730" />
       </elements>
+    </policy>
+    <!-- UseCertificateForOnPremAuth Policy -->
+    <policy name="WHFB_UseCertificateForOnPremAuth" class="Both" displayName="$(string.WHFB_UseCertificateForOnPremAuth)" explainText="$(string.WHFB_UseCertificateForOnPremAuthExplain)" key="SOFTWARE\Policies\Microsoft\PassportForWork" valueName="UseCertificateForOnPremAuth">
+        <parentCategory ref="MSPassportForWorkCategory" />
+        <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
+        <enabledValue>
+          <decimal value="1" />
+        </enabledValue>
+        <disabledValue>
+          <decimal value="0" />
+        </disabledValue>
     </policy>
     </policies>
 </policyDefinitions>

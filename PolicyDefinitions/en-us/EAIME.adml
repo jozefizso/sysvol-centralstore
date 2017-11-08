@@ -114,6 +114,16 @@ If you disable this policy setting, the functionality associated with this featu
 If you don't configure this policy setting, it will be turned off by default, and the user can turn on and turn off the cloud candidates feature.
 
 This Policy setting applies only to Microsoft CHS Pinyin IME.</string>
+      <string id="L_TurnOnLexiconUpdate">Turn on lexicon update</string>
+      <string id="L_TurnOnLexiconUpdateExplain">This policy setting controls the lexicon update feature, which downloads hot and popular words lexicon to local PC.
+
+If you enable this policy setting, the functionality associated with this feature is turned on, hot and popular words lexicon can be downloaded to local PC, the user is able to turn it on or off in settings.
+
+If you disable this policy setting, the functionality associated with this feature is turned off, and the user won't be able to turn it on. 
+
+If you don't configure this policy setting, it will be turned on by default, and the user can turn on and turn off the lexicon udpate feature.
+
+This Policy setting applies only to Microsoft CHS Pinyin IME.</string>
     </stringTable>
     <presentationTable>
       <presentation id="L_RestrictCharacterCodeRangeOfConversion">

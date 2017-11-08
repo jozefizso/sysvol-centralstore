@@ -34,7 +34,7 @@
           </item>
         </enum>
       </elements>
-    </policy>    
+    </policy>
     <policy name="BlockedCommandsList_Name" class="Machine" displayName="$(string.BlockedCommandsList_Name)" explainText="$(string.BlockedCommandsList_Help)" presentation="$(presentation.BlockedCommandsList_Name)" key="SOFTWARE\Policies\Microsoft\Tpm\BlockedCommands" valueName="Enabled">
       <parentCategory ref="TPMCategory" />
       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
@@ -88,6 +88,16 @@
       <elements>
         <decimal id="DXT_StandardUserAuthorizationFailureTotalThreshold_Name" key="Software\Policies\Microsoft\Tpm" valueName="StandardUserAuthorizationFailureTotalThreshold" maxValue="100" />
       </elements>
-    </policy>    
+    </policy>
+    <policy name="UseLegacyDAP_Name" class="Machine" displayName="$(string.UseLegacyDAP_Name)" explainText="$(string.UseLegacyDAP_Help)" key="Software\Policies\Microsoft\TPM" valueName="UseLegacyDictionaryAttackParameters">
+      <parentCategory ref="TPMCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

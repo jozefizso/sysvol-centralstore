@@ -27,7 +27,7 @@ Note: Trusted Platform Module (TPM) initialization might occur during BitLocker 
 
 Note:  This policy is only applicable to computers running Windows Server 2008 or Windows Vista.
 
-On a computer with a compatible Trusted Platform Module (TPM), two authentication methods can be used at startup to provide added protection for encrypted data. When the computer starts, it can require users to insert a USB flash drive containing a startup key. It can also require users to enter a 4-digit to 20-digit startup personal identification number (PIN).
+On a computer with a compatible Trusted Platform Module (TPM), two authentication methods can be used at startup to provide added protection for encrypted data. When the computer starts, it can require users to insert a USB flash drive containing a startup key. It can also require users to enter a 6-digit to 20-digit startup personal identification number (PIN).
 
 A USB flash drive containing a startup key is needed on computers without a compatible TPM. Without a TPM, BitLocker-encrypted data is protected solely by the key material on this USB flash drive.
 
@@ -45,7 +45,7 @@ Note: Only one of the additional authentication options can be required at start
 
 If you want to use BitLocker on a computer without a TPM, select the "Allow BitLocker without a compatible TPM" check box. In this mode either a password or a USB drive is required for start-up. When using a startup key, the key information used to encrypt the drive is stored on the USB drive, creating a USB key. When the USB key is inserted the access to the drive is authenticated and the drive is accessible. If the USB key is lost or unavailable or if you have forgotten the password then you will need to use one of the BitLocker recovery options to access the drive.
 
-On a computer with a compatible TPM, four types of authentication methods can be used at startup to provide added protection for encrypted data. When the computer starts, it can use only the TPM for authentication, or it can also require insertion of a USB flash drive containing a startup key, the entry of a 4-digit to 20-digit personal identification number (PIN), or both.
+On a computer with a compatible TPM, four types of authentication methods can be used at startup to provide added protection for encrypted data. When the computer starts, it can use only the TPM for authentication, or it can also require insertion of a USB flash drive containing a startup key, the entry of a 6-digit to 20-digit personal identification number (PIN), or both.
 
 If you enable this policy setting, users can configure advanced startup options in the BitLocker setup wizard.
 
@@ -290,6 +290,11 @@ If you disable or do not configure this policy setting, BitLocker secrets are re
       </string>
       <string id="MorBehavior_Name">Prevent memory overwrite on restart</string>
 
+      <string id="DisableExternalDMAUnderLock_Help">This policy setting allows you to block direct memory access (DMA) for all hot pluggable PCI downstream ports until a user logs into Windows. Once a user logs in, Windows will enumerate the PCI devices connected to the host plug PCI ports. Every time the user locks the machine, DMA will be blocked on hot plug PCI ports with no children devices, until the user logs in again. Devices which were already enumerated when the machine was unlocked will continue to function until unplugged. This policy setting is only enforced when BitLocker or device encryption is enabled.
+
+      </string>
+      <string id="DisableExternalDMAUnderLock_Name">Disable new DMA devices when this computer is locked</string>
+
       <string id="FVEOSCategory">Operating System Drives</string>
       <string id="FVEFDVCategory">Fixed Data Drives</string>
       <string id="FVERDVCategory">Removable Data Drives</string>
@@ -346,11 +351,11 @@ The setting that controls boot debugging (0x16000010) will always be validated a
 
 
       <string id="MinimumPINLength_Name">Configure minimum PIN length for startup</string>
-      <string id="MinimumPINLength_Help">This policy setting allows you to configure a minimum length for a Trusted Platform Module (TPM) startup PIN. This policy setting is applied when you turn on BitLocker. The startup PIN must have a minimum length of 4 digits and can have a maximum length of 20 digits.
+      <string id="MinimumPINLength_Help">This policy setting allows you to configure a minimum length for a Trusted Platform Module (TPM) startup PIN. This policy setting is applied when you turn on BitLocker. The startup PIN must have a minimum length of 6 digits and can have a maximum length of 20 digits.
 
 If you enable this policy setting, you can require a minimum number of digits to be used when setting the startup PIN.
 
-If you disable or do not configure this policy setting, users can configure a startup PIN of any length between 4 and 20 digits.
+If you disable or do not configure this policy setting, users can configure a startup PIN of any length between 6 and 20 digits.
 
       </string>
 
@@ -630,6 +635,14 @@ Note that if you do not enable this policy setting, options in the "Require addi
 - Configure use of passwords for operating system drives.
       </string>
 
+      <string id="EnablePreBootPinExceptionOnDECapableDevice_Name">Allow devices compliant with InstantGo or HSTI to opt out of pre-boot PIN.</string>
+      <string id="EnablePreBootPinExceptionOnDECapableDevice_Help">This policy setting allows users on devices that are compliant with InstantGo or Microsoft Hardware Security Test Interface (HSTI) to not have a PIN for pre-boot authentication. This overrides the "Require startup PIN with TPM" and "Require startup key and PIN with TPM" options of the "Require additional authentication at startup" policy on compliant hardware.
+
+If you enable this policy setting, users on InstantGo and HSTI compliant devices will have the choice to turn on BitLocker without pre-boot authentication.
+
+If this policy is not enabled, the options of "Require additional authentication at startup" policy apply.
+      </string>
+
       <string id="AllowSecureBootForIntegrity_Name">Allow Secure Boot for integrity validation</string>
       <string id="AllowSecureBootForIntegrity_Help">This policy setting allows you to configure whether Secure Boot will be allowed as the platform integrity provider for BitLocker operating system drives.
 
@@ -906,7 +919,7 @@ Note: Not all characters and languages are supported in pre-boot. It is strongly
       </presentation>
 
      <presentation id="MinimumPINLength">
-        <decimalTextBox refId="MinPINLength" defaultValue="4">Minimum characters:</decimalTextBox>
+        <decimalTextBox refId="MinPINLength" defaultValue="6">Minimum characters:</decimalTextBox>
       </presentation>
 
      <presentation id="FDVPassphrase_Name">

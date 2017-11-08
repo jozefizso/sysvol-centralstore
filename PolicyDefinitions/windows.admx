@@ -63,7 +63,7 @@
 
       <!--Microsoft Windows 2000 Service Pack 3 or Microsoft Windows XP Professional Service Pack 1 to Windows 8.1-->
       <definition name="SUPPORTED_Windows_6_3ToXPSP1_Or_Win2kSP3" displayName="$(string.SUPPORTED_Windows_6_3ToXPSP1_Or_Win2kSP3)">
-        <or>          
+        <or>
           <range ref="products:MicrosoftWindows2000" minVersionIndex="3"/>
           <range ref="products:MicrosoftWindowsXP" minVersionIndex="1"/>
           <range ref="products:MicrosoftWindows" minVersionIndex="3" maxVersionIndex="12"/>
@@ -140,6 +140,13 @@
           </or>
       </definition>
 
+      <!--At least Windows 10 RS2-->
+      <definition name="SUPPORTED_Windows_10_0_RS2" displayName="$(string.SUPPORTED_Windows_10_0_RS2)">
+          <or>
+              <range ref="products:MicrosoftWindows" minVersionIndex="13"/>
+          </or>
+      </definition>
+
       <!--At least Windows Threshold no ARM-->
       <definition name="SUPPORTED_Windows_10_0_NOARM" displayName="$(string.SUPPORTED_Windows_10_0_NOARM)">
           <or>
@@ -152,6 +159,13 @@
           <or>
               <range ref="products:MicrosoftWindows" minVersionIndex="14" maxVersionIndex="15"/>
           </or>
+      </definition>
+
+      <!--At least Windows Threshold no SERVER Enterprise-->
+      <definition name="SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" displayName="$(string.SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE)">
+        <or>
+          <range ref="products:MicrosoftWindows" minVersionIndex="14" maxVersionIndex="14"/>
+        </or>
       </definition>
 
       <!--Windows 2000 to Windows Blue-->
@@ -228,8 +242,8 @@
          <reference ref="products:WindowsServer2008"/>
       </or>
      </definition>
-    
-      
+
+
       <!--At least Microsoft Windows XP Professional or Windows Server 2003 family-->
       <definition name="SUPPORTED_WindowsXP" displayName="$(string.SUPPORTED_WindowsXP)">
         <or>
@@ -334,14 +348,14 @@
           <reference ref="products:MicrosoftWindowsServer2003"/>
         </or>
       </definition>
-      
+
       <!--Microsoft Windows Server 2008, Windows Vista, Windows Server 2003, Windows XP, and Windows 2000-->
       <definition name="SUPPORTED_WindowsVistaTo2k" displayName="$(string.SUPPORTED_WindowsVistaTo2k)">
         <or>
           <range ref="products:MicrosoftWindows" minVersionIndex="1" maxVersionIndex="5"/>
         </or>
       </definition>
-      
+
       <!--Microsoft Windows Server 2008, Windows Vista, Windows Server 2003, and Windows XP-->
       <definition name="SUPPORTED_WindowsVistaToXP" displayName="$(string.SUPPORTED_WindowsVistaToXP)">
         <or>
@@ -356,7 +370,7 @@
           <range ref="products:MicrosoftWindows" minVersionIndex="3" maxVersionIndex="5"/>
         </or>
       </definition>
-      
+
       <!--Microsoft Windows 7 and Windows Server 2008 R2 only-->
       <definition name="SUPPORTED_Windows7Only" displayName="$(string.SUPPORTED_Windows7Only)">
         <or>

@@ -446,6 +446,37 @@
         <multiText id="LetAppsSyncWithDevices_ForceDenyTheseApps_List" valueName="LetAppsSyncWithDevices_ForceDenyTheseApps" />
       </elements>
     </policy>
+    <policy name="LetAppsAccessTasks"
+            class="Machine"
+            displayName="$(string.LetAppsAccessTasks_Name)"
+            explainText="$(string.LetAppsAccessTasks_Explain)"
+            presentation="$(presentation.LetAppsAccessTasks)"
+            key="Software\Policies\Microsoft\Windows\AppPrivacy">
+      <parentCategory ref="AppPrivacy" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <enum id="LetAppsAccessTasks_Enum" valueName="LetAppsAccessTasks">
+          <item displayName="$(string.UserInControl)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceAllow)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceDeny)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+        <multiText id="LetAppsAccessTasks_UserInControlOfTheseApps_List" valueName="LetAppsAccessTasks_UserInControlOfTheseApps" />
+        <multiText id="LetAppsAccessTasks_ForceAllowTheseApps_List" valueName="LetAppsAccessTasks_ForceAllowTheseApps" />
+        <multiText id="LetAppsAccessTasks_ForceDenyTheseApps_List" valueName="LetAppsAccessTasks_ForceDenyTheseApps" />
+      </elements>
+    </policy>
     <policy name="LetAppsAccessTrustedDevices"
             class="Machine"
             displayName="$(string.LetAppsAccessTrustedDevices_Name)"
@@ -475,6 +506,68 @@
         <multiText id="LetAppsAccessTrustedDevices_UserInControlOfTheseApps_List" valueName="LetAppsAccessTrustedDevices_UserInControlOfTheseApps" />
         <multiText id="LetAppsAccessTrustedDevices_ForceAllowTheseApps_List" valueName="LetAppsAccessTrustedDevices_ForceAllowTheseApps" />
         <multiText id="LetAppsAccessTrustedDevices_ForceDenyTheseApps_List" valueName="LetAppsAccessTrustedDevices_ForceDenyTheseApps" />
+      </elements>
+    </policy>
+    <policy name="LetAppsRunInBackground"
+            class="Machine"
+            displayName="$(string.LetAppsRunInBackground_Name)"
+            explainText="$(string.LetAppsRunInBackground_Explain)"
+            presentation="$(presentation.LetAppsRunInBackground)"
+            key="Software\Policies\Microsoft\Windows\AppPrivacy">
+      <parentCategory ref="AppPrivacy" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <enum id="LetAppsRunInBackground_Enum" valueName="LetAppsRunInBackground">
+          <item displayName="$(string.UserInControl)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceAllow)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceDeny)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+        <multiText id="LetAppsRunInBackground_UserInControlOfTheseApps_List" valueName="LetAppsRunInBackground_UserInControlOfTheseApps" />
+        <multiText id="LetAppsRunInBackground_ForceAllowTheseApps_List" valueName="LetAppsRunInBackground_ForceAllowTheseApps" />
+        <multiText id="LetAppsRunInBackground_ForceDenyTheseApps_List" valueName="LetAppsRunInBackground_ForceDenyTheseApps" />
+      </elements>
+    </policy>
+    <policy name="LetAppsGetDiagnosticInfo"
+            class="Machine"
+            displayName="$(string.LetAppsGetDiagnosticInfo_Name)"
+            explainText="$(string.LetAppsGetDiagnosticInfo_Explain)"
+            presentation="$(presentation.LetAppsGetDiagnosticInfo)"
+            key="Software\Policies\Microsoft\Windows\AppPrivacy">
+      <parentCategory ref="AppPrivacy" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2"/>
+      <elements>
+        <enum id="LetAppsGetDiagnosticInfo_Enum" valueName="LetAppsGetDiagnosticInfo">
+          <item displayName="$(string.UserInControl)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceAllow)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceDeny)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+        <multiText id="LetAppsGetDiagnosticInfo_UserInControlOfTheseApps_List" valueName="LetAppsGetDiagnosticInfo_UserInControlOfTheseApps" />
+        <multiText id="LetAppsGetDiagnosticInfo_ForceAllowTheseApps_List" valueName="LetAppsGetDiagnosticInfo_ForceAllowTheseApps" />
+        <multiText id="LetAppsGetDiagnosticInfo_ForceDenyTheseApps_List" valueName="LetAppsGetDiagnosticInfo_ForceDenyTheseApps" />
       </elements>
     </policy>
   </policies>

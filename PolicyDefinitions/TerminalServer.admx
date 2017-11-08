@@ -311,6 +311,11 @@
           </trueValue>
         </boolean>
         <enum id="TS_GATEWAY_AUTH_MODE" valueName="LogonMethod">
+          <item displayName="$(string.TS_GATEWAY_NEGOTIATE)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
           <item displayName="$(string.TS_GATEWAY_NTLM)">
             <value>
               <decimal value="2" />

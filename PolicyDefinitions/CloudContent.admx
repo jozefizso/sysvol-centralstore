@@ -42,6 +42,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DisableTailoredExperiencesWithDiagnosticData" class="User" displayName="$(string.DisableTailoredExperiencesWithDiagnosticData)" explainText="$(string.DisableTailoredExperiencesWithDiagnosticData_Help)" key="Software\Policies\Microsoft\Windows\CloudContent" valueName="DisableTailoredExperiencesWithDiagnosticData">
+      <parentCategory ref="CloudContent" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="DisableWindowsConsumerFeatures" class="Machine" displayName="$(string.DisableWindowsConsumerFeatures)" explainText="$(string.DisableWindowsConsumerFeatures_Help)" key="Software\Policies\Microsoft\Windows\CloudContent" valueName="DisableWindowsConsumerFeatures">
       <parentCategory ref="CloudContent" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
@@ -65,6 +75,26 @@
     <policy name="DisableThirdPartySuggestions" class="User" displayName="$(string.DisableThirdPartySuggestions)" explainText="$(string.DisableThirdPartySuggestions_Help)" key="Software\Policies\Microsoft\Windows\CloudContent" valueName="DisableThirdPartySuggestions">
       <parentCategory ref="CloudContent" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableWindowsSpotlightOnActionCenter" class="User" displayName="$(string.DisableWindowsSpotlightOnActionCenter)" explainText="$(string.DisableWindowsSpotlightOnActionCenter_Help)" key="Software\Policies\Microsoft\Windows\CloudContent" valueName="DisableWindowsSpotlightOnActionCenter">
+      <parentCategory ref="CloudContent" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableWindowsSpotlightWindowsWelcomeExperience" class="User" displayName="$(string.DisableWindowsSpotlightWindowsWelcomeExperience)" explainText="$(string.DisableWindowsSpotlightWindowsWelcomeExperience_Help)" key="Software\Policies\Microsoft\Windows\CloudContent" valueName="DisableWindowsSpotlightWindowsWelcomeExperience">
+      <parentCategory ref="CloudContent" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>

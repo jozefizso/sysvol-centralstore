@@ -21,6 +21,10 @@ The "Enabled with UEFI lock" option ensures that Virtualization Based Protection
  
 The "Enabled without lock" option allows Virtualization Based Protection of Code Integrity to be disabled remotely by using Group Policy. 
 
+The "Not Configured" option leaves the policy setting undefined. Group Policy does not write the policy setting to the registry, and so it has no impact on computers or users. If there is a current setting in the registry it will not be modified.
+
+The "Require UEFI Memory Attributes Table" option will only enable Virtualization Based Protection of Code Integrity on devices with UEFI firmware support for the Memory Attributes Table. Devices without the UEFI Memory Attributes Table may have firmware that is incompatible with Virtualization Based Protection of Code Integrity which in some cases can lead to crashes or data loss or incompatibility with certain plug-in cards. If not setting this option the targeted devices should be tested to ensure compatibility.
+
 Warning: All drivers on the system must be compatible with this feature or the system may crash. Ensure that this policy setting is only deployed to computers which are known to be compatible. 
 
 Credential Guard
@@ -32,6 +36,8 @@ The "Disabled" option turns off Credential Guard remotely if it was previously t
 The "Enabled with UEFI lock" option ensures that Credential Guard cannot be disabled remotely. In order to disable the feature, you must set the Group Policy to "Disabled" as well as remove the security functionality from each computer, with a physically present user, in order to clear configuration persisted in UEFI.
 
 The "Enabled without lock" option allows Credential Guard to be disabled remotely by using Group Policy. The devices that use this setting must be running at least Windows 10 (Version 1511).
+
+The "Not Configured" option leaves the policy setting undefined. Group Policy does not write the policy setting to the registry, and so it has no impact on computers or users. If there is a current setting in the registry it will not be modified.
       </string>
       <string id="SecureBoot">Secure Boot</string>
       <string id="SecureBootAndDmaProtection">Secure Boot and DMA Protection</string>
@@ -39,6 +45,7 @@ The "Enabled without lock" option allows Credential Guard to be disabled remotel
       <string id="Enabled">Enabled</string>
       <string id="EnabledWithoutLock">Enabled without lock</string>
       <string id="EnabledWithUefiLock">Enabled with UEFI lock</string>
+      <string id="NotConfigured">Not Configured</string>
       <string id="ConfigCIPolicy">Deploy Code Integrity Policy</string>
       <string id="ConfigCIPolicyHelp">Deploy Code Integrity Policy
 
@@ -57,8 +64,9 @@ If using a signed and protected policy then disabling this policy setting doesn'
     <presentationTable>
       <presentation id="VirtualizationBasedSecurity">
         <dropdownList refId="RequirePlatformSecurityFeaturesDrop" defaultItem="1">Select Platform Security Level:</dropdownList>
-        <dropdownList refId="HypervisorEnforcedCodeIntegrityDrop" defaultItem="0">Virtualization Based Protection of Code Integrity:</dropdownList>
-        <dropdownList refId="CredentialIsolationDrop" defaultItem="0">Credential Guard Configuration:</dropdownList>
+        <dropdownList refId="HypervisorEnforcedCodeIntegrityDrop" defaultItem="3">Virtualization Based Protection of Code Integrity:</dropdownList>        
+        <checkBox refId="CheckboxMAT">Require UEFI Memory Attributes Table</checkBox>        
+        <dropdownList refId="CredentialIsolationDrop" defaultItem="3">Credential Guard Configuration:</dropdownList>                
       </presentation>
       <presentation id="ConfigCIPolicy">
         <textBox refId="ConfigCIPolicyFilePathText">

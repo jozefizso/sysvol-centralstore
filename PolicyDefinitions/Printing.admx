@@ -481,7 +481,7 @@
               <decimal value="0"/>
             </value>
           </item>
-          <item displayName="$(string.NoWarningNoElevationOnUpdate)">
+          <item displayName="$(string.WarningNoElevationOnUpdate)">
             <value>
               <decimal value="1"/>
             </value>
@@ -499,11 +499,6 @@
           <item displayName="$(string.WarningNoElevationOnUpdate)">
             <value>
               <decimal value="1"/>
-            </value>
-          </item>
-          <item displayName="$(string.NoWarningNoElevationOnUpdate)">
-            <value>
-              <decimal value="2"/>
             </value>
           </item>
         </enum>

@@ -20,6 +20,8 @@
       <string id="Integration">Integration</string>
       <string id="CEIP">CEIP</string>
       <string id="Virtualization">Virtualization</string>
+      <string id="PackageManagement">PackageManagement</string>
+      <string id="PowerManagement">PowerManagement</string>
       <string id="True">True</string>
       <string id="False">False</string>    
       <string id="Hour">Hour</string>
@@ -105,6 +107,10 @@ For more details, read about the program online at http://go.microsoft.com/fwlin
       <string id="Virtualization_JITVAllowList_Help">Specifies a list of process paths (may contain wildcards) which are candidates for using virtual components (shell extensions, browser helper objects, etc). Only processes whose full path matches one of these items can use virtual components.</string>
       <string id="Virtualization_JITVEnable">Enable Dynamic Virtualization</string>
       <string id="Virtualization_JITVEnable_Help">Enables Dynamic Virtualization of supported shell extensions, browser helper objects, and ActiveX controls.</string>
+      <string id="PackageManagement_AutoCleanupEnable">Enable automatic cleanup of unused appv packages</string>
+      <string id="PackageManagement_AutoCleanupEnable_Help">Enables automatic cleanup of appv packages that were added after Windows10 anniversary release.</string>
+      <string id="PowerManagement_SyncOnBatteriesEnable">Enable background sync to server when on battery power</string>
+      <string id="PowerManagement_SyncOnBatteriesEnable_Help">Enables background sync to server when on battery power.</string>
       <string id="Publishing_Enable_Refresh_UX">Enable Publishing Refresh UX</string>
       <string id="Publishing_Enable_Refresh_UX_Help">Enables a UX to display to the user when a publishing refresh is performed on the client.</string>
       <string id="EnableAppV">Enable App-V Client</string>

@@ -227,5 +227,29 @@
                 <decimal value="0" />
             </disabledValue>
         </policy>
+        <policy name="ConfigureTaskbarCalendar" class="User" displayName="$(string.ConfigureTaskbarCalendar)" explainText="$(string.ConfigureTaskbarCalendar_Help)" presentation="$(presentation.ConfigureTaskbarCalendar)" key="Software\Policies\Microsoft\Windows\Settings" valueName="AllowConfigureTaskbarCalendar">
+            <parentCategory ref="windows:StartMenu" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2" />
+            <enabledValue>
+                <decimal value="1" />
+             </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+            <elements>
+                <enum id="ConfigureTaskbarCalendar_Dropdown" valueName="ConfigureTaskbarCalendar" required="true">
+                    <item displayName="$(string.ConfigureTaskbarCalendar_SimplifiedChinese)">
+                        <value>
+                            <decimal value="2" />
+                        </value>
+                    </item>
+                    <item displayName="$(string.ConfigureTaskbarCalendar_TraditionalChinese)">
+                        <value>
+                            <decimal value="3" />
+                        </value>
+                    </item>
+                </enum>
+            </elements>
+        </policy>
     </policies>
 </policyDefinitions>

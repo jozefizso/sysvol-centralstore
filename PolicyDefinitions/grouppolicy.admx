@@ -68,6 +68,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="EnableAppUriHandlers" class="Machine" displayName="$(string.EnableAppUriHandlers)" explainText="$(string.EnableAppUriHandlers_Help)" key="Software\Policies\Microsoft\Windows\System" valueName="EnableAppUriHandlers">
+      <parentCategory ref="PolicyPolicies" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="EnableLogonOptimization" class="Machine" displayName="$(string.EnableLogonOptimization)" explainText="$(string.EnableLogonOptimization_Help)" presentation="$(presentation.SyncModeThreshold)" key="Software\Policies\Microsoft\Windows\System" valueName="EnableLogonOptimization">
       <parentCategory ref="PolicyPolicies" />
       <supportedOn ref="windows:SUPPORTED_Windows_6_3" />

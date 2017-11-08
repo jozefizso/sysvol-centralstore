@@ -23,6 +23,12 @@
       valueName="EnableVirtualizationBasedSecurity">
       <parentCategory ref="DeviceGuardCategory" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue> 
+         <decimal value="1" /> 
+      </enabledValue> 
+      <disabledValue> 
+         <decimal value="0" /> 
+      </disabledValue>
       <elements>
         <enum
           id="RequirePlatformSecurityFeaturesDrop"
@@ -56,7 +62,20 @@
               <decimal value="2" />
             </value>
           </item>          
+          <item displayName="$(string.NotConfigured)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
         </enum>
+        <boolean id="CheckboxMAT" valueName="HVCIMATRequired">
+            <trueValue>
+              <decimal value="1" />
+          </trueValue>
+          <falseValue>
+              <decimal value="0" />
+          </falseValue>
+        </boolean>        
         <enum
           id="CredentialIsolationDrop"
           valueName="LsaCfgFlags">
@@ -75,6 +94,11 @@
               <decimal value="2" />
             </value>
           </item>
+          <item displayName="$(string.NotConfigured)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
         </enum>
       </elements>
     </policy>
@@ -89,6 +113,12 @@
       valueName="DeployConfigCIPolicy">
       <parentCategory ref="DeviceGuardCategory" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue> 
+         <decimal value="1" /> 
+      </enabledValue> 
+      <disabledValue> 
+         <decimal value="0" /> 
+      </disabledValue>
       <elements>
         <text id="ConfigCIPolicyFilePathText" valueName="ConfigCIPolicyFilePath" maxLength="255" required="true" />
       </elements>

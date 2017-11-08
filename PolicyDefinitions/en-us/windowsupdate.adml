@@ -89,7 +89,7 @@ If the status is set to Not Configured, use of Automatic Updates is not specifie
       <string id="AutoUpdateModeAdminChooses">5 - Allow local admin to choose setting</string>
       <string id="AutoUpdateModeAuto">4 - Auto download and schedule the install</string>
       <string id="AutoUpdateModeDownload">3 - Auto download and notify for install</string>
-      <string id="AutoUpdateModeNotify">2 - Notify for download and notify for install</string>
+      <string id="AutoUpdateModeNotify">2 - Notify for download and auto install</string>
       <string id="AutoUpdateSchDay_Everyday">0 - Every day</string>
       <string id="AutoUpdateSchDay_Friday">6 - Every Friday</string>
       <string id="AutoUpdateSchDay_Monday">2 - Every Monday</string>
@@ -123,19 +123,28 @@ If the status is set to Not Configured, use of Automatic Updates is not specifie
       <string id="AutoUpdateSchTime8">08:00</string>
       <string id="AutoUpdateSchTime9">09:00</string>
       <string id="CorpWuURL">Specify intranet Microsoft update service location</string>
-      <string id="CorpWuURL_Help">Specifies an intranet server to host updates from Microsoft Update. You can then use this update service to automatically update computers on your network.
+      <string id="CorpWuURL_Help">
+        Specifies an intranet server to host updates from Microsoft Update. You can then use this update service to automatically update computers on your network.
 
-This setting lets you specify a server on your network to function as an internal update service. The Automatic Updates client will search this service for updates that apply to the computers on your network.
+        This setting lets you specify a server on your network to function as an internal update service. The Automatic Updates client will search this service for updates that apply to the computers on your network.
 
-To use this setting, you must set two servername values: the server from which the Automatic Updates client detects and downloads updates, and the server to which updated workstations upload statistics. You can set both values to be the same server.
+        To use this setting, you must set two server name values: the server from which the Automatic Updates client detects and downloads updates, and the server to which updated workstations upload statistics. You can set both values to be the same server. An optional server name value can be specified to configure Windows Update Agent to download updates from an alternate download server instead of the intranet update service.
 
-If the status is set to Enabled, the Automatic Updates client connects to the specified intranet Microsoft update service, instead of Windows Update, to search for and download updates. Enabling this setting means that end users in your organization don't have to go through a firewall to get updates, and it gives you the opportunity to test updates before deploying them.
+        If the status is set to Enabled, the Automatic Updates client connects to the specified intranet Microsoft update service (or alternate download server), instead of Windows Update, to search for and download updates. Enabling this setting means that end users in your organization don't have to go through a firewall to get updates, and it gives you the opportunity to test updates before deploying them.
 
-If the status is set to Disabled or Not Configured, and if Automatic Updates is not disabled by policy or user preference, the Automatic Updates client connects directly to the Windows Update site on the Internet.
+        If the status is set to Disabled or Not Configured, and if Automatic Updates is not disabled by policy or user preference, the Automatic Updates client connects directly to the Windows Update site on the Internet.
 
-Note: If the "Configure Automatic Updates" policy is disabled, then this policy has no effect.
+        The alternate download server configures the Windows Update Agent to download files from an alternative download server instead of the intranet update service.
 
-Note: This policy is not supported on Windows RT. Setting this policy will not have any effect on Windows RT PCs.</string>
+        The option to download files with missing Urls allows content to be downloaded from the Alternate Download Server when there are no download Urls for files in the update metadata. This option should only be used when the intranet update service does not provide download Urls in the update metadata for files which are present on the alternate download server.
+
+        Note: If the "Configure Automatic Updates" policy is disabled, then this policy has no effect.
+
+        Note: If the "Alternate Download Server" is not set, it will use the intranet update service by default to download updates.
+
+        Note: The option to "Download files with no Url..." is only used if the "Alternate Download Server" is set.
+
+        Note: This policy is not supported on Windows RT. Setting this policy will not have any effect on Windows RT PCs.</string>
       <string id="DetectionFrequency_Help">Specifies the hours that Windows will use to determine how long to wait before checking for available updates. The exact wait time is determined by using the hours specified here minus zero to twenty percent of the hours specified. For example, if this policy is used to specify a 20 hour detection frequency, then all clients to which this policy is applied will check for updates anywhere between 16 and 20 hours.
 
 If the status is set to Enabled, Windows will check for available updates at the specified interval.
@@ -300,9 +309,13 @@ Note: This policy applies only when this PC is configured to connect to an intra
 
 The branch readiness level for each new Windows 10 feature update is initially considered a "Current Branch" (CB) release, to be used by organizations for initial deployments. Once Microsoft has verified the feature update should be considered for enterprise deployment, it will be declared a branch readiness level of "Current Branch for Business" (CBB).
 
-You can defer receiving feature updates for up to 180 days.
+You can defer receiving feature updates for up to 365 days.
 
-To prevent feature updates from being received on their scheduled time, you can temporarily pause feature updates. The pause will remain in effect for 60 days or until you clear the check box.
+To prevent feature updates from being received on their scheduled time, you can temporarily pause feature updates. The pause will remain in effect for 60 days or until you clear the start date field.
+
+To resume receiving Feature Updates which are paused, clear the start date field.
+
+If you disable or do not configure this policy, Windows Update will not alter its behavior.
 
 Note: If the "Allow Telemetry" policy is set to 0, this policy will have no effect.</string>
       <string id="DeferQualityUpdates_Title">Select when Quality Updates are received</string>
@@ -310,11 +323,17 @@ Note: If the "Allow Telemetry" policy is set to 0, this policy will have no effe
 
 You can defer receiving quality updates for up to 30 days.
 
-To prevent quality updates from being received on their scheduled time, you can temporarily pause quality updates. The pause will remain in effect for 35 days or until you clear the check box.
+To prevent quality updates from being received on their scheduled time, you can temporarily pause quality updates. The pause will remain in effect for 35 days or until you clear the start date field.
+
+To resume receiving Quality Updates which are paused, clear the start date field.
+
+If you disable or do not configure this policy, Windows Update will not alter its behavior.
 
 Note: If the "Allow Telemetry" policy is set to 0, this policy will have no effect.</string>
       <string id="ExcludeWUDriversInQualityUpdate_Title">Do not include drivers with Windows Updates</string>
-      <string id="ExcludeWUDriversInQualityUpdate_Help">Enable this policy to not include drivers with Windows quality updates.</string>
+      <string id="ExcludeWUDriversInQualityUpdate_Help">Enable this policy to not include drivers with Windows quality updates.
+
+If you disable or do not configure this policy, Windows Update will include updates that have a Driver classification.</string>
       <string id="ActiveHours_Title">Turn off auto-restart for updates during active hours</string>
       <string id="ActiveHours_Help">If you enable this policy, the PC will not automatically restart after updates during active hours. The PC will attempt to restart outside of active hours.
 
@@ -326,7 +345,7 @@ If any of the following two policies are enabled, this policy has no effect:
     1. No auto-restart with logged on users for scheduled automatic updates installations.
     2. Always automatically restart at scheduled time.
 
-Note that the max active hours length is 12 hours from the Active Hours Start Time.</string>
+Note that the default max active hours range is 18 hours from the active hours start time unless otherwise configured via the Specify active hours range for auto-restarts policy.</string>
       <string id="ActiveHoursTime10AM">10 AM</string>
       <string id="ActiveHoursTime10PM">10 PM</string>
       <string id="ActiveHoursTime11AM">11 AM</string>
@@ -378,7 +397,150 @@ If any of the following two policies are enabled, this policy has no effect:
       <string id="AutoRestartDeadlineDay12">12</string>
       <string id="AutoRestartDeadlineDay13">13</string>
       <string id="AutoRestartDeadlineDay14">14</string>
+      <string id="AutoRestartDeadlineDay15">15</string>
+      <string id="AutoRestartDeadlineDay16">16</string>
+      <string id="AutoRestartDeadlineDay17">17</string>
+      <string id="AutoRestartDeadlineDay18">18</string>
+      <string id="AutoRestartDeadlineDay19">19</string>
+      <string id="AutoRestartDeadlineDay20">20</string>
+      <string id="AutoRestartDeadlineDay21">21</string>
+      <string id="AutoRestartDeadlineDay22">22</string>
+      <string id="AutoRestartDeadlineDay23">23</string>
+      <string id="AutoRestartDeadlineDay24">24</string>
+      <string id="AutoRestartDeadlineDay25">25</string>
+      <string id="AutoRestartDeadlineDay26">26</string>
+      <string id="AutoRestartDeadlineDay27">27</string>
+      <string id="AutoRestartDeadlineDay28">28</string>
+      <string id="AutoRestartDeadlineDay29">29</string>
+      <string id="AutoRestartDeadlineDay30">30</string>
+
+      <string id="DisableUXWUAccess_Title">Remove access to use all Windows Update features</string>
+      <string id="DisableUXWUAccess_Help">This setting allows you to remove access to scan Windows Update.
+
+If you enable this setting user access to Windows Update scan, download and install is removed.
+      </string>
+      <string id="ActiveHoursMaxRange_Title">Specify active hours range for auto-restarts</string>
+      <string id="ActiveHoursMaxRange_Help">Enable this policy to specify the maximum number of hours from the start time that users can set their active hours.
+
+The max active hours range can be set between 8 and 18 hours.
+
+If you disable or do not configure this policy, the default max active hours range will be used.
+      </string>
+      <string id="ActiveHoursMaxRange8">8</string>
+      <string id="ActiveHoursMaxRange9">9</string>
+      <string id="ActiveHoursMaxRange10">10</string>
+      <string id="ActiveHoursMaxRange11">11</string>
+      <string id="ActiveHoursMaxRange12">12</string>
+      <string id="ActiveHoursMaxRange13">13</string>
+      <string id="ActiveHoursMaxRange14">14</string>
+      <string id="ActiveHoursMaxRange15">15</string>
+      <string id="ActiveHoursMaxRange16">16</string>
+      <string id="ActiveHoursMaxRange17">17</string>
+      <string id="ActiveHoursMaxRange18">18</string>
+
+      <string id="AutoRestartRequiredNotificationDismissal_Title">Configure auto-restart required notification for updates</string>
+      <string id="AutoRestartRequiredNotificationDismissal_Help">Enable this policy to specify the method by which the auto-restart required notification is dismissed. When a restart is required to install updates, the auto-restart required notification is displayed. By default, the notification is automatically dismissed after 25 seconds.
+
+The method can be set to require user action to dismiss the notification.
+
+If you disable or do not configure this policy, the default method will be used.
+      </string>
+      <string id="AutoDismissal">1 - Auto</string>
+      <string id="UserAction">2 - User Action</string>
+
+      <string id="AutoRestartNotificationConfig_Title">Configure auto-restart reminder notifications for updates</string>
+      <string id="AutoRestartNotificationConfig_Help">Enable this policy to specify when auto-restart reminders are displayed.
+
+You can specify the amount of time prior to a scheduled restart to notify the user.
+
+If you disable or do not configure this policy, the default period will be used.
+      </string>
+      <string id="AutoRestartNotificationSchd15">15</string>
+      <string id="AutoRestartNotificationSchd30">30</string>
+      <string id="AutoRestartNotificationSchd60">60</string>
+      <string id="AutoRestartNotificationSchd120">120</string>
+      <string id="AutoRestartNotificationSchd240">240</string>
+
+      <string id="AutoRestartNotificationDisable_Title">Turn off auto-restart notifications for update installations</string>
+      <string id="AutoRestartNotificationDisable_Help">This policy setting allows you to control whether users receive notifications for auto restarts for update installations including reminder and warning notifications.
+
+Enable this policy to turn off all auto restart notifications.
+
+If you disable or do not configure this policy, the default notification behaviors will be unchanged.
+      </string>
+
+      <string id="RestartWarningSchd_Title">Configure auto-restart warning notifications schedule for updates</string>
+      <string id="RestartWarningSchd_Help">Enable this policy to control when notifications are displayed to warn users about a scheduled restart for the update installation deadline. Users are not able to postpone the scheduled restart once the deadline has been reached and the restart is automatically executed.
+
+Specifies the amount of time prior to a scheduled restart to display the warning reminder to the user.
+
+You can specify the amount of time prior to a scheduled restart to notify the user that the auto restart is imminent to allow them time to save their work.
+
+If you disable or do not configure this policy, the default notification behaviors will be used.
+      </string>
+      <string id="RestartWarnRemindHours2">2</string>
+      <string id="RestartWarnRemindHours4">4</string>
+      <string id="RestartWarnRemindHours8">8</string>
+      <string id="RestartWarnRemindHours12">12</string>
+      <string id="RestartWarnRemindHours24">24</string>
+      <string id="RestartWarnMins15">15</string>
+      <string id="RestartWarnMins30">30</string>
+      <string id="RestartWarnMins60">60</string>
+      <string id="EngagedRestartTransitionSchedule_Title">Specify Engaged restart transition and notification schedule for updates</string>
+      <string id="EngagedRestartTransitionSchedule_Help">Enable this policy to control the timing before transitioning from Auto restarts scheduled_outside of active hours to Engaged restart, which requires the user to schedule. The period can be set between 2 and 30 days from the time the restart becomes pending.
+
+You can specify the number of days a user can snooze Engaged restart reminder notifications. The snooze period can be set between 1 and 3 days.
+
+You can specify the deadline in days before automatically scheduling and executing a pending restart outside of active hours. The deadline can be set between 2 and 30 days from the time the restart becomes pending. If configured, the pending restart will transition from Auto-restart to Engaged restart (pending user schedule) to automatically executed, within the specified period.
+
+If no deadline is specified or deadline is set to 0, the restart will not be automatically executed and will remain Engaged restart (e.g. pending user scheduling).
+
+If you disable or do not configure this policy, the default behaviors will be used.
+
+If any of the following policies are configured, this policy has no effect:
+    1. No auto-restart with logged on users for scheduled automatic updates installations
+    2. Always automatically restart at scheduled time
+    3. Specify deadline before auto-restart for update installation
+      </string>
+      <string id="EngagedRestart_0">0</string>
+      <string id="EngagedRestart_2">2</string>
+      <string id="EngagedRestart_3">3</string>
+      <string id="EngagedRestart_4">4</string>
+      <string id="EngagedRestart_5">5</string>
+      <string id="EngagedRestart_6">6</string>
+      <string id="EngagedRestart_7">7</string>
+      <string id="EngagedRestart_8">8</string>
+      <string id="EngagedRestart_9">9</string>
+      <string id="EngagedRestart_10">10</string>
+      <string id="EngagedRestart_11">11</string>
+      <string id="EngagedRestart_12">12</string>
+      <string id="EngagedRestart_13">13</string>
+      <string id="EngagedRestart_14">14</string>
+      <string id="EngagedRestart_15">15</string>
+      <string id="EngagedRestart_16">16</string>
+      <string id="EngagedRestart_17">17</string>
+      <string id="EngagedRestart_18">18</string>
+      <string id="EngagedRestart_19">19</string>
+      <string id="EngagedRestart_20">20</string>
+      <string id="EngagedRestart_21">21</string>
+      <string id="EngagedRestart_22">22</string>
+      <string id="EngagedRestart_23">23</string>
+      <string id="EngagedRestart_24">24</string>
+      <string id="EngagedRestart_25">25</string>
+      <string id="EngagedRestart_26">26</string>
+      <string id="EngagedRestart_27">27</string>
+      <string id="EngagedRestart_28">28</string>
+      <string id="EngagedRestart_29">29</string>
+      <string id="EngagedRestart_30">30</string>
+      <string id="EngagedRestartSnooze_1">1</string>
+      <string id="EngagedRestartSnooze_2">2</string>
+      <string id="EngagedRestartSnooze_3">3</string>
+      
+      <string id="SetEDURestart_Title">Update Power Policy for Cart Restarts</string>
+      <string id="SetEDURestart_Help">Enabling this policy for EDU devices that remain on Carts overnight will skip power checks to ensure update reboots will happen at the scheduled install time.</string>
+
     </stringTable>
+
     <presentationTable>
       <presentation id="RemoveWindowsUpdate">
         <dropdownList refId="RemoveWindowsUpdateMode" defaultItem="0">Configure notifications:</dropdownList>
@@ -398,7 +560,11 @@ If any of the following two policies are enabled, this policy has no effect:
         <textBox refId="CorpWUStatusURL_Name">
           <label>Set the intranet statistics server:</label>
         </textBox>
+        <textBox refId="CorpWUContentHost_Name">
+          <label>Set the alternate download server:</label>
+        </textBox>
         <text>(example: http://IntranetUpd01)</text>
+        <checkBox refId="CorpWUFillEmptyContentUrls" defaultChecked="false">Download files with no Url in the metadata if alternate download server is set.</checkBox>
       </presentation>
       <presentation id="DetectionFrequency_Title">
         <text>Check for updates at the following</text>
@@ -436,11 +602,17 @@ If any of the following two policies are enabled, this policy has no effect:
       <presentation id="DeferFeatureUpdates">
         <dropdownList refId="BranchReadinessLevelId" noSort="true" defaultItem="0">Select the branch readiness level for the feature updates you want to receive:</dropdownList>
         <decimalTextBox refId="DeferFeatureUpdatesPeriodId" defaultValue="0">After a feature update is released, defer receiving it for this many days:</decimalTextBox>
-        <checkBox refId="PauseFeatureUpdatesId" defaultChecked="false">Pause feature updates</checkBox>
+        <textBox refId="PauseFeatureUpdatesStartId">
+          <label>Pause Feature Updates starting</label>
+        </textBox>
+        <text>(format yyyy-mm-dd example: 2016-09-16)</text>
       </presentation>
       <presentation id="DeferQualityUpdates">
         <decimalTextBox refId="DeferQualityUpdatesPeriodId" defaultValue="0">After a quality update is released, defer receiving it for this many days:</decimalTextBox>
-        <checkBox refId="PauseQualityUpdatesId" defaultChecked="false">Pause quality updates</checkBox>
+        <textBox refId="PauseQualityUpdatesStartId">
+          <label>Pause Quality Updates starting</label>
+        </textBox>
+        <text>(format yyyy-mm-dd example: 2016-09-16)</text>
       </presentation>
       <presentation id="ActiveHours_Title">
         <text>Active Hours</text>
@@ -449,6 +621,32 @@ If any of the following two policies are enabled, this policy has no effect:
       </presentation>
       <presentation id="AutoRestartDeadline_Title">
         <dropdownList refId="AutoRestartDeadline" noSort="true" defaultItem="5">Specify the number of days before a pending restart will automatically be executed outside of active hours: </dropdownList>
+      </presentation>
+      <presentation id="ActiveHoursMaxRange_Title">
+        <text>Specify the max active hours range:</text>
+        <dropdownList refId="ActiveHoursMaxRange" noSort="true" defaultItem="10">Max range: </dropdownList>
+      </presentation>
+      <presentation id="AutoRestartRequiredNotificationDismissal_Title">
+        <text>Specify the method by which the auto-restart required notification is dismissed:</text>
+        <dropdownList refId="AutoRestartRequiredNotificationDismissal" noSort="true" defaultItem="0">Method: </dropdownList>
+      </presentation>
+      <presentation id="AutoRestartNotificationConfig_Title">
+        <text>Specify the period for auto-restart reminder notifications:</text>
+        <dropdownList refId="AutoRestartNotificationSchd" noSort="true" defaultItem="0">Period (min): </dropdownList>
+      </presentation>
+      <presentation id="RestartWarningSchd_Title">
+        <text>Specify the period for auto-restart warning reminder notifications:</text>
+        <dropdownList refId="RestartWarnRemind" noSort="true" defaultItem="1">Reminder (hours): </dropdownList>
+        <text>Specify the period for auto-restart immiment warning notifications:</text>
+        <dropdownList refId="RestartWarn" noSort="true" defaultItem="0">Warning (mins): </dropdownList>
+      </presentation>
+      <presentation id="EngagedRestartTransitionSchedule_Title">
+        <text>Specify the timing before transitioning from Auto-restart to Engaged restart (pending user schedule):</text>
+        <dropdownList refId="EngagedRestartTransitionSchedule" noSort="true" defaultItem="5">Transition (days): </dropdownList>
+        <text>Specify snooze for Engaged restart reminder notifications:</text>
+        <dropdownList refId="EngagedRestartSnoozeSchedule" noSort="true" defaultItem="2">Snooze (days):     </dropdownList>
+        <text>Specify the deadline before a pending restart will automatically be executed outside of active hours:</text>
+        <dropdownList refId="EngagedRestartDeadline" noSort="true" defaultItem="0">Deadline (days):  </dropdownList>
       </presentation>
     </presentationTable>
   </resources>

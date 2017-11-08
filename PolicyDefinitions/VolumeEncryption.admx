@@ -241,6 +241,18 @@
       </disabledValue>
     </policy>
 
+    <policy name="DisableExternalDMAUnderLock_Name" class="Machine" displayName="$(string.DisableExternalDMAUnderLock_Name)" explainText="$(string.DisableExternalDMAUnderLock_Help)" key="Software\Policies\Microsoft\FVE" valueName="DisableExternalDMAUnderLock">
+      <parentCategory ref="FVECategory" />
+       <supportedOn ref="SUPPORTED_Windows_10_0_RS2" />
+
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
     <policy name="PrebootRecoveryInfo_Name" class="Machine" displayName="$(string.PrebootRecoveryInfo_Name)" explainText="$(string.PrebootRecoveryInfo_Help)" presentation="$(presentation.PrebootRecoveryInfo)" key="Software\Policies\Microsoft\FVE">
       <parentCategory ref="FVEOSCategory" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
@@ -1316,6 +1328,17 @@
     <policy name="EnablePrebootInputProtectorsOnSlates_Name" class="Machine" displayName="$(string.EnablePrebootInputProtectorsOnSlates_Name)" explainText="$(string.EnablePrebootInputProtectorsOnSlates_Help)" key="Software\Policies\Microsoft\FVE" valueName="OSEnablePrebootInputProtectorsOnSlates">
         <parentCategory ref="FVEOSCategory" />
         <supportedOn ref="SUPPORTED_Windows8NoARM" />
+        <enabledValue>
+            <decimal value="1" />
+        </enabledValue>
+        <disabledValue>
+            <decimal value="0" />
+        </disabledValue>
+    </policy>
+
+    <policy name="EnablePreBootPinExceptionOnDECapableDevice_Name" class="Machine" displayName="$(string.EnablePreBootPinExceptionOnDECapableDevice_Name)" explainText="$(string.EnablePreBootPinExceptionOnDECapableDevice_Help)" key="Software\Policies\Microsoft\FVE" valueName="OSEnablePreBootPinExceptionOnDECapableDevice">
+        <parentCategory ref="FVEOSCategory" />
+        <supportedOn ref="SUPPORTED_Windows_10_0_RS2" />
         <enabledValue>
             <decimal value="1" />
         </enabledValue>

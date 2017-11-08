@@ -103,7 +103,7 @@
       <elements>
         <decimal
             id="MaxUploadBandwidth"
-            maxValue="4294967295"
+            maxValue="4000000"
             minValue="0"
             valueName="DOMaxUploadBandwidth"
             />
@@ -256,6 +256,106 @@
             maxValue="100"
             minValue="0"
             valueName="DOPercentageMaxDownloadBandwidth"
+            />
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.MinFileSizeToCache)"
+        explainText="$(string.MinFileSizeToCache_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="MinFileSizeToCache"
+        presentation="$(presentation.MinFileSizeToCache)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <elements>
+        <decimal
+            id="MinFileSizeToCache"
+            maxValue="100000"
+            minValue="1"
+            valueName="DOMinFileSizeToCache"
+            />
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.AllowVPNPeerCaching)"
+        explainText="$(string.AllowVPNPeerCaching_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="AllowVPNPeerCaching"
+        presentation="$(presentation.AllowVPNPeerCaching)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <elements>
+        <boolean
+            id="AllowVPNPeerCaching"
+            valueName="DOAllowVPNPeerCaching"
+            >
+          <trueValue>
+            <decimal value="1"/>
+          </trueValue>
+          <falseValue>
+            <decimal value="0"/>
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.MinRAMAllowedToPeer)"
+        explainText="$(string.MinRAMAllowedToPeer_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="MinRAMAllowedToPeer"
+        presentation="$(presentation.MinRAMAllowedToPeer)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <elements>
+        <decimal
+            id="MinRAMAllowedToPeer"
+            maxValue="100000"
+            minValue="1"
+            valueName="DOMinRAMAllowedToPeer"
+            />
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.MinDiskSizeAllowedToPeer)"
+        explainText="$(string.MinDiskSizeAllowedToPeer_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="MinDiskSizeAllowedToPeer"
+        presentation="$(presentation.MinDiskSizeAllowedToPeer)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <elements>
+        <decimal
+            id="MinDiskSizeAllowedToPeer"
+            maxValue="100000"
+            minValue="1"
+            valueName="DOMinDiskSizeAllowedToPeer"
+            />
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.MinBatteryPercentageAllowedToUpload)"
+        explainText="$(string.MinBatteryPercentageAllowedToUpload_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="MinBatteryPercentageAllowedToUpload"
+        presentation="$(presentation.MinBatteryPercentageAllowedToUpload)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <elements>
+        <decimal
+            id="MinBatteryPercentageAllowedToUpload"
+            maxValue="100"
+            minValue="0"
+            valueName="DOMinBatteryPercentageAllowedToUpload"
             />
       </elements>
     </policy>

@@ -3,7 +3,7 @@
 <description>enter description here</description>
 <resources>
     <stringTable>
-    <string id="AntiSpywareDefender">Windows Defender</string>
+    <string id="AntiSpywareDefender">Windows Defender Antivirus</string>
     <string id="AntiSpyware">Endpoint Protection</string>
     <string id="Exclusions">Exclusions</string>
     <string id="NetworkRealtimeInspection">Network Inspection System</string>
@@ -17,6 +17,7 @@
     <string id="Spynet">MAPS</string>
     <string id="Threats">Threats</string>
     <string id="ClientInterface">Client Interface</string>
+    <string id="MpEngine">MpEngine</string>
     <string id="AllowFastServiceStartup">Allow antimalware service to startup with normal priority</string>
     <string id="AllowFastServiceStartup_Explain">This policy setting controls the load priority for the antimalware service. Increasing the load priority will allow for faster service startup, but may impact performance.
 
@@ -33,12 +34,12 @@
 
     If you disable or do not configure this policy setting, by default Endpoint Protection runs and computers are scanned for malware and other potentially unwanted software.
     </string>
-    <string id="DisableAntiSpywareDefender">Turn off Windows Defender</string>
-    <string id="DisableAntiSpywareDefender_Explain">This policy setting turns off Windows Defender.
+    <string id="DisableAntiSpywareDefender">Turn off Windows Defender Antivirus</string>
+    <string id="DisableAntiSpywareDefender_Explain">This policy setting turns off Windows Defender Antivirus.
 
-    If you enable this policy setting, Windows Defender does not run, and computers are not scanned for malware or other potentially unwanted software.
+    If you enable this policy setting, Windows Defender Antivirus does not run, and computers are not scanned for malware or other potentially unwanted software.
 
-    If you disable or do not configure this policy setting, by default Windows Defender runs and computers are scanned for malware and other potentially unwanted software.</string>
+    If you disable or do not configure this policy setting, by default Windows Defender Antivirus runs and computers are scanned for malware and other potentially unwanted software.</string>
     <string id="DisableLocalAdminMerge">Configure local administrator merge behavior for lists</string>
     <string id="DisableLocalAdminMerge_Explain">This policy setting controls whether or not complex list settings configured by a local administrator are merged with Group Policy settings. This setting applies to lists such as threats and Exclusions.
 
@@ -47,11 +48,11 @@
     If you disable this setting, only items defined by Group Policy will be used in the resulting effective policy. Group Policy settings will override preference settings configured by the local administrator.</string>
     <string id="DisableRoutinelyTakingAction">Turn off routine remediation</string>
     <string id="DisableRoutinelyTakingActionDefender_Explain">
-    This policy setting allows you to configure whether Windows Defender automatically takes action on all detected threats. The action to be taken on a particular threat is determined by the combination of the policy-defined action, user-defined action, and the signature-defined action.
+    This policy setting allows you to configure whether Windows Defender Antivirus automatically takes action on all detected threats. The action to be taken on a particular threat is determined by the combination of the policy-defined action, user-defined action, and the signature-defined action.
 
-    If you enable this policy setting, Windows Defender does not automatically take action on the detected threats, but prompts users to choose from the actions available for each threat.
+    If you enable this policy setting, Windows Defender Antivirus does not automatically take action on the detected threats, but prompts users to choose from the actions available for each threat.
 
-    If you disable or do not configure this policy setting, Windows Defender automatically takes action on all detected threats after a nonconfigurable delay of approximately five seconds.</string>
+    If you disable or do not configure this policy setting, Windows Defender Antivirus automatically takes action on all detected threats after a nonconfigurable delay of approximately five seconds.</string>
     <string id="DisableRoutinelyTakingAction_Explain">
         This policy setting allows you to configure whether Endpoint Protection automatically takes action on all detected threats. The action to be taken on a particular threat is determined by the combination of the policy-defined action, user-defined action, and the signature-defined action.
 
@@ -159,11 +160,11 @@
     <string id="DisableRealtimeMonitoring">Turn off real-time protection</string>
     <string id="DisableRealtimeMonitoringDefender_Explain">This policy setting turns off real-time protection prompts for known malware detection.
 
-    Windows Defender alerts you when malware or potentially unwanted software attempts to install itself or to run on your computer.
+    Windows Defender Antivirus alerts you when malware or potentially unwanted software attempts to install itself or to run on your computer.
 
-    If you enable this policy setting, Windows Defender will not prompt users to take actions on malware detections.
+    If you enable this policy setting, Windows Defender Antivirus will not prompt users to take actions on malware detections.
 
-    If you disable or do not configure this policy setting, Windows Defender will prompt users to take actions on malware detections.</string>
+    If you disable or do not configure this policy setting, Windows Defender Antivirus will prompt users to take actions on malware detections.</string>
     <string id="DisableRealtimeMonitoring_Explain">
     This policy setting turns off real-time protection prompts for known malware detection.
 
@@ -289,13 +290,21 @@
     <string id="Reporting_WppTracingComponents_Explain">This policy configures Windows software trace preprocessor (WPP Software Tracing) components.</string>
     <string id="Reporting_WppTracingLevel">Configure WPP tracing level</string>
     <string id="Reporting_WppTracingLevel_Explain">This policy allows you to configure tracing levels for Windows software trace preprocessor (WPP Software Tracing). 
-
     Tracing levels are defined as:
     1 - Error
     2 - Warning
     3 - Info
     4 - Debug</string>
-    <string id="Scan_AllowPause">Allow users to pause scan</string>
+    <string id="Reporting_DisableEnhancedNotifications">Turn off enhanced notifications</string>
+    <string id="Reporting_DisableEnhancedNotifications_Explain">
+      Use this policy setting to specify if you want Windows Defender Antivirus enhanced notifications to display on clients.
+      
+      If you disable or do not configure this setting, Windows Defender Antivirus enhanced notifications will display on clients.
+      
+      If you enable this setting, Windows Defender Antivirus enhanced notifications will not display on clients.
+    </string>
+
+      <string id="Scan_AllowPause">Allow users to pause scan</string>
     <string id="Scan_AllowPause_Explain">This policy setting allows you to manage whether or not end users can pause a scan in progress.
 
     If you enable or do not configure this setting, a new context menu will be added to the task tray icon to allow the user to pause a scan.
@@ -701,10 +710,10 @@
       If you enable this setting AM UI won't show reboot notifications.
     </string>
     <string id="UX_Configuration_Notification_Suppress">Suppress all notifications</string>
-    <string id="UX_Configuration_Notification_Suppress_Explain">Use this policy setting to specify if you want Windows Defender notifications to display on clients.
-      If you disable or do not configure this setting, Windows Defender notifications will display on clients.
+    <string id="UX_Configuration_Notification_Suppress_Explain">Use this policy setting to specify if you want Windows Defender Antivirus notifications to display on clients.
+      If you disable or do not configure this setting, Windows Defender Antivirus notifications will display on clients.
 
-      If you enable this setting, Windows Defender notifications will not display on clients.
+      If you enable this setting, Windows Defender Antivirus notifications will not display on clients.
     </string>
     <string id="UX_Configuration_CustomDefaultActionToastString">Display additional text to clients when they need to perform an action</string>
     <string id="UX_Configuration_CustomDefaultActionToastString_Explain">This policy setting allows you to configure whether or not to display additional text to clients when they need to perform an action. The text displayed is a custom administrator-defined string. For example, the phone number to call the company help desk. The client interface will only display a maximum of 1024 characters. Longer strings will be truncated before display.
@@ -712,6 +721,32 @@
     If you enable this setting, the additional text specified will be displayed.
 
     If you disable or do not configure this setting, there will be no additional text displayed.</string>
+    <string id="MpCloudBlockLevel">Select cloud protection level</string>
+    <string id="MpCloudBlockLevel_Explain">
+      This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files.
+
+      If this setting is on, Windows Defender Antivirus will be more aggressive when identifying suspicious files to block and scan; otherwise, it will be less aggressive and therefore block and scan with less frequency. 
+      
+      For more information about specific values that are supported, see the Windows Defender Antivirus documentation site.
+
+      Note: This feature requires the "Join Microsoft MAPS" setting enabled in order to function.
+
+      Possible options are:
+      (0x0) Default Windows Defender Antivirus blocking level
+      (0x2) High blocking level      
+    </string>
+    <string id="MpBafsExtendedTimeout">Configure extended cloud check</string>
+    <string id="MpBafsExtendedTimeout_Explain">
+      This feature allows Windows Defender Antivirus to block a suspicious file for up to 60 seconds, and scan it in the cloud to make sure it's safe.
+      
+      The typical cloud check timeout is 10 seconds. To enable the extended cloud check feature, specify the extended time in seconds, up to an additional 50 seconds.
+
+      For example, if the desired timeout is 60 seconds, specify 50 seconds in this setting, which will enable the extended cloud check feature, and will raise the total time to 60 seconds.
+
+      Note: This feature depends on three other MAPS settings - "Configure the 'Block at First Sight' feature; "Join Microsoft MAPS"; "Send file samples when further analysis is required" all need to be enabled.
+    </string>
+    <string id="MpCloudBlockLevel_Default_Level">Default Windows Defender Antivirus blocking level</string>
+    <string id="MpCloudBlockLevel_High_Level">High blocking level</string>    
     </stringTable>
     <presentationTable>
     <presentation id="ProxyBypass">
@@ -851,6 +886,12 @@
     </presentation>
     <presentation id="SignatureUpdate_ExpiryNotificationIntervalDays">
         <decimalTextBox refId="SignatureUpdate_ExpiryNotificationIntervalDays">Specify the interval for expiry notification</decimalTextBox>
+    </presentation>
+    <presentation id="MpCloudBlockLevel">
+     <dropdownList refId="MpCloudBlockLevel" noSort="true" defaultItem="0">Select cloud blocking level</dropdownList>
+    </presentation>
+    <presentation id="MpBafsExtendedTimeout">
+     <decimalTextBox refId="MpBafsExtendedTimeout" defaultValue="0">Specify the extended cloud check time in seconds</decimalTextBox>
     </presentation>
     </presentationTable>
 </resources>

@@ -688,7 +688,7 @@
               valueName="DefaultLibrariesLocation" />
       </elements>
     </policy>
-    <policy name="EnableSmartScreen" class="Machine" displayName="$(string.EnableSmartScreen)" explainText="$(string.EnableSmartScreen_Help)" key="Software\Policies\Microsoft\Windows\System" valueName="EnableSmartScreen">
+    <policy name="EnableSmartScreen" class="Machine" displayName="$(string.EnableSmartScreen)" explainText="$(string.EnableSmartScreen_Help)" key="Software\Policies\Microsoft\Windows\System" valueName="EnableSmartScreen" presentation="$(presentation.EnableSmartScreen)">
       <parentCategory ref="windows:WindowsExplorer" />
       <supportedOn ref="windows:SUPPORTED_Windows8" />
       <enabledValue>
@@ -697,6 +697,20 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+      <elements>
+        <enum id="EnableSmartScreenDropdown" key="Software\Policies\Microsoft\Windows\System" valueName="ShellSmartScreenLevel" required="true">
+          <item displayName="$(string.SmartScreen_PreventBypass)">
+            <value>
+              <string>Block</string>
+            </value>
+          </item>
+          <item displayName="$(string.SmartScreen_Warn)">
+            <value>
+              <string>Warn</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
     <policy name="ShowLockOption" class="Machine" displayName="$(string.ShowLockOption)" explainText="$(string.ShowLockOption_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="ShowLockOption">
       <parentCategory ref="windows:WindowsExplorer" />

@@ -17,7 +17,7 @@
     </category>
   </categories>
   <policies>
-    <policy name="EnableUEV" clientExtension="{169EBF44-942F-4C43-87CE-13C93996EBBE}" class="Machine" displayName="$(string.EnableUEV)" explainText="$(string.EnableUEV_Help)" key="Software\Policies\Microsoft\Windows\UEV\Agent" valueName="Enabled">
+    <policy name="EnableUEV" clientExtension="{169EBF44-942F-4C43-87CE-13C93996EBBE}" class="Machine" displayName="$(string.EnableUEV)" explainText="$(string.EnableUEV_Help)" presentation="$(presentation.EnableUEV)" key="Software\Policies\Microsoft\UEV\Agent" valueName="Enabled">
       <parentCategory ref="UEV" />
       <supportedOn ref="windows: SUPPORTED_Windows_10_0_NOARM" />
         <enabledValue>
@@ -26,6 +26,9 @@
         <disabledValue>
           <decimal value="0" />
         </disabledValue>
+      <elements>
+        <boolean id="RegisterInboxTemplates" valueName="RegisterInboxTemplates" />
+      </elements>
     </policy>
     <policy name="RepositoryTimeout" class="Both" displayName="$(string.RepositoryTimeout)" explainText="$(string.RepositoryTimeout_Help)" presentation="$(presentation.RepositoryTimeout)" key="Software\Policies\Microsoft\UEV\Agent\Configuration">
       <parentCategory ref="UEV" />
